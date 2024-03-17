@@ -1,13 +1,17 @@
 import tkinter as tk
 from tkinter import filedialog
 import json
+from draggable_image import DraggableImage
 
 
 class App:
     def __init__(self):
         self.barra_menu = None
+        self.draggable_image = None
         self.ventana = tk.Tk()
         self.ventana.title("Editor de circuitos y robots")
+        self.ventana.geometry("1280x720")
+        self.ventana.resizable(False, False)
         self.crear_interfaz()
         self.ventana.mainloop()
 
@@ -16,6 +20,7 @@ class App:
         self.ventana.config(menu=self.barra_menu)
 
         self.crear_menu_archivo()
+        self.draggable_image = DraggableImage(self.ventana, "image.png")
 
     def crear_menu_archivo(self):
         menu_archivo = tk.Menu(self.barra_menu, tearoff=0)
