@@ -1,37 +1,44 @@
 import tkinter as tk
 from tkinter import filedialog
 import json
-from draggable_image import DraggableImage
+from draggable_rectangle import DraggableRectangle
 
 
 class App:
     def __init__(self):
         self.barra_menu = None
-        self.draggable_image = None
+        self.parts = None
+        self._crear_ventana()
+        self.__crear_interfaz()
+        self.ventana.mainloop()
+
+    def _crear_ventana(self):
         self.ventana = tk.Tk()
         self.ventana.title("Editor de circuitos y robots")
         self.ventana.geometry("1280x720")
         self.ventana.resizable(False, False)
-        self.crear_interfaz()
-        self.ventana.mainloop()
 
-    def crear_interfaz(self):
+    def __crear_interfaz(self):
         self.barra_menu = tk.Menu(self.ventana)
         self.ventana.config(menu=self.barra_menu)
 
-        self.crear_menu_archivo()
-        self.draggable_image = DraggableImage(self.ventana, "image.png")
+        self.__crear_menu_archivo()
+        self.parts = [DraggableRectangle(self.ventana)]
 
-    def crear_menu_archivo(self):
+    def __crear_menu_archivo(self):
         menu_archivo = tk.Menu(self.barra_menu, tearoff=0)
         self.barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
 
-        menu_archivo.add_command(label="Abrir", command=self.abrir_archivo)
-        menu_archivo.add_command(label="Guardar", command=self.guardar_archivo)
+        menu_archivo.add_command(label="Abrir", command=self.__abrir_archivo)
+        menu_archivo.add_command(label="Guardar", command=self.__guardar_archivo)
+        menu_archivo.add_command(label="Añadir pieza", command=self.__anadir_pieza)
         menu_archivo.add_separator()
         menu_archivo.add_command(label="Salir", command=self.ventana.destroy)
 
-    def abrir_archivo(self):
+    def __anadir_pieza(self):
+        self.parts.append(DraggableRectangle(self.ventana))
+
+    def __abrir_archivo(self):
         ruta_archivo = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
         if ruta_archivo:
             with open(ruta_archivo, 'r') as archivo:
@@ -39,5 +46,23 @@ class App:
                 print("Contenido del archivo JSON:")
                 print(contenido)
 
-    def guardar_archivo(self):
-        print("Función Guardar")
+    def __guardar_archivo(self):
+        partsJSON = []
+        for i in range(len(self.parts)):
+            partsJSON.append(self.parts[i].toJSON())
+            if i != len(self.parts) - 1:
+                partsJSON.append(",")
+        contenido = {
+            "circuits": [
+                {
+                    "name": "circuit",
+                    "parts": partsJSON
+                }
+            ]
+        }
+        self.__crear_archivo_json(contenido, "circuits.json")
+
+    def __crear_archivo_json(self, contenido, nombre_archivo):
+        with open(nombre_archivo, 'w') as archivo:
+            json.dump(contenido, archivo, indent=4)
+        print(f"Se ha creado el archivo JSON '{nombre_archivo}'.")

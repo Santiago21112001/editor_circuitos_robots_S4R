@@ -1,0 +1,18 @@
+{
+    "circuits": [
+        {
+            "name": "circuit",
+            "parts": [
+                {
+                    "type": "straight",
+                    "orient": "x",
+                    "x": 20,
+                    "y": 20,
+                    "dist": 100,
+                    "anchor next": "mid",
+                    "save anchors": ""
+                }
+            ]
+        }
+    ]
+}
