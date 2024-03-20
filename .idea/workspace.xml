@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Imagen arrastrable por la pantalla">
-      <change afterPath="$PROJECT_DIR$/draggable_rectangle.py" afterDir="false" />
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Eliminado image.png">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/draggable_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/draggable_rectangle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/mines/PycharmProjects/editor_circuitos_robots_S4R",
     "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "Errors"
   }

@@ -40,6 +40,6 @@ class DraggableRectangle:
 
     def __update_position(self, event):
         widget = event.widget
-        self.x = widget.winfo_x() - widget._drag_start_x + event.x
-        self.y = widget.winfo_y() - widget._drag_start_y + event.y
-        widget.place(x=self.x, y=self.y)
+        delta_x = event.x - widget._drag_start_x
+        delta_y = event.y - widget._drag_start_y
+        widget.place(x=widget.winfo_x() + delta_x, y=widget.winfo_y() + delta_y)
