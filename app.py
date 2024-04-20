@@ -3,67 +3,54 @@ from tkinter import filedialog
 import json
 from draggable_rectangle import DraggableRectangle
 
-
 class App:
     def __init__(self):
-        self.ventana = self.__crear_ventana()
+        self.root = tk.Tk()
+        self.root.title("Editor de circuitos y robots")
+        self.root.resizable(False, False)
 
-        canvas = tk.Canvas(self.ventana, width=400, height=400)
-        canvas.pack()
+        self.canvas = tk.Canvas(self.root, width=400, height=400)
+        self.canvas.pack()
 
-        self.barra_menu = tk.Menu(self.ventana)
-        self.ventana.config(menu=self.barra_menu)
+        self.create_menu()
+        self.create_draggable_rectangles()
 
-        self.__crear_menu_archivo()
-        self.parts = [DraggableRectangle(canvas, 50, 50, 150, 150),
-                      DraggableRectangle(canvas, 200, 200, 300, 300)]
+        self.root.mainloop()
 
-        self.ventana.mainloop()
+    def create_menu(self):
+        self.menu_bar = tk.Menu(self.root)
+        self.root.config(menu=self.menu_bar)
 
-    def __crear_ventana(self):
-        ventana = tk.Tk()
-        ventana.title("Editor de circuitos y robots")
-        ventana.resizable(False, False)
-        return ventana
+        file_menu = tk.Menu(self.menu_bar, tearoff=0)
+        self.menu_bar.add_cascade(label="Archivo", menu=file_menu)
 
-    def __crear_menu_archivo(self):
-        menu_archivo = tk.Menu(self.barra_menu, tearoff=0)
-        self.barra_menu.add_cascade(label="Archivo", menu=menu_archivo)
+        file_menu.add_command(label="Abrir", command=self.open_file)
+        file_menu.add_command(label="Guardar", command=self.save_file)
+        file_menu.add_command(label="Añadir pieza", command=self.add_piece)
+        file_menu.add_separator()
+        file_menu.add_command(label="Salir", command=self.root.destroy)
 
-        menu_archivo.add_command(label="Abrir", command=self.__abrir_archivo)
-        menu_archivo.add_command(label="Guardar", command=self.__guardar_archivo)
-        menu_archivo.add_command(label="Añadir pieza", command=self.__anadir_pieza)
-        menu_archivo.add_separator()
-        menu_archivo.add_command(label="Salir", command=self.ventana.destroy)
+    def create_draggable_rectangles(self):
+        self.draggable_rectangles = [
+            DraggableRectangle(self.canvas, 50, 50, 150, 150),
+            DraggableRectangle(self.canvas, 200, 200, 300, 300)
+        ]
 
-    def __anadir_pieza(self):
-        self.parts.append(DraggableRectangle(self.ventana))
+    def add_piece(self):
+        new_rectangle = DraggableRectangle(self.canvas)
+        self.draggable_rectangles.append(new_rectangle)
 
-    def __abrir_archivo(self):
-        ruta_archivo = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
-        if ruta_archivo:
-            with open(ruta_archivo, 'r') as archivo:
-                contenido = json.load(archivo)
+    def open_file(self):
+        file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
+        if file_path:
+            with open(file_path, 'r') as file:
+                content = json.load(file)
                 print("Contenido del archivo JSON:")
-                print(contenido)
+                print(content)
 
-    def __guardar_archivo(self):
-        partsJSON = []
-        for i in range(len(self.parts)):
-            partsJSON.append(self.parts[i].get_rect_info())
-            if i != len(self.parts) - 1:
-                partsJSON.append(",")
-        contenido = {
-            "circuits": [
-                {
-                    "name": "circuit",
-                    "parts": partsJSON
-                }
-            ]
-        }
-        self.__crear_archivo_json(contenido, "circuits.json")
-
-    def __crear_archivo_json(self, contenido, nombre_archivo):
-        with open(nombre_archivo, 'w') as archivo:
-            json.dump(contenido, archivo, indent=4)
-        print(f"Se ha creado el archivo JSON '{nombre_archivo}'.")
+    def save_file(self):
+        parts_json = [rectangle.get_rect_info() for rectangle in self.draggable_rectangles]
+        content = {"circuits": [{"name": "circuit", "parts": parts_json}]}
+        with open("circuits.json", 'w') as file:
+            json.dump(content, file, indent=4)
+        print("Se ha creado el archivo JSON 'circuits.json'.")
