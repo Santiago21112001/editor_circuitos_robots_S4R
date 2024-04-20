@@ -1,7 +1,7 @@
 class DraggableRectangle:
     def __init__(self, canvas, x1, y1, x2, y2):
         self.canvas = canvas
-        self.rect = canvas.create_rectangle(x1, y1, x2, y2, fill="black")
+        self.rect = canvas.create_rectangle(x1, y1, x2+100, y2+100, fill="black")
         self.canvas.tag_bind(self.rect, "<ButtonPress-1>", self.__start_drag)
         self.canvas.tag_bind(self.rect, "<ButtonRelease-1>", self.__stop_drag)
         self.canvas.tag_bind(self.rect, "<B1-Motion>", self.__drag)

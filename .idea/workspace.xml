@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Arreglado bug figurar ocupando más de lo que aparentan">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Refactorizar app.py">
+      <change afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/draggable_rectangle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.14475.56" />
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -161,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713613555213</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Refactorizar app.py">
+      <option name="closed" value="true" />
+      <created>1713614288811</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713614288811</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +190,7 @@
     <MESSAGE value="Imagen arrastrable por la pantalla" />
     <MESSAGE value="Añadido .venv" />
     <MESSAGE value="Arreglado bug figurar ocupando más de lo que aparentan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglado bug figurar ocupando más de lo que aparentan" />
+    <MESSAGE value="Refactorizar app.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactorizar app.py" />
   </component>
 </project>
