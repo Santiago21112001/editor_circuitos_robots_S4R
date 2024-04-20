@@ -1,45 +1,37 @@
-from tkinter import Canvas
-
-
 class DraggableRectangle:
-    def __init__(self, widget):
-        self.widget = widget
-        self.canvas = Canvas(self.widget)
-        self.canvas.pack()
-        self.__crear_draggable()
+    def __init__(self, canvas, x1, y1, x2, y2):
+        self.canvas = canvas
+        self.rect = canvas.create_rectangle(x1, y1, x2, y2, fill="black")
+        self.canvas.tag_bind(self.rect, "<ButtonPress-1>", self.__start_drag)
+        self.canvas.tag_bind(self.rect, "<ButtonRelease-1>", self.__stop_drag)
+        self.canvas.tag_bind(self.rect, "<B1-Motion>", self.__drag)
 
-    def toJSON(self):
-        return {
-            "type": "straight",
-            "orient": "x",
-            "x": self.x,
-            "y": self.y,
-            "dist": self.width,
-            "anchor next": "mid",
-            "save anchors": ""
+        self.start_x = 0
+        self.start_y = 0
+
+    def __start_drag(self, event):
+        self.start_x = event.x
+        self.start_y = event.y
+
+    def __stop_drag(self, event):
+        self.start_x = 0
+        self.start_y = 0
+
+    def __drag(self, event):
+        delta_x = event.x - self.start_x
+        delta_y = event.y - self.start_y
+        self.canvas.move(self.rect, delta_x, delta_y)
+        self.start_x = event.x
+        self.start_y = event.y
+
+    def get_rect_info(self):
+        x1, y1, x2, y2 = self.canvas.coords(self.rect)
+        width = x2 - x1
+        height = y2 - y1
+        rect_info = {
+            "x": x1,
+            "y": y1,
+            "width": width,
+            "height": height
         }
-
-    def __crear_draggable(self):
-        self.x = 20
-        self.y = 20
-        self.width = 100
-        height = 30
-        color = "black"
-        self.canvas.create_rectangle(
-            self.x, self.y, self.x + self.width, self.y + height, fill=color)
-        self.__make_draggable(self.canvas)
-
-    def __make_draggable(self, widget):
-        widget.bind("<Button-1>", self.__set_drag_start_position)
-        widget.bind("<B1-Motion>", self.__update_position)
-
-    def __set_drag_start_position(self, event):
-        widget = event.widget
-        widget._drag_start_x = event.x
-        widget._drag_start_y = event.y
-
-    def __update_position(self, event):
-        widget = event.widget
-        delta_x = event.x - widget._drag_start_x
-        delta_y = event.y - widget._drag_start_y
-        widget.place(x=widget.winfo_x() + delta_x, y=widget.winfo_y() + delta_y)
+        return rect_info

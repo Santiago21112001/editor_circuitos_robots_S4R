@@ -4,13 +4,17 @@
             "name": "circuit",
             "parts": [
                 {
-                    "type": "straight",
-                    "orient": "x",
-                    "x": 20,
-                    "y": 20,
-                    "dist": 100,
-                    "anchor next": "mid",
-                    "save anchors": ""
+                    "x": 144.0,
+                    "y": 127.0,
+                    "width": 100.0,
+                    "height": 100.0
+                },
+                ",",
+                {
+                    "x": 242.0,
+                    "y": 99.0,
+                    "width": 100.0,
+                    "height": 100.0
                 }
             ]
         }

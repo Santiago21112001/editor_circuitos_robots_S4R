@@ -6,24 +6,25 @@ from draggable_rectangle import DraggableRectangle
 
 class App:
     def __init__(self):
-        self.barra_menu = None
-        self.parts = None
-        self._crear_ventana()
-        self.__crear_interfaz()
-        self.ventana.mainloop()
+        self.ventana = self.__crear_ventana()
 
-    def _crear_ventana(self):
-        self.ventana = tk.Tk()
-        self.ventana.title("Editor de circuitos y robots")
-        self.ventana.geometry("1280x720")
-        self.ventana.resizable(False, False)
+        canvas = tk.Canvas(self.ventana, width=400, height=400)
+        canvas.pack()
 
-    def __crear_interfaz(self):
         self.barra_menu = tk.Menu(self.ventana)
         self.ventana.config(menu=self.barra_menu)
 
         self.__crear_menu_archivo()
-        self.parts = [DraggableRectangle(self.ventana)]
+        self.parts = [DraggableRectangle(canvas, 50, 50, 150, 150),
+                      DraggableRectangle(canvas, 200, 200, 300, 300)]
+
+        self.ventana.mainloop()
+
+    def __crear_ventana(self):
+        ventana = tk.Tk()
+        ventana.title("Editor de circuitos y robots")
+        ventana.resizable(False, False)
+        return ventana
 
     def __crear_menu_archivo(self):
         menu_archivo = tk.Menu(self.barra_menu, tearoff=0)
@@ -49,7 +50,7 @@ class App:
     def __guardar_archivo(self):
         partsJSON = []
         for i in range(len(self.parts)):
-            partsJSON.append(self.parts[i].toJSON())
+            partsJSON.append(self.parts[i].get_rect_info())
             if i != len(self.parts) - 1:
                 partsJSON.append(",")
         contenido = {
