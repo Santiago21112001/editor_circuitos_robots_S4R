@@ -36,7 +36,7 @@ class App:
         return menu_bar
 
     def add_piece(self):
-        new_rectangle = DraggableRectangle(self.canvas, 100, 100, 100, 100)
+        new_rectangle = DraggableRectangle(self.canvas, 100, 200, 200, 150)
         self.draggable_rectangles.append(new_rectangle)
 
     def open_file(self):

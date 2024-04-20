@@ -3,10 +3,10 @@ from tkinter import filedialog
 import json
 import os
 
+
 class FileManager:
     def __init__(self):
-        self.root = tk.Tk()
-        self.root.withdraw()  # Oculta la ventana principal de Tkinter
+        pass
 
     def open_file(self):
         file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
