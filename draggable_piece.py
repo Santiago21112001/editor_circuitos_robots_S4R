@@ -31,14 +31,17 @@ class DraggablePiece(ABC):
         self.start_x = event.x
         self.start_y = event.y
 
-    def get_rect_info(self):
+    def get_piece_info(self):
         x1, y1, x2, y2 = self.canvas.coords(self.rect)
-        width = x2 - x1
-        height = y2 - y1
-        rect_info = {
-            "x": x1,
-            "y": y1,
-            "width": width,
-            "height": height
+        piece_info = {
+            "type": self.get_piece_type(),
+            "x1": x1,
+            "y1": y1,
+            "x2": x2,
+            "y2": y2
         }
-        return rect_info
+        return piece_info
+
+    @abstractmethod
+    def get_piece_type(self):
+        pass

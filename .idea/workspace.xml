@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Arreglo bug no cierre programa">
-      <change afterPath="$PROJECT_DIR$/draggable_arc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/draggable_piece.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draggable_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/draggable_arc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/draggable_piece.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/draggable_rectangle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +62,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\draggable_pieces" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />

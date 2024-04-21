@@ -49,13 +49,13 @@ class App:
         self.draggable_pieces.append(new_piece)
 
     def add_arc(self):
-        new_piece: DraggablePiece = DraggableArc(self.canvas, 100, 200, 200, 150)
+        new_piece: DraggablePiece = DraggableArc(self.canvas, 100, 200, 200, 300)
         self.draggable_pieces.append(new_piece)
 
     def open_file(self):
         self.file_manager.open_file()
 
     def save_file(self):
-        parts_json = [rectangle.get_rect_info() for rectangle in self.draggable_pieces]
+        parts_json = [rectangle.get_piece_info() for rectangle in self.draggable_pieces]
         content = {"circuits": [{"name": "circuit", "parts": parts_json}]}
         self.file_manager.save_file(content)
