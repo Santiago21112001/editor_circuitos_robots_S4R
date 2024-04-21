@@ -8,4 +8,4 @@ class DraggableRectangle(DraggablePiece):
         return canvas_part
 
     def get_piece_type(self):
-        return "straight_x"
+        return "straight"
