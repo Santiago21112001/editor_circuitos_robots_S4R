@@ -1,7 +1,7 @@
 import tkinter as tk
-from draggable_arc import DraggableArc
-from draggable_rectangle import DraggableRectangle
-from draggable_piece import DraggablePiece
+from circuit_pieces.draggable_arc import DraggableArc
+from circuit_pieces.draggable_rectangle import DraggableRectangle
+from circuit_pieces.draggable_piece import DraggablePiece
 from file_manager import FileManager
 
 
@@ -36,16 +36,24 @@ class App:
         return menu_bar
 
     def create_add_buttons(self):
-        add_rectangle_button = tk.Button(self.root, text="Añadir recta", command=self.add_rectangle, bg="green",
-                                         fg="white", padx=10, pady=5)
+        add_rectangle_button = tk.Button(self.root, text="Añadir recta horizontal", command=self.add_rectangle,
+                                         bg="green", fg="white", padx=10, pady=5)
         add_rectangle_button.pack(side=tk.RIGHT, padx=10, pady=10)
+
+        add_rectangle_y_button = tk.Button(self.root, text="Añadir recta vertical", command=self.add_rectangle_y,
+                                           bg="green", fg="white", padx=10, pady=5)
+        add_rectangle_y_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
         add_arc_button = tk.Button(self.root, text="Añadir curva", command=self.add_arc, bg="green",
                                    fg="white", padx=10, pady=5)
         add_arc_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
     def add_rectangle(self):
-        new_piece: DraggablePiece = DraggableRectangle(self.canvas, 100, 200, 200, 150)
+        new_piece: DraggablePiece = DraggableRectangle(self.canvas, 100, 200, 200, 250)
+        self.draggable_pieces.append(new_piece)
+
+    def add_rectangle_y(self):
+        new_piece: DraggablePiece = DraggableRectangle(self.canvas, 100, 200, 150, 300)
         self.draggable_pieces.append(new_piece)
 
     def add_arc(self):
