@@ -66,22 +66,22 @@ class App:
         self.draggable_pieces.append(new_piece)
 
     def add_polygon(self):
-        w = 100
+        w = 50
         x=200
         y=200
         points = [
             x, y,
-            300, 200,
-            300, 100,
-            400, 100,
-            400, 200,
-            500, 200,
-            500, 300,
-            400, 300,
-            400, 400,
-            300, 400,
-            300, 300,
-            200, 300
+            x+w, y,
+            x+w, y-w,
+            x+w*2, y-w,
+            x+w*2, y,
+            x+w*3, y,
+            x+w*3, y+w,
+            x+w*2, y+w,
+            x+w*2, y+w*2,
+            x+w, y+w*2,
+            x+w, y+w,
+            x, y+w
         ]
         new_piece: DraggablePiece = DraggablePolygon(self.canvas, points)
         self.draggable_pieces.append(new_piece)

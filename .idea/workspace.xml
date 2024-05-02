@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Añadido poder agrega un cruce de 4 vías al lienzo de edición">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +45,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_app.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mines/PycharmProjects/editor_circuitos_robots_S4R/circuit_pieces&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_app.py.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/mines/PycharmProjects/editor_circuitos_robots_S4R/.venv/Scripts/python.exe",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.externalTools"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
@@ -225,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714631980101</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías.">
+      <option name="closed" value="true" />
+      <created>1714632253861</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714632253861</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,6 +259,7 @@
     <MESSAGE value="Pasado straight_x a straight" />
     <MESSAGE value="Refactorización" />
     <MESSAGE value="Añadido poder agrega un cruce de 4 vías al lienzo de edición" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido poder agrega un cruce de 4 vías al lienzo de edición" />
+    <MESSAGE value="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías." />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías." />
   </component>
 </project>
