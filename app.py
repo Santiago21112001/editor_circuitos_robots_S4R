@@ -2,6 +2,7 @@ import tkinter as tk
 from circuit_pieces.draggable_arc import DraggableArc
 from circuit_pieces.draggable_rectangle import DraggableRectangle
 from circuit_pieces.draggable_piece import DraggablePiece
+from circuit_pieces.draggable_polygon import DraggablePolygon
 from file_manager import FileManager
 
 
@@ -48,6 +49,10 @@ class App:
                                    fg="white", padx=10, pady=5)
         add_arc_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
+        add_polygon_button = tk.Button(self.root, text="Añadir cruce", command=self.add_polygon, bg="green",
+                                       fg="white", padx=10, pady=5)
+        add_polygon_button.pack(side=tk.RIGHT, padx=10, pady=10)
+
     def add_rectangle(self):
         new_piece: DraggablePiece = DraggableRectangle(self.canvas, 100, 200, 200, 250)
         self.draggable_pieces.append(new_piece)
@@ -58,6 +63,27 @@ class App:
 
     def add_arc(self):
         new_piece: DraggablePiece = DraggableArc(self.canvas, 100, 200, 200, 300)
+        self.draggable_pieces.append(new_piece)
+
+    def add_polygon(self):
+        w = 100
+        x=200
+        y=200
+        points = [
+            x, y,
+            300, 200,
+            300, 100,
+            400, 100,
+            400, 200,
+            500, 200,
+            500, 300,
+            400, 300,
+            400, 400,
+            300, 400,
+            300, 300,
+            200, 300
+        ]
+        new_piece: DraggablePiece = DraggablePolygon(self.canvas, points)
         self.draggable_pieces.append(new_piece)
 
     def open_file(self):

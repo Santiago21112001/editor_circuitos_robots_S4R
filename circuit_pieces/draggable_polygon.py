@@ -9,4 +9,4 @@ class DraggablePolygon(DraggablePiece):
         self.bind_events()
 
     def get_piece_type(self):
-        return "turn1"
+        return "polygon"
