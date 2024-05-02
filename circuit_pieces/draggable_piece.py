@@ -21,8 +21,6 @@ class DraggablePiece(ABC):
     def __stop_drag(self, event):
         self.start_x = 0
         self.start_y = 0
-        x1, y1, x2, y2 = self.canvas.coords(self.piece)
-        print(str(self.get_piece_type()) + " - x1:"+str(x1)+", y1:"+str(y1)+", x2:"+str(x2)+", y2:" + str(y2))
 
     def __drag(self, event):
         delta_x = event.x - self.start_x

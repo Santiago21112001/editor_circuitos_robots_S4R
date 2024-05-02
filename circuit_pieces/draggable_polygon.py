@@ -10,3 +10,11 @@ class DraggablePolygon(DraggablePiece):
 
     def get_piece_type(self):
         return "polygon"
+
+    def get_piece_info(self):
+        points = self.canvas.coords(self.piece)
+        piece_info = {
+            "type": self.get_piece_type(),
+            "points": points
+        }
+        return piece_info
