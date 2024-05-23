@@ -6,6 +6,7 @@ class DraggablePiece(ABC):
     def __init__(self, canvas):
         self.piece = None
         self.canvas = canvas
+        self.width = 20
         self.start_x = 0
         self.start_y = 0
 
@@ -36,7 +37,8 @@ class DraggablePiece(ABC):
             "x1": x1,
             "y1": y1,
             "x2": x2,
-            "y2": y2
+            "y2": y2,
+            "scale": 0.2
         }
         return piece_info
 

@@ -12,13 +12,14 @@ class App:
         self.root.title("Editor de circuitos y robots")
         self.root.resizable(False, False)
 
-        self.canvas = tk.Canvas(self.root, width=400, height=400)
+        self.canvas = tk.Canvas(self.root, width=1280, height=720)
         self.canvas.pack()
         self.menu_bar = self.create_menu()
         self.create_add_buttons()
         self.draggable_pieces = []
 
         self.file_manager = FileManager()
+        self.content = self.file_manager.open_data_file()
 
         self.root.mainloop()
 
@@ -54,42 +55,39 @@ class App:
         add_polygon_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
     def add_rectangle(self):
-        new_piece: DraggablePiece = DraggableRectangle(self.canvas, 100, 200, 200, 250)
+        dist = 70
+        x1 = 500
+        y1 = 500
+        new_piece: DraggablePiece = DraggableRectangle(self.canvas, x1, y1, "x", dist)
         self.draggable_pieces.append(new_piece)
 
     def add_rectangle_y(self):
-        new_piece: DraggablePiece = DraggableRectangle(self.canvas, 100, 200, 150, 300)
+        dist = 70
+        x1 = 500
+        y1 = 500
+        new_piece: DraggablePiece = DraggableRectangle(self.canvas, x1, y1, "y", dist)
         self.draggable_pieces.append(new_piece)
 
     def add_arc(self):
-        new_piece: DraggablePiece = DraggableArc(self.canvas, 100, 200, 200, 300)
+        dist = 70
+        x1 = 500
+        y1 = 500
+        new_piece: DraggablePiece = DraggableArc(self.canvas, x1, y1, dist)
         self.draggable_pieces.append(new_piece)
 
     def add_polygon(self):
-        w = 50
-        x=200
-        y=200
-        points = [
-            x, y,
-            x+w, y,
-            x+w, y-w,
-            x+w*2, y-w,
-            x+w*2, y,
-            x+w*3, y,
-            x+w*3, y+w,
-            x+w*2, y+w,
-            x+w*2, y+w*2,
-            x+w, y+w*2,
-            x+w, y+w,
-            x, y+w
-        ]
-        new_piece: DraggablePiece = DraggablePolygon(self.canvas, points)
+        x = 500
+        y = 500
+        new_piece: DraggablePiece = DraggablePolygon(self.canvas, x, y)
         self.draggable_pieces.append(new_piece)
 
     def open_file(self):
-        self.file_manager.open_file()
+        content = self.file_manager.open_file()
+        if content is not None:
+            self.content = self.file_manager.open_file()
 
     def save_file(self):
         parts_json = [rectangle.get_piece_info() for rectangle in self.draggable_pieces]
-        content = {"circuits": [{"name": "circuit", "parts": parts_json}]}
-        self.file_manager.save_file(content)
+        # Partes del primer circuito
+        self.content["circuits"][0]["parts"] = parts_json
+        self.file_manager.save_file(self.content)

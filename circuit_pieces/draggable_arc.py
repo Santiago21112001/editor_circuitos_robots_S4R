@@ -3,13 +3,11 @@ from circuit_pieces.draggable_piece import DraggablePiece
 
 class DraggableArc(DraggablePiece):
 
-    def __init__(self, canvas, x1, y1, x2, y2):
+    def __init__(self, canvas, x1, y1, dist):
         super().__init__(canvas)
-        self.start=-90
-        self.extent=90
-        self.width=50
-        self.piece = self.canvas.create_arc(x1, y1, x2, y2, style="arc", start=-90, extent=90, outline="black",
-                                            width=50)
+        self.start = -90
+        self.extent = 90
+        self.piece = self.canvas.create_arc(x1, y1, x1+dist, y1+dist, width=self.width, style="arc", start=0, extent=90)
         self.bind_events()
 
     def get_piece_type(self):
@@ -25,6 +23,7 @@ class DraggableArc(DraggablePiece):
             "y2": y2,
             "start": self.start,
             "extent": self.extent,
-            "width": self.width
+            "width": self.width,
+            "scale": 0.2
         }
         return piece_info
