@@ -54,6 +54,10 @@ class App:
                                        fg="white", padx=10, pady=5)
         add_polygon_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
+        clear_canvas_button = tk.Button(self.root, text="Limpiar lienzo", command=self.clear_canvas, bg="green",
+                                        fg="white", padx=10, pady=5)
+        clear_canvas_button.pack(side=tk.RIGHT, padx=10, pady=10)
+
     def add_rectangle(self):
         dist = 70
         x1 = 100
@@ -96,7 +100,7 @@ class App:
             x1 = part['x1']
             y1 = part['y1']
             piece = None
-            if part_type == 'turn1':
+            if part_type == 'turn':
                 piece = DraggableArc(self.canvas, x1, y1, part['dist'], part['start'], part['extent'])
             elif part_type == 'polygon':
                 piece = DraggablePolygon(self.canvas, x1, y1)
@@ -110,3 +114,7 @@ class App:
         # Partes del primer circuito
         self.file_content["circuits"][0]["parts"] = parts_json
         self.file_manager.save_file(self.file_content)
+
+    def clear_canvas(self):
+        self.draggable_pieces.clear()
+        self.canvas.delete("all")

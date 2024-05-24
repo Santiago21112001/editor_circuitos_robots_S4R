@@ -13,7 +13,7 @@ class DraggableArc(DraggablePiece):
         self.bind_events()
 
     def get_piece_type(self):
-        return "turn1"
+        return "turn"
 
     def get_piece_info(self):
         x1, y1, x2, y2 = self.canvas.coords(self.piece)

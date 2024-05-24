@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Modificada funcionaliad de guardar fichero para que sea importable por el simulador.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Cargar y mostrar en pantalla">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_arc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_rectangle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot_data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716443968647</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Cargar y mostrar en pantalla">
+      <option name="closed" value="true" />
+      <created>1716574055490</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716574055490</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,7 +288,8 @@
     <MESSAGE value="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías." />
     <MESSAGE value="Parametrizado la anchura del cruce de 4 vías." />
     <MESSAGE value="Modificada funcionaliad de guardar fichero para que sea importable por el simulador." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificada funcionaliad de guardar fichero para que sea importable por el simulador." />
+    <MESSAGE value="Cargar y mostrar en pantalla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cargar y mostrar en pantalla" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
