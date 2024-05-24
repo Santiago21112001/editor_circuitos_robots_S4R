@@ -19,7 +19,7 @@ class App:
         self.draggable_pieces = []
 
         self.file_manager = FileManager()
-        self.content = self.file_manager.open_data_file()
+        self.file_content = self.file_manager.open_data_file()
 
         self.root.mainloop()
 
@@ -56,38 +56,57 @@ class App:
 
     def add_rectangle(self):
         dist = 70
-        x1 = 500
-        y1 = 500
+        x1 = 100
+        y1 = 100
         new_piece: DraggablePiece = DraggableRectangle(self.canvas, x1, y1, "x", dist)
         self.draggable_pieces.append(new_piece)
 
     def add_rectangle_y(self):
         dist = 70
-        x1 = 500
-        y1 = 500
+        x1 = 100
+        y1 = 100
         new_piece: DraggablePiece = DraggableRectangle(self.canvas, x1, y1, "y", dist)
         self.draggable_pieces.append(new_piece)
 
     def add_arc(self):
         dist = 70
-        x1 = 500
-        y1 = 500
+        x1 = 100
+        y1 = 100
         new_piece: DraggablePiece = DraggableArc(self.canvas, x1, y1, dist)
         self.draggable_pieces.append(new_piece)
 
     def add_polygon(self):
-        x = 500
-        y = 500
+        x = 100
+        y = 100
         new_piece: DraggablePiece = DraggablePolygon(self.canvas, x, y)
         self.draggable_pieces.append(new_piece)
 
     def open_file(self):
-        content = self.file_manager.open_file()
-        if content is not None:
-            self.content = self.file_manager.open_file()
+        file_content = self.file_manager.open_file()
+        if file_content is None:
+            return
+        self.file_content = file_content
+        self.append_file_pieces(file_content)
+
+    def append_file_pieces(self, file_content):
+        parts = file_content["circuits"][0]["parts"]
+        self.draggable_pieces = []
+        for part in parts:
+            part_type = part['type']
+            x1 = part['x1']
+            y1 = part['y1']
+            piece = None
+            if part_type == 'turn1':
+                piece = DraggableArc(self.canvas, x1, y1, part['dist'], part['start'], part['extent'])
+            elif part_type == 'polygon':
+                piece = DraggablePolygon(self.canvas, x1, y1)
+            elif part_type == 'straight':
+                piece = DraggableRectangle(self.canvas, x1, y1, part['orient'], part['dist'])
+            if piece is not None:
+                self.draggable_pieces.append(piece)
 
     def save_file(self):
-        parts_json = [rectangle.get_piece_info() for rectangle in self.draggable_pieces]
+        parts_json = [piece.get_piece_info() for piece in self.draggable_pieces]
         # Partes del primer circuito
-        self.content["circuits"][0]["parts"] = parts_json
-        self.file_manager.save_file(self.content)
+        self.file_content["circuits"][0]["parts"] = parts_json
+        self.file_manager.save_file(self.file_content)

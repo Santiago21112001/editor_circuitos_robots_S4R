@@ -3,22 +3,22 @@ from circuit_pieces.draggable_piece import DraggablePiece
 
 class DraggablePolygon(DraggablePiece):
 
-    def __init__(self, canvas, x, y):
+    def __init__(self, canvas, x1, y1):
         super().__init__(canvas)
         w = self.width
         points = [
-            x, y,
-            x + w, y,
-            x + w, y - w,
-            x + w * 2, y - w,
-            x + w * 2, y,
-            x + w * 3, y,
-            x + w * 3, y + w,
-            x + w * 2, y + w,
-            x + w * 2, y + w * 2,
-            x + w, y + w * 2,
-            x + w, y + w,
-            x, y + w
+            x1, y1,
+            x1 + w, y1,
+            x1 + w, y1 - w,
+            x1 + w * 2, y1 - w,
+            x1 + w * 2, y1,
+            x1 + w * 3, y1,
+            x1 + w * 3, y1 + w,
+            x1 + w * 2, y1 + w,
+            x1 + w * 2, y1 + w * 2,
+            x1 + w, y1 + w * 2,
+            x1 + w, y1 + w,
+            x1, y1 + w
         ]
         self.piece = self.canvas.create_polygon(points, fill='black')
         self.bind_events()
@@ -33,6 +33,6 @@ class DraggablePolygon(DraggablePiece):
             "x1": points[0],
             "y1": points[1],
             "width": self.width,
-            "scale": 0.2
+            "scale": self.scale
         }
         return piece_info

@@ -9,6 +9,7 @@ class DraggablePiece(ABC):
         self.width = 20
         self.start_x = 0
         self.start_y = 0
+        self.scale = 0.2
 
     def bind_events(self):
         self.canvas.tag_bind(self.piece, "<ButtonPress-1>", self.__start_drag)
@@ -38,7 +39,7 @@ class DraggablePiece(ABC):
             "y1": y1,
             "x2": x2,
             "y2": y2,
-            "scale": 0.2
+            "scale": self.scale
         }
         return piece_info
 

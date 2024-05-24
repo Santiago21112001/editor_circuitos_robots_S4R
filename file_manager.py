@@ -12,7 +12,7 @@ class FileManager:
         if file_path:
             with open(file_path, 'r') as file:
                 content = json.load(file)
-                print(f"Contenido del archivo JSON:\n{content}")
+                print("Archivo abierto")
             return content
         else:
             return None
@@ -22,7 +22,7 @@ class FileManager:
         if file_path:
             with open(file_path, 'r') as file:
                 content = json.load(file)
-                print(f"Contenido del archivo JSON:\n{content}")
+                print("Archivo abierto")
             return content
         else:
             return None
