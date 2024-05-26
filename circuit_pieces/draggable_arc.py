@@ -4,6 +4,17 @@ from circuit_pieces.draggable_piece import DraggablePiece
 class DraggableArc(DraggablePiece):
 
     def __init__(self, canvas, x1, y1, dist, start=-90, extent=90):
+        """
+        Creates the straight piece and draws it.
+
+        Parameters:
+        canvas (tkinter.Canvas): The canvas where the piece will be drawn.
+        x1 (int): The x-coordinate of the first point.
+        y1 (int): The y-coordinate of the first point.
+        dist (int): The width and height of the invisible square which contains the arc.
+        start (int, optional): The starting angle of the arc in degrees. Default is -90.
+        extent (int, optional): The extent of the arc in degrees. Default is 90.
+        """
         super().__init__(canvas)
         self.start = start
         self.extent = extent

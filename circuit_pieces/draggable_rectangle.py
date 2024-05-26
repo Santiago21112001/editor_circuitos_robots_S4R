@@ -4,6 +4,16 @@ from circuit_pieces.draggable_piece import DraggablePiece
 class DraggableRectangle(DraggablePiece):
 
     def __init__(self, canvas, x1, y1, orient, dist):
+        """
+        Creates the straight piece and draws it.
+
+        Parameters:
+        canvas (tkinter.Canvas): The canvas where the piece will be drawn.
+        x1 (int): The x-coordinate of the first point.
+        y1 (int): The y-coordinate of the first point.
+        orient (string): 'x' is horizontal, anything else is vertical.
+        dist (int): the length of the horizontal line (orient 'x') or the vertical line (orient 'y').
+        """
         super().__init__(canvas)
         self.orient = orient
         self.dist = dist

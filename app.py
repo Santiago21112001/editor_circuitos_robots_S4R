@@ -8,6 +8,10 @@ from file_manager import FileManager
 
 class App:
     def __init__(self):
+        """
+        Constructor for App.
+        Opens the main window and reads the JSON file that is in the same directory.
+        """
         self.root = tk.Tk()
         self.root.title("Editor de circuitos y robots")
         self.root.resizable(False, False)
@@ -15,7 +19,7 @@ class App:
         self.canvas = tk.Canvas(self.root, width=1280, height=720)
         self.canvas.pack()
         self.menu_bar = self.create_menu()
-        self.create_add_buttons()
+        self.create_buttons()
         self.draggable_pieces = []
 
         self.file_manager = FileManager()
@@ -37,7 +41,7 @@ class App:
 
         return menu_bar
 
-    def create_add_buttons(self):
+    def create_buttons(self):
         add_rectangle_button = tk.Button(self.root, text="Añadir recta horizontal", command=self.add_rectangle,
                                          bg="green", fg="white", padx=10, pady=5)
         add_rectangle_button.pack(side=tk.RIGHT, padx=10, pady=10)
@@ -93,6 +97,7 @@ class App:
         self.append_file_pieces(file_content)
 
     def append_file_pieces(self, file_content):
+        """Draws the circuit parts of the JSON file."""
         parts = file_content["circuits"][0]["parts"]
         self.draggable_pieces = []
         for part in parts:
