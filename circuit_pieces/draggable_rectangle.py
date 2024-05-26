@@ -3,7 +3,7 @@ from circuit_pieces.draggable_piece import DraggablePiece
 
 class DraggableRectangle(DraggablePiece):
 
-    def __init__(self, canvas, x1, y1, orient, dist):
+    def __init__(self, app, x1, y1, orient, dist):
         """
         Creates the straight piece and draws it.
 
@@ -14,7 +14,7 @@ class DraggableRectangle(DraggablePiece):
         orient (string): 'x' is horizontal, anything else is vertical.
         dist (int): the length of the horizontal line (orient 'x') or the vertical line (orient 'y').
         """
-        super().__init__(canvas)
+        super().__init__(app)
         self.orient = orient
         self.dist = dist
         if orient == "x":
@@ -39,3 +39,15 @@ class DraggableRectangle(DraggablePiece):
             "scale": self.scale
         }
         return piece_info
+
+    def rotate(self):
+        x1, y1, x2, y2 = self.canvas.coords(self.piece)
+        if self.orient == "x":
+            self.orient = "y"
+            x2 = x1 + self.width
+            y2 = y1 + self.dist
+        else:
+            self.orient = "x"
+            x2 = x1 + self.dist
+            y2 = y1 + self.width
+        self.canvas.coords(self.piece, x1, y1, x2, y2)

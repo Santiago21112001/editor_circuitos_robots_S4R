@@ -3,7 +3,7 @@ from circuit_pieces.draggable_piece import DraggablePiece
 
 class DraggableArc(DraggablePiece):
 
-    def __init__(self, canvas, x1, y1, dist, start=-90, extent=90):
+    def __init__(self, app, x1, y1, dist, start=-90, extent=90):
         """
         Creates the straight piece and draws it.
 
@@ -15,7 +15,7 @@ class DraggableArc(DraggablePiece):
         start (int, optional): The starting angle of the arc in degrees. Default is -90.
         extent (int, optional): The extent of the arc in degrees. Default is 90.
         """
-        super().__init__(canvas)
+        super().__init__(app)
         self.start = start
         self.extent = extent
         self.dist = dist
@@ -39,3 +39,16 @@ class DraggableArc(DraggablePiece):
             "scale": self.scale
         }
         return piece_info
+
+    def rotate(self):
+        new_start = self.start
+        if self.start == -90:
+            new_start = 0
+        elif self.start == 0:
+            new_start = 90
+        elif self.start == 90:
+            new_start = 180
+        elif self.start == 180:
+            new_start = -90
+        self.start = new_start
+        self.canvas.itemconfig(self.piece, start=new_start)

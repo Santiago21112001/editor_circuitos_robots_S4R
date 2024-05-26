@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import messagebox
+
 from circuit_pieces.draggable_arc import DraggableArc
 from circuit_pieces.draggable_rectangle import DraggableRectangle
 from circuit_pieces.draggable_piece import DraggablePiece
@@ -12,6 +14,7 @@ class App:
         Constructor for App.
         Opens the main window and reads the JSON file that is in the same directory.
         """
+        self.selected_piece = None
         self.root = tk.Tk()
         self.root.title("Editor de circuitos y robots")
         self.root.resizable(False, False)
@@ -62,31 +65,35 @@ class App:
                                         fg="white", padx=10, pady=5)
         clear_canvas_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
+        rotate_button = tk.Button(self.root, text="Rotar", command=self.rotate, bg="green",
+                                  fg="white", padx=10, pady=5)
+        rotate_button.pack(side=tk.RIGHT, padx=10, pady=10)
+
     def add_rectangle(self):
         dist = 70
         x1 = 100
         y1 = 100
-        new_piece: DraggablePiece = DraggableRectangle(self.canvas, x1, y1, "x", dist)
+        new_piece: DraggablePiece = DraggableRectangle(self, x1, y1, "x", dist)
         self.draggable_pieces.append(new_piece)
 
     def add_rectangle_y(self):
         dist = 70
         x1 = 100
         y1 = 100
-        new_piece: DraggablePiece = DraggableRectangle(self.canvas, x1, y1, "y", dist)
+        new_piece: DraggablePiece = DraggableRectangle(self, x1, y1, "y", dist)
         self.draggable_pieces.append(new_piece)
 
     def add_arc(self):
         dist = 70
         x1 = 100
         y1 = 100
-        new_piece: DraggablePiece = DraggableArc(self.canvas, x1, y1, dist)
+        new_piece: DraggablePiece = DraggableArc(self, x1, y1, dist)
         self.draggable_pieces.append(new_piece)
 
     def add_polygon(self):
         x = 100
         y = 100
-        new_piece: DraggablePiece = DraggablePolygon(self.canvas, x, y)
+        new_piece: DraggablePiece = DraggablePolygon(self, x, y)
         self.draggable_pieces.append(new_piece)
 
     def open_file(self):
@@ -106,11 +113,11 @@ class App:
             y1 = part['y1']
             piece = None
             if part_type == 'turn':
-                piece = DraggableArc(self.canvas, x1, y1, part['dist'], part['start'], part['extent'])
+                piece = DraggableArc(self, x1, y1, part['dist'], part['start'], part['extent'])
             elif part_type == 'polygon':
-                piece = DraggablePolygon(self.canvas, x1, y1)
+                piece = DraggablePolygon(self, x1, y1)
             elif part_type == 'straight':
-                piece = DraggableRectangle(self.canvas, x1, y1, part['orient'], part['dist'])
+                piece = DraggableRectangle(self, x1, y1, part['orient'], part['dist'])
             if piece is not None:
                 self.draggable_pieces.append(piece)
 
@@ -122,4 +129,15 @@ class App:
 
     def clear_canvas(self):
         self.draggable_pieces.clear()
+        self.selected_piece = None
         self.canvas.delete("all")
+
+    def set_select_piece(self, piece: DraggablePiece):
+        self.selected_piece = piece
+        print("Pieza seleccionada: " + str(piece.get_piece_info()))
+
+    def rotate(self):
+        if self.selected_piece is None:
+            messagebox.showwarning("Advertencia", "Selecciona una pieza")
+        else:
+            self.selected_piece.rotate()

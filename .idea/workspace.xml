@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Añadida funcionalidad de borrar todas las piezas del lienzo de edición.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Agregado comentarios a algunos constructores de clases.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_arc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_rectangle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot_data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716576798520</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Agregado comentarios a algunos constructores de clases.">
+      <option name="closed" value="true" />
+      <created>1716716255069</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716716255069</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,6 +308,7 @@
     <MESSAGE value="Modificada funcionaliad de guardar fichero para que sea importable por el simulador." />
     <MESSAGE value="Cargar y mostrar en pantalla" />
     <MESSAGE value="Añadida funcionalidad de borrar todas las piezas del lienzo de edición." />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadida funcionalidad de borrar todas las piezas del lienzo de edición." />
+    <MESSAGE value="Agregado comentarios a algunos constructores de clases." />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregado comentarios a algunos constructores de clases." />
   </component>
 </project>

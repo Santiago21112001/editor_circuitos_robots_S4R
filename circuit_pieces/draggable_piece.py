@@ -3,9 +3,10 @@ from abc import ABC, abstractmethod
 
 class DraggablePiece(ABC):
 
-    def __init__(self, canvas):
+    def __init__(self, app):
         self.piece = None
-        self.canvas = canvas
+        self.canvas = app.canvas
+        self.app = app
         self.width = 20
         self.start_x = 0
         self.start_y = 0
@@ -19,6 +20,7 @@ class DraggablePiece(ABC):
     def __start_drag(self, event):
         self.start_x = event.x
         self.start_y = event.y
+        self.app.set_select_piece(self)
 
     def __stop_drag(self, event):
         self.start_x = 0
@@ -45,4 +47,7 @@ class DraggablePiece(ABC):
 
     @abstractmethod
     def get_piece_type(self):
+        pass
+
+    def rotate(self):
         pass
