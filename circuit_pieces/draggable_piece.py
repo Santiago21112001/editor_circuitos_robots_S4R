@@ -51,3 +51,6 @@ class DraggablePiece(ABC):
 
     def rotate(self):
         pass
+
+    def set_outline(self, new_color):
+        self.canvas.itemconfig(self.piece, outline=new_color)

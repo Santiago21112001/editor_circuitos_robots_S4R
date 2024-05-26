@@ -133,7 +133,10 @@ class App:
         self.canvas.delete("all")
 
     def set_select_piece(self, piece: DraggablePiece):
+        if self.selected_piece is not None:
+            self.selected_piece.set_outline("black")
         self.selected_piece = piece
+        piece.set_outline("red")
         print("Pieza seleccionada: " + str(piece.get_piece_info()))
 
     def rotate(self):
