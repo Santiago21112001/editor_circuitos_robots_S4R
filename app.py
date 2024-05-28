@@ -137,7 +137,6 @@ class App:
             self.selected_piece.set_outline("black")
         self.selected_piece = piece
         piece.set_outline("red")
-        print("Pieza seleccionada: " + str(piece.get_piece_info()))
 
     def rotate(self):
         if self.selected_piece is None:

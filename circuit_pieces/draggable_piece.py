@@ -53,4 +53,4 @@ class DraggablePiece(ABC):
         pass
 
     def set_outline(self, new_color):
-        self.canvas.itemconfig(self.piece, outline=new_color)
+        self.canvas.itemconfig(self.piece, outline=new_color, fill=new_color)
