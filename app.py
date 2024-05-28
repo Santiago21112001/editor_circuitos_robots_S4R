@@ -26,7 +26,7 @@ class App:
         self.draggable_pieces = []
 
         self.file_manager = FileManager()
-        self.file_content = self.file_manager.open_data_file()
+        self.file_content = self.file_manager.open_circuits_file()
 
         self.root.mainloop()
 
@@ -125,7 +125,7 @@ class App:
         parts_json = [piece.get_piece_info() for piece in self.draggable_pieces]
         # Partes del primer circuito
         self.file_content["circuits"][0]["parts"] = parts_json
-        self.file_manager.save_file(self.file_content)
+        self.file_manager.save_circuits_file(self.file_content)
 
     def clear_canvas(self):
         self.draggable_pieces.clear()

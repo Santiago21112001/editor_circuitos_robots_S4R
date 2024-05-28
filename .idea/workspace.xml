@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Se colorea el borde de la pieza seleccionada para que se distinga de las demás.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Se colorea toda la pieza seleccionada en vez de sólo el borde.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/robot_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716753505249</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Se colorea toda la pieza seleccionada en vez de sólo el borde.">
+      <option name="closed" value="true" />
+      <created>1716913043488</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716913043488</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,6 +332,7 @@
     <MESSAGE value="Agregado comentarios a algunos constructores de clases." />
     <MESSAGE value="Rotar piezas." />
     <MESSAGE value="Se colorea el borde de la pieza seleccionada para que se distinga de las demás." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se colorea el borde de la pieza seleccionada para que se distinga de las demás." />
+    <MESSAGE value="Se colorea toda la pieza seleccionada en vez de sólo el borde." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se colorea toda la pieza seleccionada en vez de sólo el borde." />
   </component>
 </project>

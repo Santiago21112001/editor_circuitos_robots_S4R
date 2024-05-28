@@ -7,8 +7,8 @@ class FileManager:
     def __init__(self):
         pass
 
-    def open_data_file(self):
-        file_path = "robot_data.json"
+    def open_circuits_file(self):
+        file_path = "circuits.json"
         if file_path:
             with open(file_path, 'r') as file:
                 content = json.load(file)
@@ -27,8 +27,8 @@ class FileManager:
         else:
             return None
 
-    def save_file(self, content):
-        file_path = os.path.join(os.getcwd(), "robot_data.json")
+    def save_circuits_file(self, content):
+        file_path = "circuits.json"
         with open(file_path, 'w') as file:
             json.dump(content, file, indent=4)
         print(f"Se ha guardado el archivo JSON como '{file_path}'.")
