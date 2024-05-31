@@ -126,6 +126,8 @@ class App:
         # Partes del primer circuito
         self.file_content["circuits"][0]["parts"] = parts_json
         self.file_manager.save_circuits_file(self.file_content)
+        messagebox.showinfo("Archivo guardado", "Se ha guardado el archivo 'circuits.json' en el directorio raíz de "
+                                                "la aplicación")
 
     def clear_canvas(self):
         self.draggable_pieces.clear()
