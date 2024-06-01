@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Mensaje de diálogo (pop-up) al guardar un archivo.">
-      <change afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Pasado el editor de circuitos a una clase aparte.">
+      <change afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717178672478</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Pasado el editor de circuitos a una clase aparte.">
+      <option name="closed" value="true" />
+      <created>1717248902341</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1717248902341</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -416,6 +423,7 @@
     <MESSAGE value="Cambiado robot_data.json a circuits.json, y quitado de su contenido la parte de robots." />
     <MESSAGE value="Pruebas unitarias de las subclases de DraggablePiece." />
     <MESSAGE value="Mensaje de diálogo (pop-up) al guardar un archivo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Mensaje de diálogo (pop-up) al guardar un archivo." />
+    <MESSAGE value="Pasado el editor de circuitos a una clase aparte." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pasado el editor de circuitos a una clase aparte." />
   </component>
 </project>

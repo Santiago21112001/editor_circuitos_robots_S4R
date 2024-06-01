@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from circuits_editor import CircuitsEditor
+from editor import Editor
 
 
 class App:
@@ -22,7 +23,7 @@ class App:
         self.container.pack(fill="both", expand=True)
 
         # Instanciar todas las ventanas
-        self.editor = CircuitsEditor(self.container, width, height)
+        self.editor: Editor = CircuitsEditor(self.container, width, height)
 
         self.menu_bar = self.create_menu()
 

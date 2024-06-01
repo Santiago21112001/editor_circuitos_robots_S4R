@@ -1,20 +1,21 @@
 import tkinter as tk
 
-from tkinter import ttk
 from tkinter import messagebox
 
 from circuit_pieces.draggable_arc import DraggableArc
 from circuit_pieces.draggable_rectangle import DraggableRectangle
 from circuit_pieces.draggable_piece import DraggablePiece
 from circuit_pieces.draggable_polygon import DraggablePolygon
+from editor import Editor
 from file_manager import FileManager
 
 
-class CircuitsEditor:
+class CircuitsEditor(Editor):
     def __init__(self, container, width, height):
+        super().__init__(container)
         self.file_content = None
         self.selected_piece = None
-        self.frame = ttk.Frame(container)
+
         self.canvas = tk.Canvas(self.frame, width=width, height=height-100)
         self.canvas.pack()
 
