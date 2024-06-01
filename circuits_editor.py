@@ -9,54 +9,6 @@ from circuit_pieces.draggable_polygon import DraggablePolygon
 from editor import Editor
 
 
-def check_format(data):
-    # Comprobar que data es un diccionario
-    if not isinstance(data, dict):
-        return "El contenido debe ser un diccionario."
-
-    # Comprobar que tiene el campo 'circuits' y que es una lista
-    if 'circuits' not in data:
-        return "Falta el campo 'circuits'."
-    if not isinstance(data['circuits'], list):
-        return "El campo 'circuits' debe ser una lista."
-
-    # Comprobar cada circuito
-    for circuit in data['circuits']:
-        if not isinstance(circuit, dict):
-            return "Cada elemento de 'circuits' debe ser un diccionario."
-        if 'name' not in circuit:
-            return "Falta el campo 'name' en un circuito."
-        if 'parts' not in circuit:
-            return "Falta el campo 'parts' en un circuito."
-        if not isinstance(circuit['parts'], list):
-            return "El campo 'parts' debe ser una lista en un circuito."
-
-        # Comprobar cada parte del circuito
-        for part in circuit['parts']:
-            if not isinstance(part, dict):
-                return "Cada elemento de 'parts' debe ser un diccionario."
-            if 'type' not in part:
-                return "Falta el campo 'type' en una parte del circuito."
-            if part['type'] not in ['straight', 'turn', 'polygon']:
-                return f"Tipo de parte inválido: {part['type']}"
-
-            # Inicializar required_fields
-            required_fields = []
-            # Comprobar campos específicos para cada tipo
-            if part['type'] == 'straight':
-                required_fields = ['x1', 'y1', 'orient', 'width', 'dist', 'scale']
-            elif part['type'] == 'turn':
-                required_fields = ['x1', 'y1', 'dist', 'start', 'extent', 'width', 'scale']
-            elif part['type'] == 'polygon':
-                required_fields = ['x1', 'y1', 'width', 'scale']
-
-            for field in required_fields:
-                if field not in part:
-                    return f"Falta el campo '{field}' en una parte del tipo '{part['type']}'"
-
-    return ""
-
-
 class CircuitsEditor(Editor):
     def __init__(self, container, width, height):
         super().__init__(container)
@@ -181,3 +133,51 @@ class CircuitsEditor(Editor):
         self.file_manager.save_file(self.file_content, file_path)
         messagebox.showinfo("Archivo guardado", "Se ha guardado el archivo 'circuits.json' en el directorio raíz de "
                                                 "la aplicación")
+
+
+def check_format(data):
+    # Comprobar que data es un diccionario
+    if not isinstance(data, dict):
+        return "El contenido debe ser un diccionario."
+
+    # Comprobar que tiene el campo 'circuits' y que es una lista
+    if 'circuits' not in data:
+        return "Falta el campo 'circuits'."
+    if not isinstance(data['circuits'], list):
+        return "El campo 'circuits' debe ser una lista."
+
+    # Comprobar cada circuito
+    for circuit in data['circuits']:
+        if not isinstance(circuit, dict):
+            return "Cada elemento de 'circuits' debe ser un diccionario."
+        if 'name' not in circuit:
+            return "Falta el campo 'name' en un circuito."
+        if 'parts' not in circuit:
+            return "Falta el campo 'parts' en un circuito."
+        if not isinstance(circuit['parts'], list):
+            return "El campo 'parts' debe ser una lista en un circuito."
+
+        # Comprobar cada parte del circuito
+        for part in circuit['parts']:
+            if not isinstance(part, dict):
+                return "Cada elemento de 'parts' debe ser un diccionario."
+            if 'type' not in part:
+                return "Falta el campo 'type' en una parte del circuito."
+            if part['type'] not in ['straight', 'turn', 'polygon']:
+                return f"Tipo de parte inválido: {part['type']}"
+
+            # Inicializar required_fields
+            required_fields = []
+            # Comprobar campos específicos para cada tipo
+            if part['type'] == 'straight':
+                required_fields = ['x1', 'y1', 'orient', 'width', 'dist', 'scale']
+            elif part['type'] == 'turn':
+                required_fields = ['x1', 'y1', 'dist', 'start', 'extent', 'width', 'scale']
+            elif part['type'] == 'polygon':
+                required_fields = ['x1', 'y1', 'width', 'scale']
+
+            for field in required_fields:
+                if field not in part:
+                    return f"Falta el campo '{field}' en una parte del tipo '{part['type']}'"
+
+    return ""

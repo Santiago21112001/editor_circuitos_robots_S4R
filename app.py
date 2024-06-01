@@ -24,8 +24,8 @@ class App:
         self.container.pack(fill="both", expand=True)
 
         # Instanciar frame
-        #self.editor: Editor = RobotsEditor(self.container)
-        self.editor: Editor = CircuitsEditor(self.container, width, height)
+        self.editor: Editor = RobotsEditor(self.container)
+        #self.editor: Editor = CircuitsEditor(self.container, width, height)
 
         self.menu_bar = self.create_menu()
 
