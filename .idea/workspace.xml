@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Pasado el editor de circuitos a una clase aparte.">
-      <change afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'">
+      <change afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/tests_circuit_editor/test_check_format.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -50,6 +53,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.Python tests in test_app.py.executor": "Run",
+    "Python tests.Python tests in test_check_format.py.executor": "Run",
     "Python tests.Python tests in test_draggable_arc.py.executor": "Run",
     "Python tests.Python tests in test_draggable_polygon.py.executor": "Run",
     "Python tests.Python tests in test_draggable_rectangle.py.executor": "Run",
@@ -72,11 +76,12 @@
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests\tests_circuit_editor" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\draggable_pieces" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests in tests_circuit_editor">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
@@ -99,6 +104,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in test_check_format.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_circuit_editor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_circuit_editor/test_check_format.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests in test_draggable_arc.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
@@ -110,7 +130,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_draggable_arc.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_circuit_editor/test_draggable_arc.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -125,22 +145,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_draggable_polygon.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in test_draggable_rectangle.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="editor_circuitos_robots_S4R" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_draggable_rectangle.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_circuit_editor/test_draggable_polygon.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -159,12 +164,28 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in tests_circuit_editor" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_circuit_editor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_circuit_editor&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in tests_circuit_editor" />
         <item itemvalue="Python tests.Python tests in tests" />
+        <item itemvalue="Python tests.Python tests in test_check_format.py" />
         <item itemvalue="Python tests.Python tests in test_draggable_polygon.py" />
         <item itemvalue="Python tests.Python tests in test_draggable_arc.py" />
-        <item itemvalue="Python tests.Python tests in test_draggable_rectangle.py" />
       </list>
     </recent_temporary>
   </component>
@@ -384,7 +405,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717248902341</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'">
+      <option name="closed" value="true" />
+      <created>1717249527568</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1717249527568</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Ventana que lee archivo json" />
     <MESSAGE value="Imagen arrastrable por la pantalla" />
     <MESSAGE value="Añadido .venv" />
@@ -424,6 +452,7 @@
     <MESSAGE value="Pruebas unitarias de las subclases de DraggablePiece." />
     <MESSAGE value="Mensaje de diálogo (pop-up) al guardar un archivo." />
     <MESSAGE value="Pasado el editor de circuitos a una clase aparte." />
-    <option name="LAST_COMMIT_MESSAGE" value="Pasado el editor de circuitos a una clase aparte." />
+    <MESSAGE value="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'" />
   </component>
 </project>

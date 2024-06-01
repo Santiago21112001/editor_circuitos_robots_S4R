@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from circuits_editor import CircuitsEditor
+from robots_editor import RobotsEditor
 from editor import Editor
 
 
@@ -22,7 +23,8 @@ class App:
         self.container = ttk.Frame(self.root)
         self.container.pack(fill="both", expand=True)
 
-        # Instanciar todas las ventanas
+        # Instanciar frame
+        #self.editor: Editor = RobotsEditor(self.container)
         self.editor: Editor = CircuitsEditor(self.container, width, height)
 
         self.menu_bar = self.create_menu()

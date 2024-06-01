@@ -7,7 +7,54 @@ from circuit_pieces.draggable_rectangle import DraggableRectangle
 from circuit_pieces.draggable_piece import DraggablePiece
 from circuit_pieces.draggable_polygon import DraggablePolygon
 from editor import Editor
-from file_manager import FileManager
+
+
+def check_format(data):
+    # Comprobar que data es un diccionario
+    if not isinstance(data, dict):
+        return "El contenido debe ser un diccionario."
+
+    # Comprobar que tiene el campo 'circuits' y que es una lista
+    if 'circuits' not in data:
+        return "Falta el campo 'circuits'."
+    if not isinstance(data['circuits'], list):
+        return "El campo 'circuits' debe ser una lista."
+
+    # Comprobar cada circuito
+    for circuit in data['circuits']:
+        if not isinstance(circuit, dict):
+            return "Cada elemento de 'circuits' debe ser un diccionario."
+        if 'name' not in circuit:
+            return "Falta el campo 'name' en un circuito."
+        if 'parts' not in circuit:
+            return "Falta el campo 'parts' en un circuito."
+        if not isinstance(circuit['parts'], list):
+            return "El campo 'parts' debe ser una lista en un circuito."
+
+        # Comprobar cada parte del circuito
+        for part in circuit['parts']:
+            if not isinstance(part, dict):
+                return "Cada elemento de 'parts' debe ser un diccionario."
+            if 'type' not in part:
+                return "Falta el campo 'type' en una parte del circuito."
+            if part['type'] not in ['straight', 'turn', 'polygon']:
+                return f"Tipo de parte inválido: {part['type']}"
+
+            # Inicializar required_fields
+            required_fields = []
+            # Comprobar campos específicos para cada tipo
+            if part['type'] == 'straight':
+                required_fields = ['x1', 'y1', 'orient', 'width', 'dist', 'scale']
+            elif part['type'] == 'turn':
+                required_fields = ['x1', 'y1', 'dist', 'start', 'extent', 'width', 'scale']
+            elif part['type'] == 'polygon':
+                required_fields = ['x1', 'y1', 'width', 'scale']
+
+            for field in required_fields:
+                if field not in part:
+                    return f"Falta el campo '{field}' en una parte del tipo '{part['type']}'"
+
+    return ""
 
 
 class CircuitsEditor(Editor):
@@ -16,7 +63,7 @@ class CircuitsEditor(Editor):
         self.file_content = None
         self.selected_piece = None
 
-        self.canvas = tk.Canvas(self.frame, width=width, height=height-100)
+        self.canvas = tk.Canvas(self.frame, width=width, height=height - 100)
         self.canvas.pack()
 
         self.create_buttons()
@@ -26,7 +73,6 @@ class CircuitsEditor(Editor):
                 "name": "circuit",
                 "parts": []
             }]}
-        self.file_manager = FileManager()
 
     def add_rectangle(self):
         dist = 70
@@ -117,7 +163,9 @@ class CircuitsEditor(Editor):
 
     def open_file(self):
         file_content = self.file_manager.open_file()
-        if file_content is None:
+        message = check_format(file_content)
+        if message != "":
+            messagebox.showerror("Archivo inválido", message)
             return
         self.file_content = file_content
         self.append_file_pieces(file_content)

@@ -7,27 +7,35 @@
                     "type": "straight",
                     "x1": 100.0,
                     "y1": 100.0,
-                    "orient": "y",
-                    "width": 20,
-                    "dist": 70,
-                    "scale": 0.2
-                },
-                {
-                    "type": "straight",
-                    "x1": 100.0,
-                    "y1": 161.0,
-                    "orient": "y",
-                    "width": 20,
-                    "dist": 70,
-                    "scale": 0.2
-                },
-                {
-                    "type": "straight",
-                    "x1": 100.0,
-                    "y1": 213.0,
                     "orient": "x",
                     "width": 20,
                     "dist": 70,
+                    "scale": 0.2
+                },
+                {
+                    "type": "straight",
+                    "x1": 100.0,
+                    "y1": 100.0,
+                    "orient": "y",
+                    "width": 20,
+                    "dist": 70,
+                    "scale": 0.2
+                },
+                {
+                    "type": "turn",
+                    "x1": 142.0,
+                    "y1": 238.0,
+                    "dist": 70,
+                    "start": -90,
+                    "extent": 90,
+                    "width": 20,
+                    "scale": 0.2
+                },
+                {
+                    "type": "polygon",
+                    "x1": 179.0,
+                    "y1": 164.0,
+                    "width": 20,
                     "scale": 0.2
                 }
             ]
