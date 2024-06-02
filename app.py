@@ -14,9 +14,9 @@ class App:
         self.selected_piece = None
         self.root = tk.Tk()
         self.root.title("Editor de circuitos y robots")
-        width = 1024
-        height = 768
-        self.root.geometry(str(width)+"x"+str(height))
+        self.width = 1024
+        self.height = 768
+        self.root.geometry(str(self.width)+"x"+str(self.height))
         self.root.resizable(False, False)
 
         # Contenedor principal para los frames
@@ -24,14 +24,33 @@ class App:
         self.container.pack(fill="both", expand=True)
 
         # Instanciar frame
-        self.editor: Editor = RobotsEditor(self.container)
-        #self.editor: Editor = CircuitsEditor(self.container, width, height)
+        #self.editor: Editor = RobotsEditor(self.container)
+        self.editor: Editor = CircuitsEditor(self.container, self.width, self.height)
+        self.editor.pack_frame()
 
         self.menu_bar = self.create_menu()
 
-        self.editor.frame.grid(row=0, column=0, sticky="nsew")
         self.editor.frame.tkraise()
+
+    def run(self):
         self.root.mainloop()
+
+    def set_editor(self, new_editor_str):
+        """Destroys current editor and replaces it with a new one."""
+        if self.editor is not None:
+            self.editor.destroy_frame()
+        if new_editor_str == "c":
+            new_editor = CircuitsEditor(self.container, self.width, self.height)
+        else:
+            new_editor = RobotsEditor(self.container)
+        self.editor = new_editor
+        self.editor.pack_frame()
+
+    def switch_to_robots_editor(self):
+        self.set_editor("r")
+
+    def switch_to_circuits_editor(self):
+        self.set_editor("c")
 
     def create_menu(self):
         menu_bar = tk.Menu(self.root)
@@ -44,6 +63,11 @@ class App:
         file_menu.add_command(label="Guardar", command=self.save_file)
         file_menu.add_separator()
         file_menu.add_command(label="Salir", command=self.root.destroy)
+
+        file_menu_editor = tk.Menu(menu_bar, tearoff=0)
+        menu_bar.add_cascade(label="Editor", menu=file_menu_editor)
+        file_menu_editor.add_command(label="Abrir editor de robots", command=self.switch_to_robots_editor)
+        file_menu_editor.add_command(label="Abrir editor de circuitos", command=self.switch_to_circuits_editor)
 
         return menu_bar
 

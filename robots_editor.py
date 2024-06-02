@@ -4,9 +4,14 @@ from editor import Editor
 
 
 class RobotsEditor(Editor):
+
     def __init__(self, container):
         super().__init__(container)
-        self.file_content = None
+        self.file_content = {"robots": [
+            {
+                "name": "mobile2",
+                "elements": []
+            }]}
 
     def open_file(self):
         file_content = self.file_manager.open_file()
@@ -15,7 +20,6 @@ class RobotsEditor(Editor):
             messagebox.showerror("Archivo inválido", message)
             return
         self.file_content = file_content
-        print(self.file_content)
 
     def save_file(self):
         pass

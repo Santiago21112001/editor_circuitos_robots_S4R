@@ -12,7 +12,11 @@ from editor import Editor
 class CircuitsEditor(Editor):
     def __init__(self, container, width, height):
         super().__init__(container)
-        self.file_content = None
+        self.file_content = {"circuits": [
+            {
+                "name": "circuit",
+                "parts": []
+            }]}
         self.selected_piece = None
 
         self.canvas = tk.Canvas(self.frame, width=width, height=height - 100)
@@ -20,11 +24,6 @@ class CircuitsEditor(Editor):
 
         self.create_buttons()
         self.draggable_pieces = []
-        self.file_content = {"circuits": [
-            {
-                "name": "circuit",
-                "parts": []
-            }]}
 
     def add_rectangle(self):
         dist = 70
