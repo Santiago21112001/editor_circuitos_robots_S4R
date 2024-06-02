@@ -19,18 +19,17 @@ class App:
         self.root.geometry(str(self.width)+"x"+str(self.height))
         self.root.resizable(False, False)
 
-        # Contenedor principal para los frames
+        # Main frame container
         self.container = ttk.Frame(self.root)
         self.container.pack(fill="both", expand=True)
 
-        # Instanciar frame
-        #self.editor: Editor = RobotsEditor(self.container)
-        self.editor: Editor = CircuitsEditor(self.container, self.width, self.height)
-        self.editor.pack_frame()
+        # Create frame
+        self.editor: Editor = RobotsEditor(self.container)
+        self.editor.pack(fill=tk.BOTH, expand=True)
 
         self.menu_bar = self.create_menu()
 
-        self.editor.frame.tkraise()
+        self.editor.tkraise()
 
     def run(self):
         self.root.mainloop()
@@ -38,13 +37,13 @@ class App:
     def set_editor(self, new_editor_str):
         """Destroys current editor and replaces it with a new one."""
         if self.editor is not None:
-            self.editor.destroy_frame()
+            self.editor.destroy()
         if new_editor_str == "c":
             new_editor = CircuitsEditor(self.container, self.width, self.height)
         else:
             new_editor = RobotsEditor(self.container)
         self.editor = new_editor
-        self.editor.pack_frame()
+        self.editor.pack(fill=tk.BOTH, expand=True)
 
     def switch_to_robots_editor(self):
         self.set_editor("r")

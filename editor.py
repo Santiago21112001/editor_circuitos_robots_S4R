@@ -6,9 +6,9 @@ from file_manager import FileManager
 import tkinter as tk
 
 
-class Editor(ABC):
+class Editor(ttk.Frame):
     def __init__(self, container):
-        self.frame = ttk.Frame(container)
+        super().__init__(container)
         self.file_manager = FileManager()
 
     @abstractmethod
@@ -19,8 +19,5 @@ class Editor(ABC):
     def save_file(self):
         pass
 
-    def destroy_frame(self):
-        self.frame.destroy()
-
     def pack_frame(self):
-        self.frame.pack(fill=tk.BOTH, expand=True)
+        self.pack(fill=tk.BOTH, expand=True)
