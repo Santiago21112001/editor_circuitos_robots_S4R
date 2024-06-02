@@ -9,6 +9,7 @@ class RobotsEditor(Editor):
     def __init__(self, container):
         super().__init__(container)
         self.current_robot_index = 0
+        self.BANNED_NAMES = ["servo left", "servo right", "trig", "echo", "light 2", "light 3"]
 
         self.ROBOT_MOBILE_DEFAULT_ELEMENTS = [
             {"name": "servo left", "pin": "8"},
@@ -24,10 +25,12 @@ class RobotsEditor(Editor):
                 "elements": self.ROBOT_MOBILE_DEFAULT_ELEMENTS
             }]}
 
+        self.num_lights = 2
+
         self.current_element_index = None
 
         self.create_widgets()
-        self.on_robot_select()
+        self.update_robot_to_edit()
 
     def create_widgets(self):
         """Creates all the graphic elements and place them on the screen."""
@@ -40,29 +43,24 @@ class RobotsEditor(Editor):
         self.elements_listbox.grid(row=1, column=1, rowspan=6, columnspan=2, padx=10, pady=10, sticky='ns')
         self.elements_listbox.bind('<<ListboxSelect>>', self.on_element_select)
 
-        self.element_name_label = tk.Label(self, text="Nombre del elemento")
-        self.element_name_label.grid(row=7, column=0, padx=10, pady=5)
-        self.element_name_entry = tk.Entry(self)
-        self.element_name_entry.grid(row=7, column=1, padx=10, pady=5, sticky='ew')
-
         self.element_pin_label = tk.Label(self, text="Pin del elemento")
         self.element_pin_label.grid(row=8, column=0, padx=10, pady=5)
         self.element_pin_entry = tk.Entry(self)
         self.element_pin_entry.grid(row=8, column=1, padx=10, pady=5, sticky='ew')
 
-        self.update_button = tk.Button(self, text="Actualizar elemento", command=self.update_element)
-        self.update_button.grid(row=9, column=0, padx=10, pady=10)
+        self.update_button = tk.Button(self, text="Actualizar pin", command=self.update_element)
+        self.update_button.grid(row=8, column=2, padx=10, pady=10)
 
-        self.add_element_button = tk.Button(self, text="Agregar elemento", command=self.add_element)
-        self.add_element_button.grid(row=9, column=1, padx=10, pady=10)
+        self.add_element_button = tk.Button(self, text="Agregar sensor de luz", command=self.add_light)
+        self.add_element_button.grid(row=9, column=0, padx=10, pady=10)
 
-        self.delete_element_button = tk.Button(self, text="Eliminar elemento", command=self.delete_element)
-        self.delete_element_button.grid(row=9, column=2, padx=10, pady=10)
+        self.delete_element_button = tk.Button(self, text="Eliminar sensor de luz", command=self.delete_light)
+        self.delete_element_button.grid(row=9, column=1, padx=10, pady=10)
 
-        self.save_button = tk.Button(self, text="Guardar archivo", command=self.save_file)
-        self.save_button.grid(row=10, column=1, padx=10, pady=10)
+        self.save_button = tk.Button(self, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
+        self.save_button.grid(row=9, column=2, padx=10, pady=10)
 
-    def on_robot_select(self):
+    def update_robot_to_edit(self):
         robot = self.file_data['robots'][self.current_robot_index]
         self.robot_name_entry.delete(0, tk.END)
         self.robot_name_entry.insert(0, robot['name'])
@@ -80,41 +78,53 @@ class RobotsEditor(Editor):
             return
         self.current_element_index = selected_index[0]
         element = self.file_data['robots'][self.current_robot_index]['elements'][self.current_element_index]
-        self.element_name_entry.delete(0, tk.END)
-        self.element_name_entry.insert(0, element['name'])
         self.element_pin_entry.delete(0, tk.END)
         self.element_pin_entry.insert(0, element['pin'])
 
     def update_element(self):
-        element_name = self.element_name_entry.get()
         element_pin = self.element_pin_entry.get()
-        if not element_name or not element_pin:
-            messagebox.showerror("Error", "El nombre y el pin del elemento no pueden estar vacíos.")
+        if not element_pin:
+            messagebox.showerror("Error al actualizar", "El pin del elemento no pueden estar vacíos.")
             return
         robot = self.file_data['robots'][self.current_robot_index]
-        robot['elements'][self.current_element_index] = {'name': element_name, 'pin': element_pin}
+        robot['elements'][self.current_element_index]['pin'] = str(element_pin)
         self.populate_elements_list()
 
-    def add_element(self):
-        if self.current_robot_index is None:
+    def add_light(self):
+        if self.num_lights == 4:
+            messagebox.showerror("Error al añadir", "No pueden haber más de 4 sensores de luz.")
             return
-        element_name = self.element_name_entry.get()
-        element_pin = self.element_pin_entry.get()
-        if not element_name or not element_pin:
-            messagebox.showerror("Error", "El nombre y el pin del elemento no pueden estar vacíos.")
-            return
-        robot = self.file_data['robots'][self.current_robot_index]
-        robot['elements'].append({'name': element_name, 'pin': element_pin})
+        if self.num_lights == 3 and self.__contains_light_x(1):
+            light = {"name": "light 4", "pin": "4"}
+        else:
+            light = {"name": "light 1", "pin": "1"}
+        self.file_data['robots'][self.current_robot_index]['elements'].append(light)
         self.populate_elements_list()
+        self.num_lights += 1
 
-    def delete_element(self):
+    def __contains_light_x(self, x):
+        target_name = f"light {x}"
+        devices = self.file_data['robots'][self.current_robot_index]['elements']
+        for device in devices:
+            if device["name"] == target_name:
+                return True
+        return False
+
+    def delete_light(self):
+        if self.num_lights == 2:
+            messagebox.showerror("Error al añadir", "No pueden haber menos de 2 sensores de luz.")
+            return
         try:
-            robot = self.file_data['robots'][self.current_robot_index]
-            del robot['elements'][self.current_element_index]
-        except IndexError:
-            messagebox.showerror("Error", "Selecciona un elemento de un robot antes de borrar.")
-            return
-        self.populate_elements_list()
+            element = self.file_data['robots'][self.current_robot_index]['elements'][self.current_element_index]
+            if element['name'] in self.BANNED_NAMES:
+                messagebox.showerror("Error", "No puedes borrar ese elemento, " +
+                                     "sólo los sensores de luz 1 y 4.")
+                return
+            del self.file_data['robots'][self.current_robot_index]['elements'][self.current_element_index]
+            self.populate_elements_list()
+            self.num_lights -= 1
+        except (IndexError, TypeError):
+            messagebox.showerror("Error", "Selecciona un elemento antes de borrar.")
 
     def open_file(self):
         file_content = self.file_manager.open_file()
@@ -123,7 +133,7 @@ class RobotsEditor(Editor):
             messagebox.showerror("Archivo inválido", message)
             return
         self.file_data = file_content
-        self.on_robot_select()
+        self.update_robot_to_edit()
 
 
     def save_file(self):

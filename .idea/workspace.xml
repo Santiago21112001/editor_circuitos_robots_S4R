@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Editar robot.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots.json" beforeDir="false" afterPath="$PROJECT_DIR$/robots.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
@@ -426,7 +422,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717319455666</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Editar robot.">
+      <option name="closed" value="true" />
+      <created>1717341713025</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1717341713025</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -441,7 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arreglado bug figurar ocupando más de lo que aparentan" />
     <MESSAGE value="Refactorizar app.py" />
     <MESSAGE value="Mejora" />
     <MESSAGE value="Arreglo bug no cierre programa" />
@@ -466,6 +469,7 @@
     <MESSAGE value="Comprobar formato del archivo al cargar un fichero de circuitos" />
     <MESSAGE value="Comprobar formato del archivo al cargar un fichero de robots." />
     <MESSAGE value="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú." />
-    <option name="LAST_COMMIT_MESSAGE" value="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú." />
+    <MESSAGE value="Editar robot." />
+    <option name="LAST_COMMIT_MESSAGE" value="Editar robot." />
   </component>
 </project>

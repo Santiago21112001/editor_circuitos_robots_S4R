@@ -24,7 +24,7 @@
                     "pin": "4"
                 },
                 {
-                    "name": "echo3",
+                    "name": "echo",
                     "pin": "5"
                 }
             ]
