@@ -10,6 +10,7 @@ class Editor(ttk.Frame):
     def __init__(self, container):
         super().__init__(container)
         self.file_manager = FileManager()
+        self.pack(fill=tk.BOTH, expand=True)
 
     @abstractmethod
     def open_file(self):
@@ -18,6 +19,3 @@ class Editor(ttk.Frame):
     @abstractmethod
     def save_file(self):
         pass
-
-    def pack_frame(self):
-        self.pack(fill=tk.BOTH, expand=True)

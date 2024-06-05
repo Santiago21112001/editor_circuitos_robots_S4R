@@ -25,7 +25,6 @@ class App:
 
         # Create frame
         self.editor: Editor = RobotsEditor(self.container)
-        self.editor.pack(fill=tk.BOTH, expand=True)
 
         self.menu_bar = self.create_menu()
 
@@ -43,7 +42,6 @@ class App:
         else:
             new_editor = RobotsEditor(self.container)
         self.editor = new_editor
-        self.editor.pack(fill=tk.BOTH, expand=True)
 
     def switch_to_robots_editor(self):
         self.set_editor("r")
@@ -65,8 +63,8 @@ class App:
 
         file_menu_editor = tk.Menu(menu_bar, tearoff=0)
         menu_bar.add_cascade(label="Editor", menu=file_menu_editor)
-        file_menu_editor.add_command(label="Abrir editor de robots", command=self.switch_to_robots_editor)
-        file_menu_editor.add_command(label="Abrir editor de circuitos", command=self.switch_to_circuits_editor)
+        file_menu_editor.add_command(label="Ir al editor de robots", command=self.switch_to_robots_editor)
+        file_menu_editor.add_command(label="Ir al editor de circuitos", command=self.switch_to_circuits_editor)
 
         return menu_bar
 

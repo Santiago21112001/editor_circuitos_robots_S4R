@@ -26,6 +26,10 @@
                 {
                     "name": "echo",
                     "pin": "5"
+                },
+                {
+                    "name": "light 1",
+                    "pin": "1"
                 }
             ]
         }
