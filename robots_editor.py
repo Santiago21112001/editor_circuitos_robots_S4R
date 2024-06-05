@@ -10,11 +10,19 @@ class RobotsEditor(Editor):
         super().__init__(container)
         self.robot_manager = RobotsManager()
         self.create_widgets()
+        self.__populate_robots_list()
         self.__select_robot(0)
         self.__select_element(0)
 
     def create_widgets(self):
-        """Creates all the graphic elements and place them on the screen."""
+        """Creates all the graphic elements and places them on the screen."""
+        self.robots_label = tk.Label(self, text="Robots")
+        self.robots_label.grid(row=0, column=0, padx=10, pady=5)
+
+        self.robots_listbox = tk.Listbox(self, height=10)
+        self.robots_listbox.grid(row=1, column=0, rowspan=6, columnspan=2, padx=10, pady=10, sticky='ns')
+        self.robots_listbox.bind('<<ListboxSelect>>', self.__on_robot_select)
+
         self.robot_name_label = tk.Label(self, text="Nombre del robot")
         self.robot_name_label.grid(row=0, column=1, padx=10, pady=5)
         self.robot_name_entry = tk.Entry(self)
@@ -41,11 +49,24 @@ class RobotsEditor(Editor):
         self.save_button = tk.Button(self, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
         self.save_button.grid(row=9, column=2, padx=10, pady=10)
 
+    def __populate_robots_list(self):
+        self.robots_listbox.delete(0, tk.END)
+        robots = self.robot_manager.get_robots()
+        for robot in robots:
+            self.robots_listbox.insert(tk.END, robot.get_name())
+
     def __select_robot(self, index: int):
         self.current_robot_index = index
         self.robot_name_entry.delete(0, tk.END)
         self.robot_name_entry.insert(0, self.robot_manager.get_robots()[index].get_name())
         self.__populate_elements_list()
+
+    def __on_robot_select(self, event):
+        selected_index = self.robots_listbox.curselection()
+        if not selected_index:
+            return
+        index = int(selected_index[0])
+        self.__select_robot(index)
 
     def __populate_elements_list(self):
         self.elements_listbox.delete(0, tk.END)
@@ -101,6 +122,7 @@ class RobotsEditor(Editor):
             messagebox.showerror("Archivo inválido", message)
             return
         self.robot_manager.load_json_data(file_content)
+        self.__populate_robots_list()
         self.__select_robot(0)
         self.__select_element(0)
 

@@ -32,7 +32,9 @@ class RobotsManager:
         return {"robots": robots}
 
     def load_json_data(self, data):
-        robots = data["robots"]
-        robot = Robot("a")
-        robot.set_data(robots[0])
-        self.__robots = [robot]
+        self.__robots.clear()
+        robots_data = data["robots"]
+        for robot_data in robots_data:
+            robot = Robot("robot")
+            robot.set_data(robot_data)
+            self.__robots.append(robot)
