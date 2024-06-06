@@ -19,7 +19,7 @@ class CircuitsEditor(Editor):
             }]}
         self.selected_piece = None
 
-        self.canvas = tk.Canvas(self, width=width, height=height - 100)
+        self.canvas = tk.Canvas(self.frame, width=width, height=height - 100)
         self.canvas.pack()
 
         self.create_buttons()
@@ -70,31 +70,31 @@ class CircuitsEditor(Editor):
         piece.set_outline("red")
 
     def create_buttons(self):
-        add_rectangle_button = tk.Button(self, text="Añadir recta horizontal", command=self.add_rectangle,
+        add_rectangle_button = tk.Button(self.frame, text="Añadir recta horizontal", command=self.add_rectangle,
                                          bg="green", fg="white", padx=10, pady=5)
         add_rectangle_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
-        add_rectangle_y_button = tk.Button(self, text="Añadir recta vertical", command=self.add_rectangle_y,
+        add_rectangle_y_button = tk.Button(self.frame, text="Añadir recta vertical", command=self.add_rectangle_y,
                                            bg="green", fg="white", padx=10, pady=5)
         add_rectangle_y_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
-        add_arc_button = tk.Button(self, text="Añadir curva", command=self.add_arc, bg="green",
+        add_arc_button = tk.Button(self.frame, text="Añadir curva", command=self.add_arc, bg="green",
                                    fg="white", padx=10, pady=5)
         add_arc_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
-        add_polygon_button = tk.Button(self, text="Añadir cruce", command=self.add_polygon, bg="green",
+        add_polygon_button = tk.Button(self.frame, text="Añadir cruce", command=self.add_polygon, bg="green",
                                        fg="white", padx=10, pady=5)
         add_polygon_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
-        clear_canvas_button = tk.Button(self, text="Limpiar lienzo", command=self.clear_canvas, bg="red",
+        clear_canvas_button = tk.Button(self.frame, text="Limpiar lienzo", command=self.clear_canvas, bg="red",
                                         fg="white", padx=10, pady=5)
         clear_canvas_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
-        rotate_button = tk.Button(self, text="Rotar", command=self.rotate, bg="green",
+        rotate_button = tk.Button(self.frame, text="Rotar", command=self.rotate, bg="green",
                                   fg="white", padx=10, pady=5)
         rotate_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
-        delete_selected_piece_button = tk.Button(self, text="Eliminar pieza elegida",
+        delete_selected_piece_button = tk.Button(self.frame, text="Eliminar pieza elegida",
                                                  command=self.delete_selected_piece, bg="green", fg="white",
                                                  padx=10, pady=5)
         delete_selected_piece_button.pack(side=tk.RIGHT, padx=10, pady=10)

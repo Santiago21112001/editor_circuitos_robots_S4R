@@ -28,7 +28,7 @@ class App:
 
         self.menu_bar = self.create_menu()
 
-        self.editor.tkraise()
+        self.editor.frame.tkraise()
 
     def run(self):
         self.root.mainloop()
@@ -36,7 +36,7 @@ class App:
     def set_editor(self, new_editor_str):
         """Destroys current editor and replaces it with a new one."""
         if self.editor is not None:
-            self.editor.destroy()
+            self.editor.frame.destroy()
         if new_editor_str == "c":
             new_editor = CircuitsEditor(self.container, self.width, self.height)
         else:

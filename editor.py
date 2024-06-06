@@ -1,16 +1,15 @@
-from abc import ABC, abstractmethod
+import tkinter as tk
+from abc import abstractmethod
 from tkinter import ttk
 
 from file_manager import FileManager
 
-import tkinter as tk
 
-
-class Editor(ttk.Frame):
+class Editor:
     def __init__(self, container):
-        super().__init__(container)
+        self.frame = ttk.Frame(master=container)
         self.file_manager = FileManager()
-        self.pack(fill=tk.BOTH, expand=True)
+        self.frame.pack(fill=tk.BOTH, expand=True)
 
     @abstractmethod
     def open_file(self):
