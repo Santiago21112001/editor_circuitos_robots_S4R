@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Editor de circuitos: Permitir eliminar sólo una pieza.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -471,7 +471,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717679658604</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Editor de circuitos: Permitir eliminar sólo una pieza.">
+      <option name="closed" value="true" />
+      <created>1717684143693</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1717684143693</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,7 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactorización" />
     <MESSAGE value="Añadido poder agrega un cruce de 4 vías al lienzo de edición" />
     <MESSAGE value="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías." />
     <MESSAGE value="Parametrizado la anchura del cruce de 4 vías." />
@@ -511,6 +518,7 @@
     <MESSAGE value="No dejar editar arduinoBoard ni actuador" />
     <MESSAGE value="Pequeño cambio" />
     <MESSAGE value="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard." />
-    <option name="LAST_COMMIT_MESSAGE" value="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard." />
+    <MESSAGE value="Editor de circuitos: Permitir eliminar sólo una pieza." />
+    <option name="LAST_COMMIT_MESSAGE" value="Editor de circuitos: Permitir eliminar sólo una pieza." />
   </component>
 </project>

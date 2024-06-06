@@ -42,7 +42,10 @@ class Robot:
     def get_data(self):
         return self.__data.copy()
 
-    def update_element(self, index: int, pin: str):
+    def set_name(self, name: str):
+        self.__data["name"] = name
+
+    def set_element(self, index: int, pin: str):
         self.__data["elements"][index]["pin"] = pin
 
     def add_light(self) -> None:

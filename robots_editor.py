@@ -28,6 +28,9 @@ class RobotsEditor(Editor):
         self.robot_name_entry = tk.Entry(self)
         self.robot_name_entry.grid(row=0, column=2, padx=10, pady=5, sticky='ew')
 
+        self.update_robot_name_button = tk.Button(self, text="Actualizar nombre", command=self.__update_name)
+        self.update_robot_name_button.grid(row=0, column=3, padx=10, pady=10)
+
         self.elements_listbox = tk.Listbox(self, height=10)
         self.elements_listbox.grid(row=1, column=1, rowspan=6, columnspan=2, padx=10, pady=10, sticky='ns')
         self.elements_listbox.bind('<<ListboxSelect>>', self.__on_element_select)
@@ -48,6 +51,15 @@ class RobotsEditor(Editor):
 
         self.save_button = tk.Button(self, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
         self.save_button.grid(row=9, column=2, padx=10, pady=10)
+
+    def __update_name(self):
+        index: int = self.current_robot_index
+        name: str = self.robot_name_entry.get()
+        try:
+            self.robot_manager.set_robot_name(index, name)
+            self.__populate_robots_list()
+        except ValueError as err:
+            messagebox.showerror("Error al actualizar el nombre", str(err))
 
     def __disable_widgets(self):
         self.robot_name_entry.config(state="disabled")
@@ -118,7 +130,7 @@ class RobotsEditor(Editor):
             element_index = self.current_element_index
             index = self.current_robot_index
 
-            self.robot_manager.update_robot_element(index, element_index, pin)
+            self.robot_manager.set_robot_element(index, element_index, pin)
             self.__populate_robot_data()
         except ValueError:
             messagebox.showerror("Error al actualizar", "El pin del elemento debe ser un número.")

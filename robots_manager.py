@@ -54,8 +54,19 @@ class RobotsManager:
             raise ValueError("Debe haber al menos 1 robot")
         self.__robots.pop(index)
 
-    def update_robot_element(self, index: int, element_index: int, pin: str):
-        self.__robots[index].update_element(element_index, pin)
+    def set_robot_name(self, index: int, name: str):
+        if not name:
+            raise ValueError("El nuevo nombre está vacío.")
+        # Check that there is no robot with the new name.
+        for robot in self.__robots:
+            if robot.get_name() == name:
+                raise ValueError("Ya hay un robot con ese nombre.")
+
+        # Change the name of the selected robot.
+        self.__robots[index].set_name(name)
+
+    def set_robot_element(self, index: int, element_index: int, pin: str):
+        self.__robots[index].set_element(element_index, pin)
 
     def add_light(self, index: int):
         self.__robots[index].add_light()
