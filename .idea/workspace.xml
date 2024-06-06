@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Poder editar varios robots">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="No dejar editar arduinoBoard ni actuador">
       <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -445,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717583823560</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="No dejar editar arduinoBoard ni actuador">
+      <option name="closed" value="true" />
+      <created>1717662452206</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717662452206</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,7 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Arreglo bug no cierre programa" />
     <MESSAGE value="Cambio config circuits.json" />
     <MESSAGE value="Pasado straight_x a straight" />
     <MESSAGE value="Refactorización" />
@@ -485,6 +491,7 @@
     <MESSAGE value="Editar robot." />
     <MESSAGE value="Permitir crear/editar un robot móvil con 2, 3 o 4 sensores de luz (contenido del fichero json) (poder editar los pines de todos los componentes). Si tiene 3 sensores, permitir elegir sensor exterior izquierdo o sensor exterior derecho." />
     <MESSAGE value="Extraída la lógica de los robots de RobotsEditor e insertada en las nuevas clases Robot y RobotsManager. Ahora RobotsEditor se encarga sólo de la interfaz de usuario." />
-    <option name="LAST_COMMIT_MESSAGE" value="Extraída la lógica de los robots de RobotsEditor e insertada en las nuevas clases Robot y RobotsManager. Ahora RobotsEditor se encarga sólo de la interfaz de usuario." />
+    <MESSAGE value="No dejar editar arduinoBoard ni actuador" />
+    <option name="LAST_COMMIT_MESSAGE" value="No dejar editar arduinoBoard ni actuador" />
   </component>
 </project>

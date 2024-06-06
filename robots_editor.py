@@ -92,7 +92,6 @@ class RobotsEditor(Editor):
             self.elements_listbox.insert(tk.END, "NO EDITABLE")
             self.__disable_widgets()
         else:
-            self.__enable_widgets()
             self.robot_name_entry.delete(0, tk.END)
             self.robot_name_entry.insert(0, robot.get_name())
             self.elements_listbox.delete(0, tk.END)
