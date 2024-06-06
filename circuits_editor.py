@@ -86,13 +86,24 @@ class CircuitsEditor(Editor):
                                        fg="white", padx=10, pady=5)
         add_polygon_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
-        clear_canvas_button = tk.Button(self, text="Limpiar lienzo", command=self.clear_canvas, bg="green",
+        clear_canvas_button = tk.Button(self, text="Limpiar lienzo", command=self.clear_canvas, bg="red",
                                         fg="white", padx=10, pady=5)
         clear_canvas_button.pack(side=tk.RIGHT, padx=10, pady=10)
 
         rotate_button = tk.Button(self, text="Rotar", command=self.rotate, bg="green",
                                   fg="white", padx=10, pady=5)
         rotate_button.pack(side=tk.RIGHT, padx=10, pady=10)
+
+        delete_selected_piece_button = tk.Button(self, text="Eliminar pieza elegida",
+                                                 command=self.delete_selected_piece, bg="green", fg="white",
+                                                 padx=10, pady=5)
+        delete_selected_piece_button.pack(side=tk.RIGHT, padx=10, pady=10)
+
+    def delete_selected_piece(self):
+        if self.selected_piece:
+            self.draggable_pieces.remove(self.selected_piece)
+            self.canvas.delete(self.selected_piece.get_id())
+            self.selected_piece = None
 
     def append_file_pieces(self, file_content):
         """Draws the circuit parts of the JSON file."""

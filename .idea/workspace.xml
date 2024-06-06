@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Pequeño cambio">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.json" beforeDir="false" afterPath="$PROJECT_DIR$/robots.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,30 +47,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_app.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_check_format.py (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_check_format.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_arc.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_polygon.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_rectangle.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests_circuit_editor.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests_robots_editor.executor&quot;: &quot;Run&quot;,
-    &quot;Python.borrar.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pr.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prueba.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mines/PycharmProjects/editor_circuitos_robots_S4R&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_app.py.executor": "Run",
+    "Python tests.Python tests in test_check_format.py (1).executor": "Run",
+    "Python tests.Python tests in test_check_format.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_arc.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_polygon.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_rectangle.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python tests.Python tests in tests_circuit_editor.executor": "Run",
+    "Python tests.Python tests in tests_robots_editor.executor": "Run",
+    "Python.borrar.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.pr.executor": "Run",
+    "Python.prueba.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/mines/PycharmProjects/editor_circuitos_robots_S4R",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
@@ -463,7 +463,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717663085733</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard.">
+      <option name="closed" value="true" />
+      <created>1717679658604</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1717679658604</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -478,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pasado straight_x a straight" />
     <MESSAGE value="Refactorización" />
     <MESSAGE value="Añadido poder agrega un cruce de 4 vías al lienzo de edición" />
     <MESSAGE value="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías." />
@@ -503,6 +510,7 @@
     <MESSAGE value="Extraída la lógica de los robots de RobotsEditor e insertada en las nuevas clases Robot y RobotsManager. Ahora RobotsEditor se encarga sólo de la interfaz de usuario." />
     <MESSAGE value="No dejar editar arduinoBoard ni actuador" />
     <MESSAGE value="Pequeño cambio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pequeño cambio" />
+    <MESSAGE value="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard." />
+    <option name="LAST_COMMIT_MESSAGE" value="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard." />
   </component>
 </project>
