@@ -2,8 +2,46 @@ from robot import Robot
 
 
 class RobotsManager:
+    ACTUATOR_DATA = {
+            "name": "actuator",
+            "elements": [
+                {
+                    "name": "servo",
+                    "pin": "8"
+                },
+                {
+                    "name": "button joystick",
+                    "pin": "9"
+                },
+                {
+                    "name": "x joystick",
+                    "pin": "A0"
+                },
+                {
+                    "name": "y joystick",
+                    "pin": "A1"
+                },
+                {
+                    "name": "button left",
+                    "pin": "6"
+                },
+                {
+                    "name": "button right",
+                    "pin": "7"
+                }
+            ]
+        }
+
+    ARDUINO_BOARD_DATA = {
+            "name": "arduinoBoard",
+            "elements": []
+        }
+
     def __init__(self):
         self.__robots = [Robot("mobile2")]
+        actuator = Robot("actuator")
+        actuator.set_data(self.ACTUATOR_DATA)
+        self.__robots.append(actuator)
 
     def get_robots(self):
         return self.__robots.copy()
@@ -29,12 +67,14 @@ class RobotsManager:
         robots = []
         for robot in self.__robots:
             robots.append(robot.get_data())
+        robots.append(self.ARDUINO_BOARD_DATA)
         return {"robots": robots}
 
     def load_json_data(self, data):
         self.__robots.clear()
         robots_data = data["robots"]
         for robot_data in robots_data:
-            robot = Robot("robot")
-            robot.set_data(robot_data)
-            self.__robots.append(robot)
+            if robot_data["name"] != self.ARDUINO_BOARD_DATA["name"]:
+                robot = Robot("robot")
+                robot.set_data(robot_data)
+                self.__robots.append(robot)

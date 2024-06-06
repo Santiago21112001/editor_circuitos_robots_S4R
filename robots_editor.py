@@ -142,6 +142,8 @@ class RobotsEditor(Editor):
 
     def open_file(self):
         file_content = self.file_manager.open_file()
+        if file_content is None:
+            return
         message = check_format(file_content)
         if message != "":
             messagebox.showerror("Archivo inválido", message)
