@@ -47,20 +47,27 @@ class RobotsManager:
         return self.__robots.copy()
 
     def add_robot(self, name: str):
+        self.__check_robot_name(name)
+
         self.__robots.append(Robot(name))
 
-    def delete_robot(self, index: int) -> None:
-        if len(self.__robots) <= 1:
-            raise ValueError("Debe haber al menos 1 robot")
-        self.__robots.pop(index)
-
-    def set_robot_name(self, index: int, name: str):
+    def __check_robot_name(self, name: str):
         if not name:
             raise ValueError("El nuevo nombre está vacío.")
         # Check that there is no robot with the new name.
         for robot in self.__robots:
             if robot.get_name() == name:
-                raise ValueError("Ya hay un robot con ese nombre.")
+                raise ValueError("Ya hay un robot con el nombre '" + name + "'.")
+
+    def delete_robot(self, index: int) -> None:
+        if self.__robots[index].get_name() == "actuator":
+            raise ValueError("No se puede eliminar el actuador lineal.")
+        if len(self.__robots) <= 2:
+            raise ValueError("Debe haber al menos 2 robots (incluyendo el actuador lineal).")
+        self.__robots.pop(index)
+
+    def set_robot_name(self, index: int, name: str):
+        self.__check_robot_name(name)
 
         # Change the name of the selected robot.
         self.__robots[index].set_name(name)
