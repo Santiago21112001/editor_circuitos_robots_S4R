@@ -40,14 +40,30 @@ class RobotsEditor(Editor):
         self.update_button = tk.Button(self, text="Actualizar pin", command=self.__update_element)
         self.update_button.grid(row=8, column=2, padx=10, pady=10)
 
-        self.add_element_button = tk.Button(self, text="Agregar sensor de luz", command=self.__add_light)
-        self.add_element_button.grid(row=9, column=0, padx=10, pady=10)
+        self.add_light_sensor_button = tk.Button(self, text="Agregar sensor de luz", command=self.__add_light)
+        self.add_light_sensor_button.grid(row=9, column=0, padx=10, pady=10)
 
-        self.delete_element_button = tk.Button(self, text="Eliminar sensor de luz", command=self.__delete_light)
-        self.delete_element_button.grid(row=9, column=1, padx=10, pady=10)
+        self.delete_light_sensor_button = tk.Button(self, text="Eliminar sensor de luz", command=self.__delete_light)
+        self.delete_light_sensor_button.grid(row=9, column=1, padx=10, pady=10)
 
         self.save_button = tk.Button(self, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
         self.save_button.grid(row=9, column=2, padx=10, pady=10)
+
+    def __disable_widgets(self):
+        self.robot_name_entry.config(state="disabled")
+        self.elements_listbox.config(state="disabled")
+        self.element_pin_entry.config(state="disabled")
+        self.update_button.config(state="disabled")
+        self.add_light_sensor_button.config(state="disabled")
+        self.delete_light_sensor_button.config(state="disabled")
+
+    def __enable_widgets(self):
+        self.robot_name_entry.config(state="normal")
+        self.elements_listbox.config(state="normal")
+        self.element_pin_entry.config(state="normal")
+        self.update_button.config(state="normal")
+        self.add_light_sensor_button.config(state="normal")
+        self.delete_light_sensor_button.config(state="normal")
 
     def __populate_robots_list(self):
         self.robots_listbox.delete(0, tk.END)
@@ -57,9 +73,7 @@ class RobotsEditor(Editor):
 
     def __select_robot(self, index: int):
         self.current_robot_index = index
-        self.robot_name_entry.delete(0, tk.END)
-        self.robot_name_entry.insert(0, self.robot_manager.get_robots()[index].get_name())
-        self.__populate_elements_list()
+        self.__populate_robot_data()
 
     def __on_robot_select(self, event):
         selected_index = self.robots_listbox.curselection()
@@ -68,11 +82,23 @@ class RobotsEditor(Editor):
         index = int(selected_index[0])
         self.__select_robot(index)
 
-    def __populate_elements_list(self):
-        self.elements_listbox.delete(0, tk.END)
-        elements = self.robot_manager.get_robots()[self.current_robot_index].get_elements()
-        for e in elements:
-            self.elements_listbox.insert(tk.END, e["name"])
+    def __populate_robot_data(self):
+        self.__enable_widgets()
+        robot = self.robot_manager.get_robots()[self.current_robot_index]
+        if robot.get_name() in ["actuator", "arduinoBoard"]:
+            self.robot_name_entry.delete(0, tk.END)
+            self.robot_name_entry.insert(0, robot.get_name())
+            self.elements_listbox.delete(0, tk.END)
+            self.elements_listbox.insert(tk.END, "NO EDITABLE")
+            self.__disable_widgets()
+        else:
+            self.__enable_widgets()
+            self.robot_name_entry.delete(0, tk.END)
+            self.robot_name_entry.insert(0, robot.get_name())
+            self.elements_listbox.delete(0, tk.END)
+            elements = robot.get_elements()
+            for e in elements:
+                self.elements_listbox.insert(tk.END, e["name"])
 
     def __select_element(self, index: int):
         self.current_element_index = index
@@ -94,14 +120,14 @@ class RobotsEditor(Editor):
             index = self.current_robot_index
 
             self.robot_manager.update_robot_element(index, element_index, pin)
-            self.__populate_elements_list()
+            self.__populate_robot_data()
         except ValueError:
             messagebox.showerror("Error al actualizar", "El pin del elemento debe ser un número.")
 
     def __add_light(self):
         try:
             self.robot_manager.get_robots()[self.current_robot_index].add_light()
-            self.__populate_elements_list()
+            self.__populate_robot_data()
         except ValueError as err:
             messagebox.showerror("Error al añadir sensor de luz", str(err))
 
@@ -110,7 +136,7 @@ class RobotsEditor(Editor):
             index = self.current_robot_index
             light_index: int = self.current_element_index
             self.robot_manager.delete_light(index, light_index)
-            self.__populate_elements_list()
+            self.__populate_robot_data()
             self.__select_element(0)
         except ValueError as err:
             messagebox.showerror("Error al eliminar sensor de luz", str(err))
