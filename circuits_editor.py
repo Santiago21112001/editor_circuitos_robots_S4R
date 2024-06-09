@@ -26,6 +26,8 @@ class CircuitsEditor(Editor):
         self.circuits = []
         self.circuit_editor = None
         self.create_widgets(self.frame)
+        self.circuits.append({"name": "Nuevo circuito", "parts": self.DEFAULT_CIRCUIT_PARTS})
+        self.populate_listbox()
 
     def create_widgets(self, frame):
         self.listbox = tk.Listbox(frame)
@@ -92,8 +94,9 @@ class CircuitsEditor(Editor):
     def open_this(self, circuit_data=None):
         if circuit_data:
             self.circuits[self.editing_index] = circuit_data
+        self.circuit_editor.frame.destroy()
         self.circuit_editor = None
-        self.frame.pack()
+        self.frame.pack(fill="both", expand=True)
 
     def open_file(self):
         if self.circuit_editor:

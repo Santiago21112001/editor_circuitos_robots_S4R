@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame">
-      <change afterPath="$PROJECT_DIR$/circuit_editor.py" afterDir="false" />
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_editor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_check_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_circuit_editor/test_check_format.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,28 +83,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="borrar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="editor_circuitos_robots_S4R" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/borrar.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
@@ -193,7 +167,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.borrar" />
         <item itemvalue="Python tests.Python tests in tests_robots_editor" />
         <item itemvalue="Python tests.Python tests in tests_circuit_editor" />
         <item itemvalue="Python tests.Python tests in test_check_format.py" />
@@ -529,7 +502,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717698421640</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos.">
+      <option name="closed" value="true" />
+      <created>1717928716613</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1717928716613</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -544,7 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modificada funcionaliad de guardar fichero para que sea importable por el simulador." />
     <MESSAGE value="Cargar y mostrar en pantalla" />
     <MESSAGE value="Añadida funcionalidad de borrar todas las piezas del lienzo de edición." />
     <MESSAGE value="Agregado comentarios a algunos constructores de clases." />
@@ -569,6 +549,7 @@
     <MESSAGE value="Editor de robots: Permitir cambiar el nombre de un robot." />
     <MESSAGE value="Poder añadir y eliminar robots." />
     <MESSAGE value="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame" />
+    <MESSAGE value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
   </component>
 </project>

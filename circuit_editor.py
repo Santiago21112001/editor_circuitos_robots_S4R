@@ -100,7 +100,6 @@ class CircuitEditor(Editor):
         title = "Volver sin guardar"
         message = "Se perderán los cambios si vuelve atrás. ¿Desea continuar?"
         if messagebox.askokcancel(title, message):
-            self.frame.destroy()
             self.circuits_editor.open_this()
 
     def save_and_go_back(self):
