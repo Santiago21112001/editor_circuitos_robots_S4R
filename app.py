@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
+from circuit_editor import CircuitEditor
 from circuits_editor import CircuitsEditor
 from robots_editor import RobotsEditor
 from editor import Editor
@@ -24,7 +25,7 @@ class App:
         self.container.pack(fill="both", expand=True)
 
         # Create frame
-        self.editor: Editor = RobotsEditor(self.container)
+        self.editor: Editor = CircuitsEditor(self.container, self.width, self.height)
 
         self.menu_bar = self.create_menu()
 

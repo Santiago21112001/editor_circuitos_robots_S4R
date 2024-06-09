@@ -1,6 +1,6 @@
 import unittest
 
-from circuits_editor import check_format
+from circuit_editor import check_format
 
 
 class TestCheckFormat(unittest.TestCase):

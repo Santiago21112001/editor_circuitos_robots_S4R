@@ -1,148 +1,136 @@
 import tkinter as tk
+from tkinter import messagebox, simpledialog
 
-from tkinter import messagebox
-
-from circuit_pieces.draggable_arc import DraggableArc
-from circuit_pieces.draggable_rectangle import DraggableRectangle
-from circuit_pieces.draggable_piece import DraggablePiece
-from circuit_pieces.draggable_polygon import DraggablePolygon
+from circuit_editor import CircuitEditor
 from editor import Editor
 
 
 class CircuitsEditor(Editor):
+
+    DEFAULT_CIRCUIT_PARTS = [
+        {
+            "type": "straight",
+            "x1": 100.0,
+            "y1": 100.0,
+            "orient": "x",
+            "width": 20,
+            "dist": 70,
+            "scale": 0.2
+        }]
+
     def __init__(self, container, width, height):
         super().__init__(container)
-        self.file_data = {"circuits": [
-            {
-                "name": "circuit",
-                "parts": []
-            }]}
-        self.selected_piece = None
+        self.editing_index = -1
+        self.width = width
+        self.height = height
+        self.circuits = []
+        self.circuit_editor = None
+        self.create_widgets(self.frame)
 
-        self.canvas = tk.Canvas(self.frame, width=width, height=height - 100)
-        self.canvas.pack()
+    def create_widgets(self, frame):
+        self.listbox = tk.Listbox(frame)
+        self.listbox.pack(padx=10, pady=10)
 
-        self.create_buttons()
-        self.draggable_pieces = []
+        self.add_button = tk.Button(frame, text="Crear", command=self.create_circuit)
+        self.add_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-    def add_rectangle(self):
-        dist = 70
-        x1 = 100
-        y1 = 100
-        new_piece: DraggablePiece = DraggableRectangle(self, x1, y1, "x", dist)
-        self.draggable_pieces.append(new_piece)
+        self.edit_button = tk.Button(frame, text="Editar", command=self.edit_circuit)
+        self.edit_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-    def add_rectangle_y(self):
-        dist = 70
-        x1 = 100
-        y1 = 100
-        new_piece: DraggablePiece = DraggableRectangle(self, x1, y1, "y", dist)
-        self.draggable_pieces.append(new_piece)
+        self.edit_name_button = tk.Button(frame, text="Editar nombre", command=self.edit_circuit_name)
+        self.edit_name_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-    def add_arc(self):
-        dist = 70
-        x1 = 100
-        y1 = 100
-        new_piece: DraggablePiece = DraggableArc(self, x1, y1, dist)
-        self.draggable_pieces.append(new_piece)
+        self.delete_button = tk.Button(frame, text="Borrar", command=self.delete_circuit)
+        self.delete_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-    def add_polygon(self):
-        x = 100
-        y = 100
-        new_piece: DraggablePiece = DraggablePolygon(self, x, y)
-        self.draggable_pieces.append(new_piece)
+    def create_circuit(self):
+        name = simpledialog.askstring("Crear", "Introduzca el nombre:")
+        if self.__name_invalid(name):
+            return
+        self.circuits.append({"name": name, "parts": self.DEFAULT_CIRCUIT_PARTS})
+        self.populate_listbox()
 
-    def clear_canvas(self):
-        self.draggable_pieces.clear()
-        self.selected_piece = None
-        self.canvas.delete("all")
+    def edit_circuit(self):
+        selected = self.listbox.curselection()
+        if not selected:
+            messagebox.showwarning("Advertencia", "Seleccione un circuito para editar")
+            return
+        index = selected[0]
+        self.editing_index = index
+        circuit_data = self.circuits[index]
+        self.circuit_editor = CircuitEditor(self, circuit_data)
+        self.frame.pack_forget()  # Hide CircuitsEditor
 
-    def rotate(self):
-        if self.selected_piece is None:
-            messagebox.showwarning("Advertencia", "Selecciona una pieza")
-        else:
-            self.selected_piece.rotate()
+    def edit_circuit_name(self):
+        selected = self.listbox.curselection()
+        if not selected:
+            messagebox.showwarning("Advertencia", "Seleccione un circuito para editar su nombre")
+            return
+        index = int(selected[0])
+        name = simpledialog.askstring("Crear", "Introduzca el nombre:")
+        if self.__name_invalid(name):
+            return
+        self.circuits[index]["name"] = name
+        self.populate_listbox()
 
-    def set_select_piece(self, piece: DraggablePiece):
-        if self.selected_piece is not None:
-            self.selected_piece.set_outline("black")
-        self.selected_piece = piece
-        piece.set_outline("red")
+    def __name_invalid(self, name: str):
+        if not name:
+            return True
+        if self.__already_exists(name):
+            messagebox.showerror("Error", "Ese nombre ya existe")
+            return True
+        return False
 
-    def create_buttons(self):
-        add_rectangle_button = tk.Button(self.frame, text="Añadir recta horizontal", command=self.add_rectangle,
-                                         bg="green", fg="white", padx=10, pady=5)
-        add_rectangle_button.pack(side=tk.RIGHT, padx=10, pady=10)
+    def delete_circuit(self):
+        selected = self.listbox.curselection()
+        if not selected:
+            messagebox.showwarning("Advertencia", "Seleccione un elemento para borrar")
+            return
+        index = selected[0]
+        self.listbox.delete(index)
 
-        add_rectangle_y_button = tk.Button(self.frame, text="Añadir recta vertical", command=self.add_rectangle_y,
-                                           bg="green", fg="white", padx=10, pady=5)
-        add_rectangle_y_button.pack(side=tk.RIGHT, padx=10, pady=10)
-
-        add_arc_button = tk.Button(self.frame, text="Añadir curva", command=self.add_arc, bg="green",
-                                   fg="white", padx=10, pady=5)
-        add_arc_button.pack(side=tk.RIGHT, padx=10, pady=10)
-
-        add_polygon_button = tk.Button(self.frame, text="Añadir cruce", command=self.add_polygon, bg="green",
-                                       fg="white", padx=10, pady=5)
-        add_polygon_button.pack(side=tk.RIGHT, padx=10, pady=10)
-
-        clear_canvas_button = tk.Button(self.frame, text="Limpiar lienzo", command=self.clear_canvas, bg="red",
-                                        fg="white", padx=10, pady=5)
-        clear_canvas_button.pack(side=tk.RIGHT, padx=10, pady=10)
-
-        rotate_button = tk.Button(self.frame, text="Rotar", command=self.rotate, bg="green",
-                                  fg="white", padx=10, pady=5)
-        rotate_button.pack(side=tk.RIGHT, padx=10, pady=10)
-
-        delete_selected_piece_button = tk.Button(self.frame, text="Eliminar pieza elegida",
-                                                 command=self.delete_selected_piece, bg="green", fg="white",
-                                                 padx=10, pady=5)
-        delete_selected_piece_button.pack(side=tk.RIGHT, padx=10, pady=10)
-
-    def delete_selected_piece(self):
-        if self.selected_piece:
-            self.draggable_pieces.remove(self.selected_piece)
-            self.canvas.delete(self.selected_piece.get_id())
-            self.selected_piece = None
-
-    def append_file_pieces(self, file_content):
-        """Draws the circuit parts of the JSON file."""
-        parts = file_content["circuits"][0]["parts"]
-        self.clear_canvas()
-        for part in parts:
-            part_type = part['type']
-            x1 = part['x1']
-            y1 = part['y1']
-            piece = None
-            if part_type == 'turn':
-                piece = DraggableArc(self, x1, y1, part['dist'], part['start'], part['extent'])
-            elif part_type == 'polygon':
-                piece = DraggablePolygon(self, x1, y1)
-            elif part_type == 'straight':
-                piece = DraggableRectangle(self, x1, y1, part['orient'], part['dist'])
-            if piece is not None:
-                self.draggable_pieces.append(piece)
+    def open_this(self, circuit_data=None):
+        if circuit_data:
+            self.circuits[self.editing_index] = circuit_data
+        self.circuit_editor = None
+        self.frame.pack()
 
     def open_file(self):
+        if self.circuit_editor:
+            self.circuit_editor.open_file()
+            return
         file_content = self.file_manager.open_file()
         message = check_format(file_content)
         if message != "":
             messagebox.showerror("Archivo inválido", message)
             return
-        self.file_data = file_content
-        self.append_file_pieces(file_content)
+        self.circuits = file_content["circuits"]
+        self.populate_listbox()
 
     def save_file(self):
-        if not self.draggable_pieces:
-            messagebox.showerror("Circuito inválido", "El circuito debe tener al menos una pieza")
+        if self.circuit_editor:
+            self.circuit_editor.save_file()
             return
-        parts_json = [piece.get_piece_info() for piece in self.draggable_pieces]
-        # Partes del primer circuito
-        self.file_data["circuits"][0]["parts"] = parts_json
+        if not self.circuits:
+            messagebox.showerror("No se pudo guardar", "Debe haber al menos 1 circuito.")
+            return
+        content = {"circuits": self.circuits}
         file_path = "circuits.json"
-        self.file_manager.save_file(self.file_data, file_path)
+        self.file_manager.save_file(content, file_path)
         messagebox.showinfo("Archivo guardado", "Se ha guardado el archivo 'circuits.json' en el "
-                                                "directorio raíz de la aplicación")
+                                                "directorio raíz de la aplicación.")
+
+    def populate_listbox(self):
+        self.listbox.delete(0, tk.END)
+        for circuit in self.circuits:
+            name: str = circuit["name"]
+            self.listbox.insert(tk.END, name)
+
+    def __already_exists(self, name):
+        for circuit in self.circuits:
+            if circuit["name"] == name:
+                return True
+        return False
 
 
 def check_format(data):

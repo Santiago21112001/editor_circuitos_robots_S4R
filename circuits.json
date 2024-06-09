@@ -1,7 +1,7 @@
 {
     "circuits": [
         {
-            "name": "circuit",
+            "name": "new circuit",
             "parts": [
                 {
                     "type": "straight",
@@ -13,38 +13,12 @@
                     "scale": 0.2
                 },
                 {
-                    "type": "polygon",
-                    "x1": 295.0,
-                    "y1": 202.0,
-                    "width": 20,
-                    "scale": 0.2
-                },
-                {
                     "type": "straight",
-                    "x1": 229.0,
-                    "y1": 202.0,
+                    "x1": 100.0,
+                    "y1": 100.0,
                     "orient": "x",
                     "width": 20,
                     "dist": 70,
-                    "scale": 0.2
-                },
-                {
-                    "type": "straight",
-                    "x1": 161.0,
-                    "y1": 152.0,
-                    "orient": "x",
-                    "width": 20,
-                    "dist": 70,
-                    "scale": 0.2
-                },
-                {
-                    "type": "turn",
-                    "x1": 325.0,
-                    "y1": 150.0,
-                    "dist": 70,
-                    "start": 90,
-                    "extent": 90,
-                    "width": 20,
                     "scale": 0.2
                 }
             ]
