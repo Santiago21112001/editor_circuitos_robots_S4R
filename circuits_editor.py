@@ -26,7 +26,7 @@ class CircuitsEditor(Editor):
         self.circuits = []
         self.circuit_editor = None
         self.create_widgets(self.frame)
-        self.circuits.append({"name": "Nuevo circuito", "parts": self.DEFAULT_CIRCUIT_PARTS})
+        self.circuits.append({"name": "circuit", "parts": self.DEFAULT_CIRCUIT_PARTS})
         self.populate_listbox()
 
     def create_widgets(self, frame):
@@ -164,7 +164,7 @@ def check_format(data):
                 return "Cada elemento de 'parts' debe ser un diccionario."
             if 'type' not in part:
                 return "Falta el campo 'type' en una parte del circuito."
-            if part['type'] not in ['straight', 'turn', 'polygon']:
+            if part['type'] not in ['straight', 'turn', 'polygon', '3way']:
                 return f"Tipo de parte inválido: {part['type']}"
 
             # Inicializar required_fields
@@ -176,6 +176,8 @@ def check_format(data):
                 required_fields = ['x1', 'y1', 'dist', 'start', 'extent', 'width', 'scale']
             elif part['type'] == 'polygon':
                 required_fields = ['x1', 'y1', 'width', 'scale']
+            elif part['type'] == '3way':
+                required_fields = ['x1', 'y1', 'width', 'scale', 'orient']
 
             for field in required_fields:
                 if field not in part:

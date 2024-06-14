@@ -53,9 +53,11 @@ class Robot:
             raise ValueError("No pueden haber más de 4 sensores de luz.")
 
         if self.__ext_lights == 1 and self.__contains_light_x(1):
-            self.__data["elements"].append({"name": "light 4", "pin": "4"})
+            # Exterior derecho
+            self.__data["elements"].append({"name": "light 4", "pin": "11"})
         else:
-            self.__data["elements"].append({"name": "light 1", "pin": "1"})
+            # Exterior izquierdo
+            self.__data["elements"].append({"name": "light 1", "pin": "10"})
         self.__ext_lights += 1
 
     def delete_light(self, index: int) -> None:

@@ -6,6 +6,7 @@ from circuit_pieces.draggable_arc import DraggableArc
 from circuit_pieces.draggable_rectangle import DraggableRectangle
 from circuit_pieces.draggable_piece import DraggablePiece
 from circuit_pieces.draggable_polygon import DraggablePolygon
+from circuit_pieces.draggable_three_way import DraggableThreeWay
 from editor import Editor
 
 
@@ -16,7 +17,7 @@ class CircuitEditor(Editor):
         self.circuits_editor = circuits_editor
         self.selected_piece = None
 
-        self.canvas = tk.Canvas(self.frame, width=circuits_editor.width, height=circuits_editor.height - 110)
+        self.canvas = tk.Canvas(self.frame, width=circuits_editor.width, height=circuits_editor.height - 210)
         self.canvas.pack()
 
         self.create_buttons(self.frame)
@@ -24,6 +25,41 @@ class CircuitEditor(Editor):
 
         self.circuit_name = circuit_data["name"]
         self.append_file_pieces(circuit_data["parts"])
+
+    def create_buttons(self, frame):
+        button_frame = tk.Frame(frame)
+        button_frame.pack(side=tk.BOTTOM, fill=tk.X)
+
+        top_buttons = [
+            ("Volver sin guardar", self.go_back, "blue"),
+            ("Guardar y volver", self.save_and_go_back, "blue"),
+        ]
+
+        mid_buttons = [
+            ("Añadir recta horizontal", self.add_rectangle, "green"),
+            ("Añadir recta vertical", self.add_rectangle_y, "green"),
+            ("Añadir curva", self.add_arc, "green"),
+            ("Añadir cruce de 4 vías", self.add_polygon, "green"),
+        ]
+
+        bottom_buttons = [
+            ("Añadir cruce de 3 vías", self.add_three_way, "green"),
+            ("Rotar", self.rotate, "green"),
+            ("Eliminar pieza elegida", self.delete_selected_piece, "green"),
+            ("Limpiar lienzo", self.clear_canvas, "red")
+        ]
+
+        for i, (text, command, color) in enumerate(top_buttons):
+            button = tk.Button(button_frame, text=text, command=command, bg=color, fg="white", padx=10, pady=5)
+            button.grid(row=0, column=i, padx=5, pady=10)
+
+        for i, (text, command, color) in enumerate(mid_buttons):
+            button = tk.Button(button_frame, text=text, command=command, bg=color, fg="white", padx=10, pady=5)
+            button.grid(row=1, column=i, padx=5, pady=10)
+
+        for i, (text, command, color) in enumerate(bottom_buttons):
+            button = tk.Button(button_frame, text=text, command=command, bg=color, fg="white", padx=10, pady=5)
+            button.grid(row=2, column=i, padx=5, pady=10)
 
     def add_rectangle(self):
         dist = 70
@@ -52,6 +88,12 @@ class CircuitEditor(Editor):
         new_piece: DraggablePiece = DraggablePolygon(self, x, y)
         self.draggable_pieces.append(new_piece)
 
+    def add_three_way(self):
+        x = 100
+        y = 100
+        new_piece: DraggablePiece = DraggableThreeWay(self, x, y)
+        self.draggable_pieces.append(new_piece)
+
     def clear_canvas(self):
         self.draggable_pieces.clear()
         self.selected_piece = None
@@ -68,33 +110,6 @@ class CircuitEditor(Editor):
             self.selected_piece.set_outline("black")
         self.selected_piece = piece
         piece.set_outline("red")
-
-    def create_buttons(self, frame):
-        button_frame = tk.Frame(frame)
-        button_frame.pack(side=tk.BOTTOM, fill=tk.X)
-
-        top_buttons = [
-            ("Volver sin guardar", self.go_back, "blue"),
-            ("Guardar y volver", self.save_and_go_back, "blue"),
-        ]
-
-        bottom_buttons = [
-            ("Añadir recta horizontal", self.add_rectangle, "green"),
-            ("Añadir recta vertical", self.add_rectangle_y, "green"),
-            ("Añadir curva", self.add_arc, "green"),
-            ("Añadir cruce", self.add_polygon, "green"),
-            ("Rotar", self.rotate, "green"),
-            ("Eliminar pieza elegida", self.delete_selected_piece, "green"),
-            ("Limpiar lienzo", self.clear_canvas, "red")
-        ]
-
-        for i, (text, command, color) in enumerate(top_buttons):
-            button = tk.Button(button_frame, text=text, command=command, bg=color, fg="white", padx=10, pady=5)
-            button.grid(row=0, column=i, padx=5, pady=10)
-
-        for i, (text, command, color) in enumerate(bottom_buttons):
-            button = tk.Button(button_frame, text=text, command=command, bg=color, fg="white", padx=10, pady=5)
-            button.grid(row=1, column=i, padx=5, pady=10)
 
     def go_back(self):
         title = "Volver sin guardar"
@@ -131,6 +146,8 @@ class CircuitEditor(Editor):
                 piece = DraggablePolygon(self, x1, y1)
             elif part_type == 'straight':
                 piece = DraggableRectangle(self, x1, y1, part['orient'], part['dist'])
+            elif part_type == '3way':
+                piece = DraggableThreeWay(self, x1, y1, part['orient'])
             if piece is not None:
                 self.draggable_pieces.append(piece)
 

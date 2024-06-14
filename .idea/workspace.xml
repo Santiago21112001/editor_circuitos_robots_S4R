@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver.">
+      <change afterPath="$PROJECT_DIR$/circuit_pieces/draggable_three_way.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/circuit_pieces/three_way_orient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuit_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_arc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_polygon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.json" beforeDir="false" afterPath="$PROJECT_DIR$/robots.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +86,8 @@
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests\tests_circuit_editor" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests\tests_circuit_editor" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\draggable_pieces" />
     </key>
   </component>
@@ -169,15 +178,15 @@
       <list>
         <item itemvalue="Python tests.Python tests in tests_robots_editor" />
         <item itemvalue="Python tests.Python tests in tests_circuit_editor" />
-        <item itemvalue="Python tests.Python tests in test_check_format.py" />
         <item itemvalue="Python tests.Python tests in tests" />
+        <item itemvalue="Python tests.Python tests in test_check_format.py" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-48aec45f0201-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17011.127" />
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
       </set>
     </attachedChunks>
   </component>
@@ -510,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717928716613</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver.">
+      <option name="closed" value="true" />
+      <created>1717935227155</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1717935227155</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -525,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cargar y mostrar en pantalla" />
     <MESSAGE value="Añadida funcionalidad de borrar todas las piezas del lienzo de edición." />
     <MESSAGE value="Agregado comentarios a algunos constructores de clases." />
     <MESSAGE value="Rotar piezas." />
@@ -550,6 +566,7 @@
     <MESSAGE value="Poder añadir y eliminar robots." />
     <MESSAGE value="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame" />
     <MESSAGE value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
+    <MESSAGE value="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver." />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver." />
   </component>
 </project>
