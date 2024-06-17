@@ -30,7 +30,7 @@ class RobotsEditor(Editor):
         self.robots_listbox.bind('<<ListboxSelect>>', self.__on_robot_select)
 
         self.edit_name_button = tk.Button(self.frame, text="Editar nombre", command=self.__edit_name)
-        self.edit_name_button.grid(row=0, column=4, padx=10, pady=10)
+        self.edit_name_button.grid(row=3, column=0, padx=10, pady=10)
 
         self.elements_listbox = tk.Listbox(self.frame, height=10)
         self.elements_listbox.grid(row=1, column=2, rowspan=6, columnspan=2, padx=10, pady=10, sticky='ns')
