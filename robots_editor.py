@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, simpledialog
 
 from editor import Editor
 from robots_manager import RobotsManager
@@ -29,13 +29,8 @@ class RobotsEditor(Editor):
         self.robots_listbox.grid(row=1, column=1, rowspan=6, columnspan=2, padx=10, pady=10, sticky='ns')
         self.robots_listbox.bind('<<ListboxSelect>>', self.__on_robot_select)
 
-        self.robot_name_label = tk.Label(self.frame, text="Nombre del robot")
-        self.robot_name_label.grid(row=0, column=2, padx=10, pady=5)
-        self.robot_name_entry = tk.Entry(self.frame)
-        self.robot_name_entry.grid(row=0, column=3, padx=10, pady=5, sticky='ew')
-
-        self.update_robot_name_button = tk.Button(self.frame, text="Actualizar nombre", command=self.__update_name)
-        self.update_robot_name_button.grid(row=0, column=4, padx=10, pady=10)
+        self.edit_name_button = tk.Button(self.frame, text="Editar nombre", command=self.__edit_name)
+        self.edit_name_button.grid(row=0, column=4, padx=10, pady=10)
 
         self.elements_listbox = tk.Listbox(self.frame, height=10)
         self.elements_listbox.grid(row=1, column=2, rowspan=6, columnspan=2, padx=10, pady=10, sticky='ns')
@@ -75,9 +70,16 @@ class RobotsEditor(Editor):
         except ValueError as err:
             messagebox.showerror("Error al eliminar el robot.", str(err))
 
-    def __update_name(self):
-        index: int = self.current_robot_index
-        name: str = self.robot_name_entry.get()
+    def __edit_name(self):
+        selected = self.robots_listbox.curselection()
+        if not selected:
+            messagebox.showwarning("Advertencia", "Seleccione un robot para editar su nombre")
+            return
+        index = int(selected[0])
+        initial_value = self.robots_listbox.get(index)
+        name = simpledialog.askstring("Editar nombre", "Introduzca el nombre:", initialvalue=initial_value)
+        if not name:
+            return
         try:
             self.robot_manager.set_robot_name(index, name)
             self.__populate_robots_list()
@@ -85,7 +87,7 @@ class RobotsEditor(Editor):
             messagebox.showerror("Error al actualizar el nombre", str(err))
 
     def __disable_widgets(self):
-        self.robot_name_entry.config(state="disabled")
+        self.edit_name_button.config(state="disabled")
         self.elements_listbox.config(state="disabled")
         self.element_pin_entry.config(state="disabled")
         self.update_button.config(state="disabled")
@@ -93,7 +95,7 @@ class RobotsEditor(Editor):
         self.delete_light_sensor_button.config(state="disabled")
 
     def __enable_widgets(self):
-        self.robot_name_entry.config(state="normal")
+        self.edit_name_button.config(state="normal")
         self.elements_listbox.config(state="normal")
         self.element_pin_entry.config(state="normal")
         self.update_button.config(state="normal")
@@ -121,14 +123,10 @@ class RobotsEditor(Editor):
         self.__enable_widgets()
         robot = self.robot_manager.get_robots()[self.current_robot_index]
         if robot.get_name() in ["actuator", "arduinoBoard"]:
-            self.robot_name_entry.delete(0, tk.END)
-            self.robot_name_entry.insert(0, robot.get_name())
             self.elements_listbox.delete(0, tk.END)
             self.elements_listbox.insert(tk.END, "NO EDITABLE")
             self.__disable_widgets()
         else:
-            self.robot_name_entry.delete(0, tk.END)
-            self.robot_name_entry.insert(0, robot.get_name())
             self.elements_listbox.delete(0, tk.END)
             elements = robot.get_elements()
             for e in elements:

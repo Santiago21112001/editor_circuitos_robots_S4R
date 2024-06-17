@@ -69,7 +69,7 @@ class CircuitsEditor(Editor):
             messagebox.showwarning("Advertencia", "Seleccione un circuito para editar su nombre")
             return
         index = int(selected[0])
-        name = simpledialog.askstring("Crear", "Introduzca el nombre:")
+        name = simpledialog.askstring("Editar nombre", "Introduzca el nombre:")
         if self.__name_invalid(name):
             return
         self.circuits[index]["name"] = name
