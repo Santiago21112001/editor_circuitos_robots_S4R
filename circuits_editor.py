@@ -45,6 +45,9 @@ class CircuitsEditor(Editor):
         self.delete_button = tk.Button(frame, text="Borrar", command=self.delete_circuit)
         self.delete_button.pack(side=tk.LEFT, padx=5, pady=5)
 
+        self.save_button = tk.Button(self.frame, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
+        self.save_button.pack(side=tk.LEFT, padx=5, pady=5)
+
     def create_circuit(self):
         name = simpledialog.askstring("Crear", "Introduzca el nombre:")
         if self.__name_invalid(name):

@@ -11,38 +11,6 @@
                     "width": 20,
                     "dist": 70,
                     "scale": 0.2
-                },
-                {
-                    "type": "3way",
-                    "orient": "down",
-                    "x1": 167.0,
-                    "y1": 100.0,
-                    "width": 20,
-                    "scale": 0.2
-                },
-                {
-                    "type": "3way",
-                    "orient": "left",
-                    "x1": 225.0,
-                    "y1": 100.0,
-                    "width": 20,
-                    "scale": 0.2
-                },
-                {
-                    "type": "3way",
-                    "orient": "up",
-                    "x1": 261.0,
-                    "y1": 103.0,
-                    "width": 20,
-                    "scale": 0.2
-                },
-                {
-                    "type": "3way",
-                    "orient": "right",
-                    "x1": 300.0,
-                    "y1": 104.0,
-                    "width": 20,
-                    "scale": 0.2
                 }
             ]
         }
