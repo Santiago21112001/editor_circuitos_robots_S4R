@@ -11,6 +11,11 @@ from editor import Editor
 
 
 class CircuitEditor(Editor):
+
+    NEW_PIECE_X = 100
+    NEW_PIECE_Y = 100
+    NEW_PIECE_DIST = 70
+
     def __init__(self, circuits_editor, circuit_data):
         # We pass circuits_editor.frame.master in order to avoid hiding CircuitEditor when we hide CircuitsEditor.
         super().__init__(circuits_editor.frame.master)
@@ -37,16 +42,15 @@ class CircuitEditor(Editor):
 
         mid_buttons = [
             ("Añadir recta horizontal", self.add_rectangle, "green"),
-            ("Añadir recta vertical", self.add_rectangle_y, "green"),
             ("Añadir curva", self.add_arc, "green"),
             ("Añadir cruce de 4 vías", self.add_polygon, "green"),
+            ("Añadir cruce de 3 vías", self.add_three_way, "green")
         ]
 
         bottom_buttons = [
-            ("Añadir cruce de 3 vías", self.add_three_way, "green"),
             ("Rotar", self.rotate, "green"),
             ("Eliminar pieza elegida", self.delete_selected_piece, "green"),
-            ("Limpiar lienzo", self.clear_canvas, "red")
+            ("Eliminar todas las piezas", self.clear_canvas, "red")
         ]
 
         for i, (text, command, color) in enumerate(top_buttons):
@@ -62,36 +66,20 @@ class CircuitEditor(Editor):
             button.grid(row=2, column=i, padx=5, pady=10)
 
     def add_rectangle(self):
-        dist = 70
-        x1 = 100
-        y1 = 100
-        new_piece: DraggablePiece = DraggableRectangle(self, x1, y1, "x", dist)
-        self.draggable_pieces.append(new_piece)
-
-    def add_rectangle_y(self):
-        dist = 70
-        x1 = 100
-        y1 = 100
-        new_piece: DraggablePiece = DraggableRectangle(self, x1, y1, "y", dist)
+        new_piece: DraggablePiece = DraggableRectangle(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, "x",
+                                                       self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
 
     def add_arc(self):
-        dist = 70
-        x1 = 100
-        y1 = 100
-        new_piece: DraggablePiece = DraggableArc(self, x1, y1, dist)
+        new_piece: DraggablePiece = DraggableArc(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
 
     def add_polygon(self):
-        x = 100
-        y = 100
-        new_piece: DraggablePiece = DraggablePolygon(self, x, y)
+        new_piece: DraggablePiece = DraggablePolygon(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
 
     def add_three_way(self):
-        x = 100
-        y = 100
-        new_piece: DraggablePiece = DraggableThreeWay(self, x, y)
+        new_piece: DraggablePiece = DraggableThreeWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
 
     def clear_canvas(self):
