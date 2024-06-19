@@ -138,6 +138,10 @@ class CircuitsEditor(Editor):
                 return True
         return False
 
+    def destroy(self):
+        if self.circuit_editor:
+            self.circuit_editor.destroy()
+        self.frame.destroy()
 
 def check_format(data):
     # Comprobar que data es un diccionario

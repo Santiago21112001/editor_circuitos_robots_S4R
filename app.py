@@ -37,7 +37,7 @@ class App:
     def set_editor(self, new_editor_str):
         """Destroys current editor and replaces it with a new one."""
         if self.editor is not None:
-            self.editor.frame.destroy()
+            self.editor.destroy()
         if new_editor_str == "c":
             new_editor = CircuitsEditor(self.container, self.width, self.height)
         else:

@@ -17,3 +17,6 @@ class Editor:
     @abstractmethod
     def save_file(self):
         pass
+
+    def destroy(self):
+        self.frame.destroy()
