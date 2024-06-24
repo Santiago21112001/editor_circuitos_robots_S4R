@@ -1,9 +1,9 @@
 from circuit_pieces.draggable_piece import DraggablePiece
 
 
-class DraggableFourWay(DraggablePiece):
+class FourWay(DraggablePiece):
 
-    def __init__(self, circuit_editor, x1, y1):
+    def __init__(self, circuit_parts_editor, x1, y1):
         """
         Creates the 4-way intersection piece and draws it.
 
@@ -12,7 +12,7 @@ class DraggableFourWay(DraggablePiece):
         x1 (int): The x-coordinate of the first point of the intersection.
         y1 (int): The y-coordinate of the first point of the intersection.
         """
-        super().__init__(circuit_editor)
+        super().__init__(circuit_parts_editor)
         w = self.width  # Length of each individual line.
         points = [
             x1, y1,

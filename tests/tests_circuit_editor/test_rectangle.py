@@ -1,6 +1,6 @@
 import unittest
 import tkinter as tk
-from circuit_pieces.draggable_rectangle import DraggableRectangle
+from circuit_pieces.rectangle import Rectangle
 
 
 class MockApp:
@@ -11,11 +11,11 @@ class MockApp:
         pass
 
 
-class TestDraggableRectangle(unittest.TestCase):
+class TestRectangle(unittest.TestCase):
 
     def setUp(self):
         self.app = MockApp()
-        self.draggable_rectangle = DraggableRectangle(self.app, 10, 10, 'x', 50)
+        self.draggable_rectangle = Rectangle(self.app, 10, 10, 'x', 50)
 
     def test_initialization(self):
         self.assertEqual(self.draggable_rectangle.orient, 'x')

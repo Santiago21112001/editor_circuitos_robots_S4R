@@ -3,10 +3,10 @@ from abc import ABC, abstractmethod
 
 class DraggablePiece(ABC):
 
-    def __init__(self, circuit_editor):
+    def __init__(self, circuit_parts_editor):
         self.piece = None
-        self.canvas = circuit_editor.canvas
-        self.circuit_editor = circuit_editor
+        self.canvas = circuit_parts_editor.canvas
+        self.circuit_parts_editor = circuit_parts_editor
         self.width = 20
         self.start_x = 0
         self.start_y = 0
@@ -20,7 +20,7 @@ class DraggablePiece(ABC):
     def __start_drag(self, event):
         self.start_x = event.x
         self.start_y = event.y
-        self.circuit_editor.set_selected_piece(self)
+        self.circuit_parts_editor.set_selected_piece(self)
 
     def __stop_drag(self, event):
         self.start_x = 0

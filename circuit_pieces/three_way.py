@@ -2,9 +2,9 @@ from circuit_pieces.draggable_piece import DraggablePiece
 from circuit_pieces.three_way_orient import Orient, OrientDown, OrientUp, OrientLeft, OrientRight
 
 
-class DraggableThreeWay(DraggablePiece):
+class ThreeWay(DraggablePiece):
 
-    def __init__(self, circuit_editor, x1, y1, orient=Orient.DOWN):
+    def __init__(self, circuit_parts_editor, x1, y1, orient=Orient.DOWN):
         """
         Creates the 3-way intersection piece and draws it.
 
@@ -13,7 +13,7 @@ class DraggableThreeWay(DraggablePiece):
         x1 (int): The x-coordinate of the first point of the intersection.
         y1 (int): The y-coordinate of the first point of the intersection.
         """
-        super().__init__(circuit_editor)
+        super().__init__(circuit_parts_editor)
         w = self.width  # Length of each individual line.
         if orient == Orient.UP:
             self.orient = OrientUp()

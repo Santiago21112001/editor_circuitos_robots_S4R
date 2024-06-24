@@ -2,11 +2,11 @@ import tkinter as tk
 
 from tkinter import messagebox
 
-from circuit_pieces.draggable_arc import DraggableArc
-from circuit_pieces.draggable_rectangle import DraggableRectangle
+from circuit_pieces.arc import Arc
+from circuit_pieces.rectangle import Rectangle
 from circuit_pieces.draggable_piece import DraggablePiece
-from circuit_pieces.draggable_four_way import DraggableFourWay
-from circuit_pieces.draggable_three_way import DraggableThreeWay
+from circuit_pieces.four_way import FourWay
+from circuit_pieces.three_way import ThreeWay
 from editor import Editor
 
 
@@ -29,7 +29,7 @@ class CircuitPiecesEditor(Editor):
         self.draggable_pieces = []
 
         self.circuit_name = circuit_data["name"]
-        self.append_file_pieces(circuit_data["parts"])
+        self.load_file_pieces(circuit_data["parts"])
 
     def create_buttons(self):
         button_frame = tk.Frame(self.frame)
@@ -66,20 +66,20 @@ class CircuitPiecesEditor(Editor):
             button.grid(row=2, column=i, padx=5, pady=10)
 
     def add_rectangle(self):
-        new_piece: DraggablePiece = DraggableRectangle(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, "x",
-                                                       self.NEW_PIECE_DIST)
+        new_piece: DraggablePiece = Rectangle(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, "x",
+                                              self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
 
     def add_arc(self):
-        new_piece: DraggablePiece = DraggableArc(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, self.NEW_PIECE_DIST)
+        new_piece: DraggablePiece = Arc(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
 
     def add_four_way(self):
-        new_piece: DraggablePiece = DraggableFourWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
+        new_piece: DraggablePiece = FourWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
 
     def add_three_way(self):
-        new_piece: DraggablePiece = DraggableThreeWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
+        new_piece: DraggablePiece = ThreeWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
 
     def delete_all_pieces(self):
@@ -120,22 +120,22 @@ class CircuitPiecesEditor(Editor):
             self.canvas.delete(self.selected_piece.get_id())
             self.selected_piece = None
 
-    def append_file_pieces(self, parts):
+    def load_file_pieces(self, file_pieces):
         """Draws the circuit parts of the JSON file."""
         self.delete_all_pieces()
-        for part in parts:
+        for part in file_pieces:
             part_type = part['type']
             x1 = part['x1']
             y1 = part['y1']
             piece = None
             if part_type == 'turn':
-                piece = DraggableArc(self, x1, y1, part['dist'], part['start'], part['extent'])
+                piece = Arc(self, x1, y1, part['dist'], part['start'], part['extent'])
             elif part_type == 'polygon':
-                piece = DraggableFourWay(self, x1, y1)
+                piece = FourWay(self, x1, y1)
             elif part_type == 'straight':
-                piece = DraggableRectangle(self, x1, y1, part['orient'], part['dist'])
+                piece = Rectangle(self, x1, y1, part['orient'], part['dist'])
             elif part_type == '3way':
-                piece = DraggableThreeWay(self, x1, y1, part['orient'])
+                piece = ThreeWay(self, x1, y1, part['orient'])
             if piece is not None:
                 self.draggable_pieces.append(piece)
 
