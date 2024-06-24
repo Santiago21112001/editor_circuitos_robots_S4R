@@ -5,12 +5,12 @@ from tkinter import messagebox
 from circuit_pieces.draggable_arc import DraggableArc
 from circuit_pieces.draggable_rectangle import DraggableRectangle
 from circuit_pieces.draggable_piece import DraggablePiece
-from circuit_pieces.draggable_polygon import DraggablePolygon
+from circuit_pieces.draggable_four_way import DraggableFourWay
 from circuit_pieces.draggable_three_way import DraggableThreeWay
 from editor import Editor
 
 
-class CircuitEditor(Editor):
+class CircuitPartsEditor(Editor):
 
     NEW_PIECE_X = 100
     NEW_PIECE_Y = 100
@@ -25,14 +25,14 @@ class CircuitEditor(Editor):
         self.canvas = tk.Canvas(self.frame, width=circuits_editor.width, height=circuits_editor.height - 210)
         self.canvas.pack()
 
-        self.create_buttons(self.frame)
+        self.create_buttons()
         self.draggable_pieces = []
 
         self.circuit_name = circuit_data["name"]
         self.append_file_pieces(circuit_data["parts"])
 
-    def create_buttons(self, frame):
-        button_frame = tk.Frame(frame)
+    def create_buttons(self):
+        button_frame = tk.Frame(self.frame)
         button_frame.pack(side=tk.BOTTOM, fill=tk.X)
 
         top_buttons = [
@@ -43,7 +43,7 @@ class CircuitEditor(Editor):
         mid_buttons = [
             ("Añadir recta horizontal", self.add_rectangle, "green"),
             ("Añadir curva", self.add_arc, "green"),
-            ("Añadir cruce de 4 vías", self.add_polygon, "green"),
+            ("Añadir cruce de 4 vías", self.add_4_way, "green"),
             ("Añadir cruce de 3 vías", self.add_three_way, "green")
         ]
 
@@ -74,8 +74,8 @@ class CircuitEditor(Editor):
         new_piece: DraggablePiece = DraggableArc(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
 
-    def add_polygon(self):
-        new_piece: DraggablePiece = DraggablePolygon(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
+    def add_4_way(self):
+        new_piece: DraggablePiece = DraggableFourWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
 
     def add_three_way(self):
@@ -131,7 +131,7 @@ class CircuitEditor(Editor):
             if part_type == 'turn':
                 piece = DraggableArc(self, x1, y1, part['dist'], part['start'], part['extent'])
             elif part_type == 'polygon':
-                piece = DraggablePolygon(self, x1, y1)
+                piece = DraggableFourWay(self, x1, y1)
             elif part_type == 'straight':
                 piece = DraggableRectangle(self, x1, y1, part['orient'], part['dist'])
             elif part_type == '3way':

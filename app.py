@@ -1,10 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 
-from circuit_editor import CircuitEditor
 from circuits_editor import CircuitsEditor
-from robots_editor import RobotsEditor
 from editor import Editor
+from robots_editor import RobotsEditor
 
 
 class App:

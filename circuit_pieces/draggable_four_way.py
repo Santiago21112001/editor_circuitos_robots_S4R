@@ -1,7 +1,7 @@
 from circuit_pieces.draggable_piece import DraggablePiece
 
 
-class DraggablePolygon(DraggablePiece):
+class DraggableFourWay(DraggablePiece):
 
     def __init__(self, circuit_editor, x1, y1):
         """

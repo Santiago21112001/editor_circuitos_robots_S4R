@@ -11,6 +11,13 @@
                     "width": 20,
                     "dist": 70,
                     "scale": 0.2
+                },
+                {
+                    "type": "polygon",
+                    "x1": 280.0,
+                    "y1": 156.0,
+                    "width": 20,
+                    "scale": 0.2
                 }
             ]
         }

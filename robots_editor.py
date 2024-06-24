@@ -41,8 +41,8 @@ class RobotsEditor(Editor):
         self.element_pin_entry = tk.Entry(self.frame)
         self.element_pin_entry.grid(row=8, column=2, padx=10, pady=5, sticky='ew')
 
-        self.update_button = tk.Button(self.frame, text="Actualizar pin", command=self.__update_element)
-        self.update_button.grid(row=8, column=3, padx=10, pady=10)
+        self.edit_pin_button = tk.Button(self.frame, text="Actualizar pin", command=self.__edit_pin)
+        self.edit_pin_button.grid(row=8, column=3, padx=10, pady=10)
 
         self.add_light_sensor_button = tk.Button(self.frame, text="Agregar sensor de luz", command=self.__add_light)
         self.add_light_sensor_button.grid(row=9, column=1, padx=10, pady=10)
@@ -90,7 +90,7 @@ class RobotsEditor(Editor):
         self.edit_name_button.config(state="disabled")
         self.elements_listbox.config(state="disabled")
         self.element_pin_entry.config(state="disabled")
-        self.update_button.config(state="disabled")
+        self.edit_pin_button.config(state="disabled")
         self.add_light_sensor_button.config(state="disabled")
         self.delete_light_sensor_button.config(state="disabled")
 
@@ -98,7 +98,7 @@ class RobotsEditor(Editor):
         self.edit_name_button.config(state="normal")
         self.elements_listbox.config(state="normal")
         self.element_pin_entry.config(state="normal")
-        self.update_button.config(state="normal")
+        self.edit_pin_button.config(state="normal")
         self.add_light_sensor_button.config(state="normal")
         self.delete_light_sensor_button.config(state="normal")
 
@@ -145,7 +145,7 @@ class RobotsEditor(Editor):
         index = int(selected_index[0])
         self.__select_element(index)
 
-    def __update_element(self):
+    def __edit_pin(self):
         try:
             pin = self.element_pin_entry.get()
             element_index = self.current_element_index
@@ -188,8 +188,8 @@ class RobotsEditor(Editor):
 
     def save_file(self):
         file_path = "robots.json"
-        file_data = self.robot_manager.to_json()
-        self.file_manager.save_file(file_data, file_path)
+        content = self.robot_manager.to_json()
+        self.file_manager.save_file(content, file_path)
         messagebox.showinfo("Archivo guardado", "Se ha guardado el archivo 'robots.json' en el "
                                                 "directorio raíz de la aplicación")
 

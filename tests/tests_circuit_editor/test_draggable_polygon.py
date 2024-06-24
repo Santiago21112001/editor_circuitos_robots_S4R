@@ -1,6 +1,6 @@
 import unittest
 import tkinter as tk
-from circuit_pieces.draggable_polygon import DraggablePolygon
+from circuit_pieces.draggable_four_way import DraggableFourWay
 
 
 class MockApp:
@@ -15,7 +15,7 @@ class TestDraggablePolygon(unittest.TestCase):
 
     def setUp(self):
         self.app = MockApp()
-        self.draggable_polygon = DraggablePolygon(self.app, 10, 10)
+        self.draggable_polygon = DraggableFourWay(self.app, 10, 10)
 
     def test_initialization(self):
         self.assertEqual(self.draggable_polygon.width, 20)
