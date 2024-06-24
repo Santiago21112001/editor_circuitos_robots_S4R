@@ -10,7 +10,7 @@ from circuit_pieces.draggable_three_way import DraggableThreeWay
 from editor import Editor
 
 
-class CircuitPartsEditor(Editor):
+class CircuitPiecesEditor(Editor):
 
     NEW_PIECE_X = 100
     NEW_PIECE_Y = 100
@@ -43,14 +43,14 @@ class CircuitPartsEditor(Editor):
         mid_buttons = [
             ("Añadir recta horizontal", self.add_rectangle, "green"),
             ("Añadir curva", self.add_arc, "green"),
-            ("Añadir cruce de 4 vías", self.add_4_way, "green"),
+            ("Añadir cruce de 4 vías", self.add_four_way, "green"),
             ("Añadir cruce de 3 vías", self.add_three_way, "green")
         ]
 
         bottom_buttons = [
-            ("Rotar", self.rotate, "green"),
+            ("Rotar", self.rotate_selected_piece, "green"),
             ("Eliminar pieza elegida", self.delete_selected_piece, "green"),
-            ("Eliminar todas las piezas", self.clear_canvas, "red")
+            ("Eliminar todas las piezas", self.delete_all_pieces, "red")
         ]
 
         for i, (text, command, color) in enumerate(top_buttons):
@@ -74,7 +74,7 @@ class CircuitPartsEditor(Editor):
         new_piece: DraggablePiece = DraggableArc(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
 
-    def add_4_way(self):
+    def add_four_way(self):
         new_piece: DraggablePiece = DraggableFourWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
 
@@ -82,18 +82,18 @@ class CircuitPartsEditor(Editor):
         new_piece: DraggablePiece = DraggableThreeWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
 
-    def clear_canvas(self):
+    def delete_all_pieces(self):
         self.draggable_pieces.clear()
         self.selected_piece = None
         self.canvas.delete("all")
 
-    def rotate(self):
+    def rotate_selected_piece(self):
         if self.selected_piece is None:
             messagebox.showwarning("Advertencia", "Selecciona una pieza")
         else:
             self.selected_piece.rotate()
 
-    def set_select_piece(self, piece: DraggablePiece):
+    def set_selected_piece(self, piece: DraggablePiece):
         if self.selected_piece is not None:
             self.selected_piece.set_outline("black")
         self.selected_piece = piece
@@ -122,7 +122,7 @@ class CircuitPartsEditor(Editor):
 
     def append_file_pieces(self, parts):
         """Draws the circuit parts of the JSON file."""
-        self.clear_canvas()
+        self.delete_all_pieces()
         for part in parts:
             part_type = part['type']
             x1 = part['x1']

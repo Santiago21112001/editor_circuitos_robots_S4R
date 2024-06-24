@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog
 
-from circuit_parts_editor import CircuitPartsEditor
+from circuit_pieces_editor import CircuitPiecesEditor
 from editor import Editor
 
 
@@ -63,7 +63,7 @@ class CircuitsEditor(Editor):
         index = selected[0]
         self.editing_index = index
         circuit_data = self.circuits[index]
-        self.circuit_parts_editor = CircuitPartsEditor(self, circuit_data)
+        self.circuit_parts_editor = CircuitPiecesEditor(self, circuit_data)
         self.frame.pack_forget()  # Hide CircuitsEditor
 
     def edit_circuit_name(self):

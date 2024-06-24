@@ -20,7 +20,7 @@ class DraggablePiece(ABC):
     def __start_drag(self, event):
         self.start_x = event.x
         self.start_y = event.y
-        self.circuit_editor.set_select_piece(self)
+        self.circuit_editor.set_selected_piece(self)
 
     def __stop_drag(self, event):
         self.start_x = 0
