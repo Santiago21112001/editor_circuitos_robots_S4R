@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Arreglos de nombres">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Cambios de nombres de algunas clases para que quede más claro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/arc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_four_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/four_way.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/rectangle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/three_way.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_draggable_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_circuit_editor/test_arc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_draggable_polygon.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_circuit_editor/test_four_way.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_draggable_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests_circuit_editor/test_rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/three_way.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way_orient.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/three_way_orient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -574,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719228423041</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Cambios de nombres de algunas clases para que quede más claro">
+      <option name="closed" value="true" />
+      <created>1719232711637</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1719232711637</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -589,7 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pruebas unitarias de las subclases de DraggablePiece." />
     <MESSAGE value="Mensaje de diálogo (pop-up) al guardar un archivo." />
     <MESSAGE value="Pasado el editor de circuitos a una clase aparte." />
     <MESSAGE value="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'" />
@@ -614,6 +616,7 @@
     <MESSAGE value="Arreglado bug: si mandabas abrir el editor de robots mientras estabas editando las piezas de un circuito, se te quedaba la pantalla del editor de circuito cuando debería mostrarse la pantalla del editor de robots." />
     <MESSAGE value="Pqueñas mejoras" />
     <MESSAGE value="Arreglos de nombres" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglos de nombres" />
+    <MESSAGE value="Cambios de nombres de algunas clases para que quede más claro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios de nombres de algunas clases para que quede más claro" />
   </component>
 </project>

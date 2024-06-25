@@ -1,10 +1,10 @@
 from circuit_pieces.draggable_piece import DraggablePiece
-from circuit_pieces.three_way_orient import Orient, OrientDown, OrientUp, OrientLeft, OrientRight
+from circuit_pieces.three_way_orient import ThreeWayOrient, OrientDown, OrientUp, OrientLeft, OrientRight
 
 
 class ThreeWay(DraggablePiece):
 
-    def __init__(self, circuit_parts_editor, x1, y1, orient=Orient.DOWN):
+    def __init__(self, circuit_parts_editor, x1, y1, orient=ThreeWayOrient.DOWN):
         """
         Creates the 3-way intersection piece and draws it.
 
@@ -15,11 +15,11 @@ class ThreeWay(DraggablePiece):
         """
         super().__init__(circuit_parts_editor)
         w = self.width  # Length of each individual line.
-        if orient == Orient.UP:
+        if orient == ThreeWayOrient.UP:
             self.orient = OrientUp()
-        elif orient == Orient.RIGHT:
+        elif orient == ThreeWayOrient.RIGHT:
             self.orient = OrientRight()
-        elif orient == Orient.LEFT:
+        elif orient == ThreeWayOrient.LEFT:
             self.orient = OrientLeft()
         else:
             self.orient = OrientDown()
@@ -29,11 +29,11 @@ class ThreeWay(DraggablePiece):
 
     def rotate(self):
         old_orient = self.orient.get_orient()
-        if old_orient == Orient.UP:
+        if old_orient == ThreeWayOrient.UP:
             self.orient = OrientRight()
-        elif old_orient == Orient.RIGHT:
+        elif old_orient == ThreeWayOrient.RIGHT:
             self.orient = OrientDown()
-        elif old_orient == Orient.DOWN:
+        elif old_orient == ThreeWayOrient.DOWN:
             self.orient = OrientLeft()
         elif old_orient == OrientLeft.LEFT:
             self.orient = OrientUp()
@@ -48,7 +48,7 @@ class ThreeWay(DraggablePiece):
         x1 = points[0]
         y1 = points[1]
         w = self.width
-        if self.orient.get_orient() == Orient.RIGHT:
+        if self.orient.get_orient() == ThreeWayOrient.RIGHT:
             # Make the first point the same as the other orients
             x1 -= w
             y1 += w

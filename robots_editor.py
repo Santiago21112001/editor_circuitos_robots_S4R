@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, simpledialog
+from tkinter import messagebox, simpledialog, filedialog
 
 from editor import Editor
 from robots_manager import RobotsManager
@@ -174,7 +174,8 @@ class RobotsEditor(Editor):
             messagebox.showerror("Error al eliminar sensor de luz", str(err))
 
     def open_file(self):
-        file_content = self.file_manager.open_file()
+        file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
+        file_content = self.file_manager.open_file(file_path)
         if file_content is None:
             return
         message = check_format(file_content)

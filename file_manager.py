@@ -6,8 +6,7 @@ class FileManager:
     def __init__(self):
         pass
 
-    def open_file(self):
-        file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
+    def open_file(self, file_path):
         if file_path:
             with open(file_path, 'r') as file:
                 content = json.load(file)

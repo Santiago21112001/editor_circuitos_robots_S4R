@@ -1,14 +1,14 @@
 from abc import ABC, abstractmethod
 
 
-class Orient(ABC):
+class ThreeWayOrient(ABC):
     DOWN = "down"
     UP = "up"
     RIGHT = "right"
     LEFT = "left"
 
     @abstractmethod
-    def get_points(self, x1: int, y1: int, w: int) -> list[int]:
+    def get_points(self, x1: int, y1: int, width: int) -> list[int]:
         pass
 
     @abstractmethod
@@ -16,69 +16,69 @@ class Orient(ABC):
         pass
 
 
-class OrientDown(Orient):
+class OrientDown(ThreeWayOrient):
 
-    def get_points(self, x1, y1, w):
+    def get_points(self, x1, y1, width):
         return [
             x1, y1,
-            x1 + w * 3, y1,
-            x1 + w * 3, y1 + w,
-            x1 + w * 2, y1 + w,
-            x1 + w * 2, y1 + w * 2,
-            x1 + w, y1 + w * 2,
-            x1 + w, y1 + w,
-            x1, y1 + w
+            x1 + width * 3, y1,
+            x1 + width * 3, y1 + width,
+            x1 + width * 2, y1 + width,
+            x1 + width * 2, y1 + width * 2,
+            x1 + width, y1 + width * 2,
+            x1 + width, y1 + width,
+            x1, y1 + width
         ]
 
     def get_orient(self):
         return self.DOWN
 
 
-class OrientUp(Orient):
-    def get_points(self, x1, y1, w):
+class OrientUp(ThreeWayOrient):
+    def get_points(self, x1, y1, width):
         return [
             x1, y1,
-            x1 + w, y1,
-            x1 + w, y1 - w,
-            x1 + w * 2, y1 - w,
-            x1 + w * 2, y1,
-            x1 + w * 3, y1,
-            x1 + w * 3, y1 + w,
-            x1, y1 + w
+            x1 + width, y1,
+            x1 + width, y1 - width,
+            x1 + width * 2, y1 - width,
+            x1 + width * 2, y1,
+            x1 + width * 3, y1,
+            x1 + width * 3, y1 + width,
+            x1, y1 + width
         ]
 
     def get_orient(self):
         return self.UP
 
 
-class OrientRight(Orient):
-    def get_points(self, x1, y1, w):
+class OrientRight(ThreeWayOrient):
+    def get_points(self, x1, y1, width):
         return [
-            x1 + w, y1 - w,
-            x1 + w * 2, y1 - w,
-            x1 + w * 2, y1,
-            x1 + w * 3, y1,
-            x1 + w * 3, y1 + w,
-            x1 + w * 2, y1 + w,
-            x1 + w * 2, y1 + w * 2,
-            x1 + w, y1 + w * 2
+            x1 + width, y1 - width,
+            x1 + width * 2, y1 - width,
+            x1 + width * 2, y1,
+            x1 + width * 3, y1,
+            x1 + width * 3, y1 + width,
+            x1 + width * 2, y1 + width,
+            x1 + width * 2, y1 + width * 2,
+            x1 + width, y1 + width * 2
         ]
 
     def get_orient(self):
         return self.RIGHT
 
 
-class OrientLeft(Orient):
-    def get_points(self, x1, y1, w):
+class OrientLeft(ThreeWayOrient):
+    def get_points(self, x1, y1, width):
         return [
             x1, y1,
-            x1 + w, y1,
-            x1 + w, y1 - w,
-            x1 + w * 2, y1 - w,
-            x1 + w * 2, y1 + w * 2,
-            x1 + w, y1 + w * 2,
-            x1 + w, y1 + w,
-            x1, y1 + w
+            x1 + width, y1,
+            x1 + width, y1 - width,
+            x1 + width * 2, y1 - width,
+            x1 + width * 2, y1 + width * 2,
+            x1 + width, y1 + width * 2,
+            x1 + width, y1 + width,
+            x1, y1 + width
         ]
 
     def get_orient(self):

@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, simpledialog
+from tkinter import messagebox, simpledialog, filedialog
 
 from circuit_pieces_editor import CircuitPiecesEditor
 from editor import Editor
@@ -106,7 +106,8 @@ class CircuitsEditor(Editor):
         if self.circuit_parts_editor:
             self.circuit_parts_editor.open_file()
             return
-        file_content = self.file_manager.open_file()
+        file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
+        file_content = self.file_manager.open_file(file_path)
         message = check_format(file_content)
         if message != "":
             messagebox.showerror("Archivo inválido", message)
