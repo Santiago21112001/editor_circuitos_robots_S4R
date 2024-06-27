@@ -13,9 +13,17 @@
                     "scale": 0.2
                 },
                 {
-                    "type": "polygon",
-                    "x1": 280.0,
-                    "y1": 156.0,
+                    "type": "three-way",
+                    "orient": "down",
+                    "x1": 220.0,
+                    "y1": 127.0,
+                    "width": 20,
+                    "scale": 0.2
+                },
+                {
+                    "type": "four-way",
+                    "x1": 307.0,
+                    "y1": 149.0,
                     "width": 20,
                     "scale": 0.2
                 }

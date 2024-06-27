@@ -32,7 +32,7 @@ class FourWay(DraggablePiece):
         self.bind_events()
 
     def get_piece_type(self):
-        return "polygon"
+        return "four-way"
 
     def get_piece_info(self):
         points = self.canvas.coords(self.piece)

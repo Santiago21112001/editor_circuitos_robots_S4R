@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Cambios de nombres de algunas clases para que quede más claro">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/four_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/four_way.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/three_way.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way_orient.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces/three_way_orient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,30 +46,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_app.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_check_format.py (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_check_format.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_arc.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_polygon.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_rectangle.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests_circuit_editor.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests_robots_editor.executor&quot;: &quot;Run&quot;,
-    &quot;Python.borrar.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pr.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prueba.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mines/PycharmProjects/editor_circuitos_robots_S4R&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_app.py.executor": "Run",
+    "Python tests.Python tests in test_check_format.py (1).executor": "Run",
+    "Python tests.Python tests in test_check_format.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_arc.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_polygon.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_rectangle.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python tests.Python tests in tests_circuit_editor.executor": "Run",
+    "Python tests.Python tests in tests_robots_editor.executor": "Run",
+    "Python.borrar.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.pr.executor": "Run",
+    "Python.prueba.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/mines/PycharmProjects/simulator-robotic-software",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
@@ -577,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719232711637</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;">
+      <option name="closed" value="true" />
+      <created>1719320172668</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1719320172668</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -592,7 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mensaje de diálogo (pop-up) al guardar un archivo." />
     <MESSAGE value="Pasado el editor de circuitos a una clase aparte." />
     <MESSAGE value="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'" />
     <MESSAGE value="Comprobar formato del archivo al cargar un fichero de circuitos" />
@@ -617,6 +621,7 @@
     <MESSAGE value="Pqueñas mejoras" />
     <MESSAGE value="Arreglos de nombres" />
     <MESSAGE value="Cambios de nombres de algunas clases para que quede más claro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios de nombres de algunas clases para que quede más claro" />
+    <MESSAGE value="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;" />
   </component>
 </project>

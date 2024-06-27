@@ -55,7 +55,7 @@ class ThreeWay(DraggablePiece):
         return x1, y1
 
     def get_piece_type(self):
-        return "3way"
+        return "three-way"
 
     def get_piece_info(self):
         x1, y1 = self.__get_first_point()
