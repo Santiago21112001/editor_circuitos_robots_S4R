@@ -130,11 +130,11 @@ class CircuitPiecesEditor(Editor):
             piece = None
             if part_type == 'turn':
                 piece = Arc(self, x1, y1, part['dist'], part['start'], part['extent'])
-            elif part_type == 'polygon':
+            elif part_type == 'four-way':
                 piece = FourWay(self, x1, y1)
             elif part_type == 'straight':
                 piece = Rectangle(self, x1, y1, part['orient'], part['dist'])
-            elif part_type == '3way':
+            elif part_type == 'three-way':
                 piece = ThreeWay(self, x1, y1, part['orient'])
             if piece is not None:
                 self.draggable_pieces.append(piece)

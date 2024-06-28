@@ -47,7 +47,8 @@ class RobotsEditor(Editor):
         self.add_light_sensor_button = tk.Button(self.frame, text="Agregar sensor de luz", command=self.__add_light)
         self.add_light_sensor_button.grid(row=9, column=1, padx=10, pady=10)
 
-        self.delete_light_sensor_button = tk.Button(self.frame, text="Eliminar sensor de luz", command=self.__delete_light)
+        self.delete_light_sensor_button = tk.Button(self.frame, text="Eliminar sensor de luz",
+                                                    command=self.__delete_light)
         self.delete_light_sensor_button.grid(row=9, column=2, padx=10, pady=10)
 
         self.save_button = tk.Button(self.frame, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
@@ -176,7 +177,7 @@ class RobotsEditor(Editor):
     def open_file(self):
         file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
         file_content = self.file_manager.open_file(file_path)
-        if file_content is None:
+        if not file_content:
             return
         message = check_format(file_content)
         if message != "":

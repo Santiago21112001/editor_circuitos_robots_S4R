@@ -107,6 +107,8 @@ class CircuitsEditor(Editor):
             self.circuit_parts_editor.open_file()
             return
         file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
+        if not file_path:
+            return
         file_content = self.file_manager.open_file(file_path)
         message = check_format(file_content)
         if message != "":
@@ -167,7 +169,7 @@ def check_format(data):
                 return "Cada elemento de 'parts' debe ser un diccionario."
             if 'type' not in part:
                 return "Falta el campo 'type' en una parte del circuito."
-            if part['type'] not in ['straight', 'turn', 'polygon', '3way']:
+            if part['type'] not in ['straight', 'turn', 'three-way', 'four-way']:
                 return f"Tipo de parte inválido: {part['type']}"
 
             # Inicializar required_fields
