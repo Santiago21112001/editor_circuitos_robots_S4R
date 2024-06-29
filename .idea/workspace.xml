@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Leer fichero circuitos: three-way y four-way, en lugar de 3way y polygon">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="CircuitPiecesEditor ya no hereda de Editor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces_editor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,14 +190,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Ventana que lee archivo json">
-      <option name="closed" value="true" />
-      <created>1709630449222</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1709630449222</updated>
     </task>
     <task id="LOCAL-00003" summary="Imagen arrastrable por la pantalla">
       <option name="closed" value="true" />
@@ -584,7 +575,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719514026329</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="CircuitPiecesEditor ya no hereda de Editor">
+      <option name="closed" value="true" />
+      <created>1719671043749</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1719671043749</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -599,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'" />
     <MESSAGE value="Comprobar formato del archivo al cargar un fichero de circuitos" />
     <MESSAGE value="Comprobar formato del archivo al cargar un fichero de robots." />
     <MESSAGE value="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú." />
@@ -624,6 +622,7 @@
     <MESSAGE value="Cambios de nombres de algunas clases para que quede más claro" />
     <MESSAGE value="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;" />
     <MESSAGE value="Piezas de un circuito: cambiado &quot;3way&quot; a &quot;three-way&quot; y &quot;polygon&quot; a &quot;four-way&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Piezas de un circuito: cambiado &quot;3way&quot; a &quot;three-way&quot; y &quot;polygon&quot; a &quot;four-way&quot;" />
+    <MESSAGE value="CircuitPiecesEditor ya no hereda de Editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="CircuitPiecesEditor ya no hereda de Editor" />
   </component>
 </project>

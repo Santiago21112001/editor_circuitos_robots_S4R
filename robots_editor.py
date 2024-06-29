@@ -224,12 +224,12 @@ class RobotsEditor(Editor):
 
     def open_file(self):
         file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
-        file_content = self.file_manager.open_file(file_path)
-        if not file_content:
+        if not file_path:
             return
-        message = check_format(file_content)
-        if message != "":
-            messagebox.showerror("Archivo inválido", message)
+        try:
+            file_content = self.file_manager.open_robots_file(file_path)
+        except ValueError as err:
+            messagebox.showerror("Archivo inválido", str(err))
             return
         self.robot_manager.load_json_data(file_content)
         self.__populate_robots_list()
@@ -242,37 +242,3 @@ class RobotsEditor(Editor):
         self.file_manager.save_file(content, file_path)
         messagebox.showinfo("Archivo guardado", "Se ha guardado el archivo 'robots.json' en el "
                                                 "directorio raíz de la aplicación")
-
-
-def check_format(data):
-    # Check that data is a dictionary
-    if not isinstance(data, dict):
-        return "El contenido debe ser un diccionario."
-
-    # Check that it has the 'robots' field and that it is a list
-    if 'robots' not in data:
-        return "Falta el campo 'robots'."
-    if not isinstance(data['robots'], list):
-        return "El campo 'robots' debe ser una lista."
-
-    # Check each robot
-    for robot in data['robots']:
-        if not isinstance(robot, dict):
-            return "Cada elemento de 'robots' debe ser un diccionario."
-        if 'name' not in robot:
-            return "Falta el campo 'name' en un robot."
-        if 'elements' not in robot:
-            return "Falta el campo 'elements' en un robot."
-        if not isinstance(robot['elements'], list):
-            return "El campo 'elements' debe ser una lista en un robot."
-
-        # Check each element of the robot
-        for element in robot['elements']:
-            if not isinstance(element, dict):
-                return "Cada elemento de 'elements' debe ser un diccionario."
-            if 'name' not in element:
-                return "Falta el campo 'name' en un elemento."
-            if 'pin' not in element:
-                return "Falta el campo 'pin' en un elemento."
-
-    return ""
