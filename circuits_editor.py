@@ -104,7 +104,7 @@ class CircuitsEditor(Editor):
 
     def open_file(self):
         if self.circuit_parts_editor:
-            self.circuit_parts_editor.open_file()
+            messagebox.showerror("Error", "Para abrir un archivo tienes que volver a la ventana anterior.")
             return
         file_path = filedialog.askopenfilename(filetypes=[("Archivos JSON", "*.json")])
         if not file_path:
@@ -119,7 +119,7 @@ class CircuitsEditor(Editor):
 
     def save_file(self):
         if self.circuit_parts_editor:
-            self.circuit_parts_editor.save_file()
+            messagebox.showerror("Error", "Para guardar un archivo tienes que volver a la ventana anterior.")
             return
         if not self.circuits:
             messagebox.showerror("No se pudo guardar", "Debe haber al menos 1 circuito.")
@@ -138,7 +138,7 @@ class CircuitsEditor(Editor):
 
     def destroy(self):
         if self.circuit_parts_editor:
-            self.circuit_parts_editor.destroy()
+            self.circuit_parts_editor.frame.destroy()
         self.frame.destroy()
 
 def check_format(data):

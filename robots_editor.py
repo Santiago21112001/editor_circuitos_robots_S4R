@@ -9,10 +9,58 @@ class RobotsEditor(Editor):
     def __init__(self, container):
         super().__init__(container)
         self.robot_manager = RobotsManager()
-        self.create_widgets()
+        # Configure grid weights
+        for i in range(10):
+            self.frame.grid_rowconfigure(i, weight=1)
+        for j in range(4):
+            self.frame.grid_columnconfigure(j, weight=1)
+        #self.create_widgets()
+        self.create_widgets2()
         self.__populate_robots_list()
         self.__select_robot(0)
         self.__select_element(0)
+
+    def create_widgets2(self):
+        self.robots_label = tk.Label(self.frame, text="Robots")
+        self.robots_label.grid(row=0, column=1, padx=10, pady=5, sticky="ew")
+
+        self.elements_label = tk.Label(self.frame, text="Elementos del robot")
+        self.elements_label.grid(row=0, column=2, padx=10, pady=5, sticky="ew")
+
+        self.add_robot_button = tk.Button(self.frame, text="Añadir robot", command=self.__add_robot)
+        self.add_robot_button.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
+
+        self.delete_robot_button = tk.Button(self.frame, text="Eliminar robot", command=self.__delete_robot)
+        self.delete_robot_button.grid(row=2, column=0, padx=10, pady=10, sticky="ew")
+
+        self.robots_listbox = tk.Listbox(self.frame, height=10)
+        self.robots_listbox.grid(row=1, column=1, rowspan=6, columnspan=2, padx=10, pady=10, sticky='nsew')
+        self.robots_listbox.bind('<<ListboxSelect>>', self.__on_robot_select)
+
+        self.edit_name_button = tk.Button(self.frame, text="Editar nombre", command=self.__edit_name)
+        self.edit_name_button.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
+
+        self.elements_listbox = tk.Listbox(self.frame, height=10)
+        self.elements_listbox.grid(row=1, column=2, rowspan=6, columnspan=2, padx=10, pady=10, sticky='nsew')
+        self.elements_listbox.bind('<<ListboxSelect>>', self.__on_element_select)
+
+        self.element_pin_label = tk.Label(self.frame, text="Pin del elemento")
+        self.element_pin_label.grid(row=8, column=1, padx=10, pady=5, sticky="ew")
+        self.element_pin_entry = tk.Entry(self.frame)
+        self.element_pin_entry.grid(row=8, column=2, padx=10, pady=5, sticky='ew')
+
+        self.edit_pin_button = tk.Button(self.frame, text="Actualizar pin", command=self.__edit_pin)
+        self.edit_pin_button.grid(row=8, column=3, padx=10, pady=10, sticky="ew")
+
+        self.add_light_sensor_button = tk.Button(self.frame, text="Agregar sensor de luz", command=self.__add_light)
+        self.add_light_sensor_button.grid(row=9, column=1, padx=10, pady=10, sticky="ew")
+
+        self.delete_light_sensor_button = tk.Button(self.frame, text="Eliminar sensor de luz",
+                                                    command=self.__delete_light)
+        self.delete_light_sensor_button.grid(row=9, column=2, padx=10, pady=10, sticky="ew")
+
+        self.save_button = tk.Button(self.frame, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
+        self.save_button.grid(row=9, column=3, padx=10, pady=10, sticky="ew")
 
     def create_widgets(self):
         """Creates all the graphic elements and places them on the screen."""

@@ -16,8 +16,8 @@ class App:
         self.root.title("Editor de circuitos y robots")
         self.width = 1024
         self.height = 768
-        self.root.geometry(str(self.width)+"x"+str(self.height))
-        self.root.resizable(False, False)
+        self.root.geometry(f"{self.width}x{self.height}")
+        self.root.resizable(True, True)
 
         # Main frame container
         self.container = ttk.Frame(self.root)

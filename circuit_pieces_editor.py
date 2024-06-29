@@ -10,7 +10,7 @@ from circuit_pieces.three_way import ThreeWay
 from editor import Editor
 
 
-class CircuitPiecesEditor(Editor):
+class CircuitPiecesEditor:
 
     NEW_PIECE_X = 100
     NEW_PIECE_Y = 100
@@ -18,7 +18,9 @@ class CircuitPiecesEditor(Editor):
 
     def __init__(self, circuits_editor, circuit_data):
         # We pass circuits_editor.frame.master in order to avoid hiding CircuitEditor when we hide CircuitsEditor.
-        super().__init__(circuits_editor.frame.master)
+        container = circuits_editor.frame.master
+        self.frame = tk.Frame(master=container)
+        self.frame.pack(fill="both", expand=True)
         self.circuits_editor = circuits_editor
         self.selected_piece = None
 
