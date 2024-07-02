@@ -202,8 +202,8 @@ class RobotsEditor(Editor):
 
             self.robot_manager.set_robot_element(index, element_index, pin)
             self.__populate_robot_data()
-        except ValueError:
-            messagebox.showerror("Error al actualizar", "El pin del elemento debe ser un número.")
+        except ValueError as err:
+            messagebox.showerror("Error al actualizar", str(err))
 
     def __add_light(self):
         try:

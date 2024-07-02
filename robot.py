@@ -46,6 +46,14 @@ class Robot:
         self.__data["name"] = name
 
     def set_element(self, index: int, pin: str):
+        if not pin.isdigit():
+            raise ValueError("El pin del elemento debe ser un número.")
+        # Check that the pin isn't already taken by another element
+        elements = self.__data["elements"]
+        for e in elements:
+            if e["pin"] == pin:
+                raise ValueError("Ya hay un elemento con ese pin.")
+
         self.__data["elements"][index]["pin"] = pin
 
     def add_light(self) -> None:

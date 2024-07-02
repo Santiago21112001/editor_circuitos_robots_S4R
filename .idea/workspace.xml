@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager">
-      <change afterPath="$PROJECT_DIR$/test_files_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_robot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_robots_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_three_way.py" afterDir="false" />
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Implementadas las pruebas unitarias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_arc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_check_format.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_four_way.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_rectangle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests_robots_editor/test_check_format.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +90,7 @@
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\draggable_pieces" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_files_manager.py">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
@@ -199,10 +190,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in editor_circuitos_robots_S4R" />
         <item itemvalue="Python tests.Python tests in test_files_manager.py" />
         <item itemvalue="Python tests.Python tests in test_three_way.py" />
         <item itemvalue="Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left" />
-        <item itemvalue="Python tests.Python tests in editor_circuitos_robots_S4R" />
         <item itemvalue="Python tests.Python tests for test_rectangle.TestRectangle" />
       </list>
     </recent_temporary>
@@ -222,14 +213,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Añadido .venv">
-      <option name="closed" value="true" />
-      <created>1710976927451</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1710976927451</updated>
     </task>
     <task id="LOCAL-00005" summary="Arreglado bug figurar ocupando más de lo que aparentan">
       <option name="closed" value="true" />
@@ -615,7 +598,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719673579194</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Implementadas las pruebas unitarias">
+      <option name="closed" value="true" />
+      <created>1719955295905</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955295905</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -630,7 +621,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Comprobar formato del archivo al cargar un fichero de robots." />
     <MESSAGE value="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú." />
     <MESSAGE value="Editar robot." />
     <MESSAGE value="Permitir crear/editar un robot móvil con 2, 3 o 4 sensores de luz (contenido del fichero json) (poder editar los pines de todos los componentes). Si tiene 3 sensores, permitir elegir sensor exterior izquierdo o sensor exterior derecho." />
@@ -655,6 +645,7 @@
     <MESSAGE value="Piezas de un circuito: cambiado &quot;3way&quot; a &quot;three-way&quot; y &quot;polygon&quot; a &quot;four-way&quot;" />
     <MESSAGE value="CircuitPiecesEditor ya no hereda de Editor" />
     <MESSAGE value="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager" />
+    <MESSAGE value="Implementadas las pruebas unitarias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementadas las pruebas unitarias" />
   </component>
 </project>
