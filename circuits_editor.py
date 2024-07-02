@@ -93,7 +93,8 @@ class CircuitsEditor(Editor):
             messagebox.showwarning("Advertencia", "Seleccione un elemento para borrar")
             return
         index = selected[0]
-        self.listbox.delete(index)
+        del self.circuits[index]
+        self.populate_listbox()
 
     def open_this(self, circuit_data=None):
         if circuit_data:

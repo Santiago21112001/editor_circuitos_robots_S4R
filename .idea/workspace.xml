@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Corrección de la descripción del commit anterior: Robot lanza el error, no RobotsManager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.json" beforeDir="false" afterPath="$PROJECT_DIR$/robots.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,37 +47,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_rectangle.TestRectangle.executor": "Run",
-    "Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left.executor": "Run",
-    "Python tests.Python tests in editor_circuitos_robots_S4R.executor": "Run",
-    "Python tests.Python tests in test_app.py.executor": "Run",
-    "Python tests.Python tests in test_check_format.py (1).executor": "Run",
-    "Python tests.Python tests in test_check_format.py.executor": "Run",
-    "Python tests.Python tests in test_draggable_arc.py.executor": "Run",
-    "Python tests.Python tests in test_draggable_polygon.py.executor": "Run",
-    "Python tests.Python tests in test_draggable_rectangle.py.executor": "Run",
-    "Python tests.Python tests in test_files_manager.py.executor": "Run",
-    "Python tests.Python tests in test_robot.py.executor": "Run",
-    "Python tests.Python tests in test_robots_manager.py.executor": "Run",
-    "Python tests.Python tests in test_three_way.py.executor": "Run",
-    "Python tests.Python tests in tests.executor": "Run",
-    "Python tests.Python tests in tests_circuit_editor.executor": "Run",
-    "Python tests.Python tests in tests_robots_editor.executor": "Run",
-    "Python.borrar.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.pr.executor": "Run",
-    "Python.prueba.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/mines/PycharmProjects/simulator-robotic-software",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_rectangle.TestRectangle.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in editor_circuitos_robots_S4R.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_app.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_check_format.py (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_check_format.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_draggable_arc.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_draggable_polygon.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_draggable_rectangle.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_files_manager.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_robot.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_robots_manager.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_three_way.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_circuit_editor.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_robots_editor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.borrar.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prueba.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mines/PycharmProjects/simulator-robotic-software&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
@@ -212,14 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Refactorizar app.py">
-      <option name="closed" value="true" />
-      <created>1713614288811</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1713614288811</updated>
     </task>
     <task id="LOCAL-00007" summary="Mejora">
       <option name="closed" value="true" />
@@ -605,7 +599,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719956234793</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Corrección de la descripción del commit anterior: Robot lanza el error, no RobotsManager">
+      <option name="closed" value="true" />
+      <created>1719956489344</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1719956489344</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -620,7 +622,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editar robot." />
     <MESSAGE value="Permitir crear/editar un robot móvil con 2, 3 o 4 sensores de luz (contenido del fichero json) (poder editar los pines de todos los componentes). Si tiene 3 sensores, permitir elegir sensor exterior izquierdo o sensor exterior derecho." />
     <MESSAGE value="Extraída la lógica de los robots de RobotsEditor e insertada en las nuevas clases Robot y RobotsManager. Ahora RobotsEditor se encarga sólo de la interfaz de usuario." />
     <MESSAGE value="No dejar editar arduinoBoard ni actuador" />
@@ -645,6 +646,7 @@
     <MESSAGE value="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager" />
     <MESSAGE value="Implementadas las pruebas unitarias" />
     <MESSAGE value="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario" />
+    <MESSAGE value="Corrección de la descripción del commit anterior: Robot lanza el error, no RobotsManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrección de la descripción del commit anterior: Robot lanza el error, no RobotsManager" />
   </component>
 </project>
