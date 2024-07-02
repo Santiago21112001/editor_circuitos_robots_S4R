@@ -1,8 +1,7 @@
 import json
-from tkinter import filedialog
 
 
-class FileManager:
+class FilesManager:
     def __init__(self):
         pass
 

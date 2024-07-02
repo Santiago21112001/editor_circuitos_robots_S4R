@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="CircuitPiecesEditor ya no hereda de Editor">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager">
+      <change afterPath="$PROJECT_DIR$/test_files_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_robot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_robots_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_three_way.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_arc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_check_format.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_four_way.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_circuit_editor/test_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_robots_editor/test_check_format.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Unit Test" />
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -47,30 +55,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_app.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_check_format.py (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_check_format.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_arc.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_polygon.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_draggable_rectangle.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests_circuit_editor.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests_robots_editor.executor&quot;: &quot;Run&quot;,
-    &quot;Python.borrar.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pr.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prueba.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mines/PycharmProjects/simulator-robotic-software&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_rectangle.TestRectangle.executor": "Run",
+    "Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left.executor": "Run",
+    "Python tests.Python tests in editor_circuitos_robots_S4R.executor": "Run",
+    "Python tests.Python tests in test_app.py.executor": "Run",
+    "Python tests.Python tests in test_check_format.py (1).executor": "Run",
+    "Python tests.Python tests in test_check_format.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_arc.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_polygon.py.executor": "Run",
+    "Python tests.Python tests in test_draggable_rectangle.py.executor": "Run",
+    "Python tests.Python tests in test_files_manager.py.executor": "Run",
+    "Python tests.Python tests in test_robot.py.executor": "Run",
+    "Python tests.Python tests in test_robots_manager.py.executor": "Run",
+    "Python tests.Python tests in test_three_way.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python tests.Python tests in tests_circuit_editor.executor": "Run",
+    "Python tests.Python tests in tests_robots_editor.executor": "Run",
+    "Python.borrar.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.pr.executor": "Run",
+    "Python.prueba.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/mines/PycharmProjects/simulator-robotic-software",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
@@ -78,12 +93,13 @@
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests\tests_circuit_editor" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\draggable_pieces" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests in test_files_manager.py">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
@@ -106,79 +122,95 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_check_format.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_rectangle.TestRectangle" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_robots_editor" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_robots_editor/test_check_format.py&quot;" />
+      <option name="_new_target" value="&quot;test_rectangle.TestRectangle&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in editor_circuitos_robots_S4R" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_files_manager.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_files_manager.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in tests_circuit_editor" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_three_way.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_circuit_editor" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_circuit_editor&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests in tests_robots_editor" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="editor_circuitos_robots_S4R" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/tests_robots_editor" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/tests_robots_editor&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_three_way.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in tests_robots_editor" />
-        <item itemvalue="Python tests.Python tests in tests_circuit_editor" />
-        <item itemvalue="Python tests.Python tests in tests" />
-        <item itemvalue="Python tests.Python tests in test_check_format.py" />
+        <item itemvalue="Python tests.Python tests in test_files_manager.py" />
+        <item itemvalue="Python tests.Python tests in test_three_way.py" />
+        <item itemvalue="Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left" />
+        <item itemvalue="Python tests.Python tests in editor_circuitos_robots_S4R" />
+        <item itemvalue="Python tests.Python tests for test_rectangle.TestRectangle" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
       </set>
     </attachedChunks>
   </component>
@@ -190,14 +222,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Imagen arrastrable por la pantalla">
-      <option name="closed" value="true" />
-      <created>1710698020996</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1710698020996</updated>
     </task>
     <task id="LOCAL-00004" summary="Añadido .venv">
       <option name="closed" value="true" />
@@ -583,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719671043749</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager">
+      <option name="closed" value="true" />
+      <created>1719673579194</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1719673579194</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -598,7 +630,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Comprobar formato del archivo al cargar un fichero de circuitos" />
     <MESSAGE value="Comprobar formato del archivo al cargar un fichero de robots." />
     <MESSAGE value="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú." />
     <MESSAGE value="Editar robot." />
@@ -623,6 +654,7 @@
     <MESSAGE value="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;" />
     <MESSAGE value="Piezas de un circuito: cambiado &quot;3way&quot; a &quot;three-way&quot; y &quot;polygon&quot; a &quot;four-way&quot;" />
     <MESSAGE value="CircuitPiecesEditor ya no hereda de Editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="CircuitPiecesEditor ya no hereda de Editor" />
+    <MESSAGE value="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager" />
   </component>
 </project>

@@ -1,13 +1,13 @@
 from abc import abstractmethod
 import tkinter as tk
 
-from file_manager import FileManager
+from files_manager import FilesManager
 
 
 class Editor:
     def __init__(self, container):
         self.frame = tk.Frame(master=container)
-        self.file_manager = FileManager()
+        self.file_manager = FilesManager()
         self.frame.pack(fill="both", expand=True)
 
     @abstractmethod
