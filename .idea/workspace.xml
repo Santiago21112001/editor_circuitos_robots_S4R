@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Implementadas las pruebas unitarias">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,14 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Arreglado bug figurar ocupando más de lo que aparentan">
-      <option name="closed" value="true" />
-      <created>1713613555213</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1713613555213</updated>
     </task>
     <task id="LOCAL-00006" summary="Refactorizar app.py">
       <option name="closed" value="true" />
@@ -606,7 +597,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719955295905</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario">
+      <option name="closed" value="true" />
+      <created>1719956234793</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1719956234793</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -621,7 +620,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú." />
     <MESSAGE value="Editar robot." />
     <MESSAGE value="Permitir crear/editar un robot móvil con 2, 3 o 4 sensores de luz (contenido del fichero json) (poder editar los pines de todos los componentes). Si tiene 3 sensores, permitir elegir sensor exterior izquierdo o sensor exterior derecho." />
     <MESSAGE value="Extraída la lógica de los robots de RobotsEditor e insertada en las nuevas clases Robot y RobotsManager. Ahora RobotsEditor se encarga sólo de la interfaz de usuario." />
@@ -646,6 +644,7 @@
     <MESSAGE value="CircuitPiecesEditor ya no hereda de Editor" />
     <MESSAGE value="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager" />
     <MESSAGE value="Implementadas las pruebas unitarias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementadas las pruebas unitarias" />
+    <MESSAGE value="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario" />
   </component>
 </project>

@@ -46,6 +46,7 @@ class Robot:
         self.__data["name"] = name
 
     def set_element(self, index: int, pin: str):
+        # Check that the pin is a number, although it's a string
         if not pin.isdigit():
             raise ValueError("El pin del elemento debe ser un número.")
         # Check that the pin isn't already taken by another element
