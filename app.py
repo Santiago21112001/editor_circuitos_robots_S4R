@@ -62,7 +62,7 @@ class App:
         file_menu.add_command(label="Salir", command=self.root.destroy)
 
         file_menu_editor = tk.Menu(menu_bar, tearoff=0)
-        menu_bar.add_cascade(label="Editor", menu=file_menu_editor)
+        menu_bar.add_cascade(label="Cambiar de editor", menu=file_menu_editor)
         file_menu_editor.add_command(label="Ir al editor de robots", command=self.switch_to_robots_editor)
         file_menu_editor.add_command(label="Ir al editor de circuitos", command=self.switch_to_circuits_editor)
 

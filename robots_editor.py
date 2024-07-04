@@ -21,7 +21,7 @@ class RobotsEditor(Editor):
 
     def create_widgets(self):
         self.title_label = tk.Label(self.frame, text="Se está usando el editor de ROBOTS.\nPara cambiar al de "
-                                                     "circuitos,\n seleccione la opción de menú 'Cambiar de Editor'.")
+                                                     "circuitos,\n seleccione la opción de menú 'Cambiar de editor'.")
         self.title_label.grid(row=0, column=1, padx=10, pady=5, sticky="ew")
 
         self.robots_label = tk.Label(self.frame, text="Robots")
