@@ -40,7 +40,7 @@ class CircuitsEditor(Editor):
         self.add_circuit_button = tk.Button(frame, text="Crear", command=self.add_circuit)
         self.add_circuit_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.edit_circuit_button = tk.Button(frame, text="Editar", command=self.edit_circuit)
+        self.edit_circuit_button = tk.Button(frame, text="Editar piezas", command=self.edit_circuit)
         self.edit_circuit_button.pack(side=tk.LEFT, padx=5, pady=5)
 
         self.edit_circuit_name_button = tk.Button(frame, text="Editar nombre", command=self.edit_circuit_name)
