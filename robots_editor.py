@@ -142,7 +142,17 @@ class RobotsEditor(Editor):
             self.elements_listbox.delete(0, tk.END)
             elements = robot.get_elements()
             for e in elements:
-                self.elements_listbox.insert(tk.END, e["name"])
+                if e["name"] == "light 1":
+                    name = "sensor de luz exterior izquierdo"
+                elif e["name"] == "light 2":
+                    name = "sensor de luz interior izquierdo"
+                elif e["name"] == "light 3":
+                    name = "sensor de luz interior derecho"
+                elif e["name"] == "light 4":
+                    name = "sensor de luz exterior derecho"
+                else:
+                    name = e["name"]
+                self.elements_listbox.insert(tk.END, name)
 
     def __select_element(self, index: int):
         self.current_element_index = index

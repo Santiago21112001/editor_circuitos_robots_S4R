@@ -73,7 +73,7 @@ class Robot:
         if self.__ext_lights == 0:
             raise ValueError("No pueden haber menos de 2 sensores de luz.")
         if self.__data["elements"][index]["name"] in self.BANNED_NAMES:
-            raise ValueError("Error", "No puedes borrar ese elemento, sólo los sensores de luz 1 y 4.")
+            raise ValueError("Error", "No puedes borrar ese elemento, sólo los sensores de luz exteriores")
 
         self.__data["elements"].pop(index)
         self.__ext_lights -= 1

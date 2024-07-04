@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Cuando se añade una nueva pieza a un circuito, se marca como seleccionada para que se vea.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,14 +216,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Añadido poder agrega un cruce de 4 vías al lienzo de edición">
-      <option name="closed" value="true" />
-      <created>1714631980101</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1714631980101</updated>
     </task>
     <task id="LOCAL-00013" summary="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías.">
       <option name="closed" value="true" />
@@ -609,7 +601,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720119158896</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito.">
+      <option name="closed" value="true" />
+      <created>1720123813915</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1720123813915</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -624,7 +624,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editor de circuitos: Permitir eliminar sólo una pieza." />
     <MESSAGE value="Editor de robots: Permitir cambiar el nombre de un robot." />
     <MESSAGE value="Poder añadir y eliminar robots." />
     <MESSAGE value="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame" />
@@ -649,6 +648,7 @@
     <MESSAGE value="Cambiado la opción de menú “Editor” a “Cambiar de editor”." />
     <MESSAGE value="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas" />
     <MESSAGE value="Cuando se añade una nueva pieza a un circuito, se marca como seleccionada para que se vea." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cuando se añade una nueva pieza a un circuito, se marca como seleccionada para que se vea." />
+    <MESSAGE value="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito." />
+    <option name="LAST_COMMIT_MESSAGE" value="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito." />
   </component>
 </project>
