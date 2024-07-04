@@ -30,6 +30,10 @@ class CircuitsEditor(Editor):
         self.populate_listbox()
 
     def create_widgets(self, frame):
+        self.title_label = tk.Label(self.frame, text="Se está usando el editor de CIRCUITOS. Para cambiar al de robots, "
+                                               "seleccione la opción de menú 'Cambiar de Editor.'")
+        self.title_label.pack(side=tk.TOP, padx=5, pady=5)
+
         self.listbox = tk.Listbox(frame)
         self.listbox.pack(padx=10, pady=10)
 
