@@ -53,18 +53,26 @@ class App:
         menu_bar = tk.Menu(self.root)
         self.root.config(menu=menu_bar)
 
+        #  'Archivo' Menu bar
         file_menu = tk.Menu(menu_bar, tearoff=0)
         menu_bar.add_cascade(label="Archivo", menu=file_menu)
-
-        file_menu.add_command(label="Abrir", command=self.open_file)
-        file_menu.add_command(label="Guardar", command=self.save_file)
+        file_menu.add_command(label="Abrir", command=self.open_file, accelerator="Ctrl+O")
+        self.root.bind("<Control-o>", lambda event: self.open_file())
+        file_menu.add_command(label="Guardar", command=self.save_file, accelerator="Ctrl+S")
+        self.root.bind("<Control-s>", lambda event: self.save_file())
         file_menu.add_separator()
-        file_menu.add_command(label="Salir", command=self.root.destroy)
+        file_menu.add_command(label="Salir", command=self.root.destroy, accelerator="Ctrl+Q")
+        self.root.bind("<Control-q>", lambda event: self.root.destroy())
 
+        #  'Cambiar de editor' Menu bar
         file_menu_editor = tk.Menu(menu_bar, tearoff=0)
         menu_bar.add_cascade(label="Cambiar de editor", menu=file_menu_editor)
-        file_menu_editor.add_command(label="Ir al editor de robots", command=self.switch_to_robots_editor)
-        file_menu_editor.add_command(label="Ir al editor de circuitos", command=self.switch_to_circuits_editor)
+        file_menu_editor.add_command(label="Ir al editor de robots", command=self.switch_to_robots_editor,
+                                     accelerator="Ctrl+R")
+        self.root.bind("<Control-r>", lambda event: self.switch_to_robots_editor())
+        file_menu_editor.add_command(label="Ir al editor de circuitos", command=self.switch_to_circuits_editor,
+                                     accelerator="Ctrl+C")
+        self.root.bind("<Control-c>", lambda event: self.switch_to_circuits_editor())
 
         return menu_bar
 

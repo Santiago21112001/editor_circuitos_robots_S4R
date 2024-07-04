@@ -30,17 +30,17 @@ class RobotsEditor(Editor):
         self.elements_label = tk.Label(self.frame, text="Elementos del robot")
         self.elements_label.grid(row=1, column=2, padx=10, pady=5, sticky="ew")
 
-        self.add_robot_button = tk.Button(self.frame, text="Añadir robot", command=self.__add_robot)
+        self.add_robot_button = tk.Button(self.frame, text="Añadir robot", command=self.__add_robot, underline=0)
         self.add_robot_button.grid(row=2, column=0, padx=10, pady=10, sticky="ew")
 
-        self.delete_robot_button = tk.Button(self.frame, text="Eliminar robot", command=self.__delete_robot)
+        self.delete_robot_button = tk.Button(self.frame, text="Eliminar robot", command=self.__delete_robot, underline=0)
         self.delete_robot_button.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
 
         self.robots_listbox = tk.Listbox(self.frame, height=10)
         self.robots_listbox.grid(row=2, column=1, rowspan=6, columnspan=2, padx=10, pady=10, sticky='nsew')
         self.robots_listbox.bind('<<ListboxSelect>>', self.__on_robot_select)
 
-        self.edit_name_button = tk.Button(self.frame, text="Editar nombre", command=self.__edit_name)
+        self.edit_name_button = tk.Button(self.frame, text="Editar nombre", command=self.__edit_name, underline=1)
         self.edit_name_button.grid(row=4, column=0, padx=10, pady=10, sticky="ew")
 
         self.elements_listbox = tk.Listbox(self.frame, height=10)
@@ -52,17 +52,19 @@ class RobotsEditor(Editor):
         self.element_pin_entry = tk.Entry(self.frame)
         self.element_pin_entry.grid(row=9, column=2, padx=10, pady=5, sticky='ew')
 
-        self.edit_pin_button = tk.Button(self.frame, text="Actualizar pin", command=self.__edit_pin)
+        self.edit_pin_button = tk.Button(self.frame, text="Actualizar pin", command=self.__edit_pin, underline=1)
         self.edit_pin_button.grid(row=9, column=3, padx=10, pady=10, sticky="ew")
 
-        self.add_light_sensor_button = tk.Button(self.frame, text="Agregar sensor de luz", command=self.__add_light)
+        self.add_light_sensor_button = tk.Button(self.frame, text="Agregar sensor de luz", command=self.__add_light,
+                                                 underline=1)
         self.add_light_sensor_button.grid(row=10, column=1, padx=10, pady=10, sticky="ew")
 
         self.delete_light_sensor_button = tk.Button(self.frame, text="Eliminar sensor de luz",
-                                                    command=self.__delete_light)
+                                                    command=self.__delete_light, underline=1)
         self.delete_light_sensor_button.grid(row=10, column=2, padx=10, pady=10, sticky="ew")
 
-        self.save_button = tk.Button(self.frame, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
+        self.save_button = tk.Button(self.frame, text="Guardar archivo", command=self.save_file, bg="green", fg="white",
+                                     underline=1)
         self.save_button.grid(row=10, column=3, padx=10, pady=10, sticky="ew")
 
     def __add_robot(self):

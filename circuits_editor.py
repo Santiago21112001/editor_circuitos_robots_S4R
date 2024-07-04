@@ -34,22 +34,29 @@ class CircuitsEditor(Editor):
                                          "seleccione la opción de menú 'Cambiar de editor.'")
         self.title_label.pack(side=tk.TOP, padx=5, pady=5)
 
-        self.listbox = tk.Listbox(frame)
-        self.listbox.pack(padx=10, pady=10)
+        self.circuits_listbox = tk.Listbox(frame)
+        self.circuits_listbox.pack(padx=10, pady=10)
 
-        self.add_circuit_button = tk.Button(frame, text="Crear", command=self.add_circuit)
+        self.add_circuit_button = tk.Button(frame, text="Crear", command=self.add_circuit, underline=1)
+        self.frame.master.bind("<Alt-r>", self.add_circuit)
         self.add_circuit_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.edit_circuit_button = tk.Button(frame, text="Editar piezas", command=self.edit_circuit)
+        self.edit_circuit_button = tk.Button(frame, text="Editar piezas", command=self.edit_circuit, underline=0)
+        self.frame.bind("<Alt-e>", lambda event: self.edit_circuit_button.invoke())
         self.edit_circuit_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.edit_circuit_name_button = tk.Button(frame, text="Editar nombre", command=self.edit_circuit_name)
+        self.edit_circuit_name_button = tk.Button(frame, text="Editar nombre", command=self.edit_circuit_name,
+                                                  underline=1)
+        self.frame.bind("<Alt-d>", lambda event: self.edit_circuit_name_button.invoke())
         self.edit_circuit_name_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.delete_circuit_button = tk.Button(frame, text="Borrar", command=self.delete_circuit)
+        self.delete_circuit_button = tk.Button(frame, text="Borrar", command=self.delete_circuit, underline=0)
+        self.frame.bind("<Alt-b>", lambda event: self.delete_circuit_button.invoke())
         self.delete_circuit_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-        self.save_button = tk.Button(self.frame, text="Guardar archivo", command=self.save_file, bg="green", fg="white")
+        self.save_button = tk.Button(self.frame, text="Guardar archivo", command=self.save_file, bg="green", fg="white",
+                                     underline=0)
+        self.frame.bind("<Alt-g>", lambda event: self.save_button.invoke())
         self.save_button.pack(side=tk.LEFT, padx=5, pady=5)
 
     def add_circuit(self):
@@ -60,7 +67,7 @@ class CircuitsEditor(Editor):
         self.populate_listbox()
 
     def edit_circuit(self):
-        selected = self.listbox.curselection()
+        selected = self.circuits_listbox.curselection()
         if not selected:
             messagebox.showwarning("Advertencia", "Seleccione un circuito para editar")
             return
@@ -71,7 +78,7 @@ class CircuitsEditor(Editor):
         self.frame.pack_forget()  # Hide CircuitsEditor
 
     def edit_circuit_name(self):
-        selected = self.listbox.curselection()
+        selected = self.circuits_listbox.curselection()
         if not selected:
             messagebox.showwarning("Advertencia", "Seleccione un circuito para editar su nombre")
             return
@@ -92,7 +99,7 @@ class CircuitsEditor(Editor):
         return False
 
     def delete_circuit(self):
-        selected = self.listbox.curselection()
+        selected = self.circuits_listbox.curselection()
         if not selected:
             messagebox.showwarning("Advertencia", "Seleccione un elemento para borrar")
             return
@@ -140,10 +147,10 @@ class CircuitsEditor(Editor):
             messagebox.showinfo("Archivo guardado", f"Archivo guardado en:\n{file_path}")
 
     def populate_listbox(self):
-        self.listbox.delete(0, tk.END)
+        self.circuits_listbox.delete(0, tk.END)
         for circuit in self.circuits:
             name: str = circuit["name"]
-            self.listbox.insert(tk.END, name)
+            self.circuits_listbox.insert(tk.END, name)
 
     def destroy(self):
         if self.circuit_parts_editor:
