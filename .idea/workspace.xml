@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,14 +216,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Arreglado pequeño bug relacionado con las coordenadas del cruce de 4 vías.">
-      <option name="closed" value="true" />
-      <created>1714632253861</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1714632253861</updated>
     </task>
     <task id="LOCAL-00014" summary="Parametrizado la anchura del cruce de 4 vías.">
       <option name="closed" value="true" />
@@ -609,7 +601,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720123813915</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica).">
+      <option name="closed" value="true" />
+      <created>1720124525420</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1720124525420</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -624,7 +624,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editor de robots: Permitir cambiar el nombre de un robot." />
     <MESSAGE value="Poder añadir y eliminar robots." />
     <MESSAGE value="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame" />
     <MESSAGE value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
@@ -649,6 +648,7 @@
     <MESSAGE value="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas" />
     <MESSAGE value="Cuando se añade una nueva pieza a un circuito, se marca como seleccionada para que se vea." />
     <MESSAGE value="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito." />
-    <option name="LAST_COMMIT_MESSAGE" value="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito." />
+    <MESSAGE value="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica)." />
   </component>
 </project>

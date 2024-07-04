@@ -130,10 +130,14 @@ class CircuitsEditor(Editor):
             messagebox.showerror("No se pudo guardar", "Debe haber al menos 1 circuito.")
             return
         content = {"circuits": self.circuits}
-        file_path = "circuits.json"
-        self.file_manager.save_file(content, file_path)
-        messagebox.showinfo("Archivo guardado", "Se ha guardado el archivo 'circuits.json' en el "
-                                                "directorio raíz de la aplicación.")
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".json",
+            initialfile="circuits.json",
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        if file_path:
+            self.file_manager.save_file(content, file_path)
+            messagebox.showinfo("Archivo guardado", f"Archivo guardado en:\n{file_path}")
 
     def populate_listbox(self):
         self.listbox.delete(0, tk.END)

@@ -210,8 +210,12 @@ class RobotsEditor(Editor):
         self.__select_element(0)
 
     def save_file(self):
-        file_path = "robots.json"
-        content = self.robot_manager.to_json()
-        self.file_manager.save_file(content, file_path)
-        messagebox.showinfo("Archivo guardado", "Se ha guardado el archivo 'robots.json' en el "
-                                                "directorio raíz de la aplicación")
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".json",
+            initialfile="robots.json",
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        if file_path:
+            content = self.robot_manager.to_json()
+            self.file_manager.save_file(content, file_path)
+            messagebox.showinfo("Archivo guardado", f"Archivo guardado en:\n{file_path}")
