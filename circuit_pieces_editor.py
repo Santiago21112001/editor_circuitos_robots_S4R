@@ -71,18 +71,22 @@ class CircuitPiecesEditor:
         new_piece: DraggablePiece = Rectangle(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, "x",
                                               self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
+        self.set_selected_piece(new_piece)
 
     def add_arc(self):
         new_piece: DraggablePiece = Arc(self, self.NEW_PIECE_X, self.NEW_PIECE_Y, self.NEW_PIECE_DIST)
         self.draggable_pieces.append(new_piece)
+        self.set_selected_piece(new_piece)
 
     def add_four_way(self):
         new_piece: DraggablePiece = FourWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
+        self.set_selected_piece(new_piece)
 
     def add_three_way(self):
         new_piece: DraggablePiece = ThreeWay(self, self.NEW_PIECE_X, self.NEW_PIECE_Y)
         self.draggable_pieces.append(new_piece)
+        self.set_selected_piece(new_piece)
 
     def delete_all_pieces(self):
         self.draggable_pieces.clear()

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Cambiado la opción de menú “Editor” a “Cambiar de editor”.">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces_editor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,14 +213,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Pasado straight_x a straight">
-      <option name="closed" value="true" />
-      <created>1713728463212</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1713728463212</updated>
     </task>
     <task id="LOCAL-00011" summary="Refactorización">
       <option name="closed" value="true" />
@@ -604,7 +598,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720111301924</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas">
+      <option name="closed" value="true" />
+      <created>1720111375485</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1720111375485</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -619,7 +621,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pequeño cambio" />
     <MESSAGE value="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard." />
     <MESSAGE value="Editor de circuitos: Permitir eliminar sólo una pieza." />
     <MESSAGE value="Editor de robots: Permitir cambiar el nombre de un robot." />
@@ -644,6 +645,7 @@
     <MESSAGE value="Problema: cuando el usuario carga un fichero con dos circuitos, borra uno y guarda el fichero, dicho fichero sigue teniendo dos circuitos. Sólo se borra la representación gráfica.&#10;Solución: se borra el circuito del fichero, además de su representación gráfica." />
     <MESSAGE value="Puesto en la parte superior de la interfaz qué editor se está usando y como cambiar de otro editor" />
     <MESSAGE value="Cambiado la opción de menú “Editor” a “Cambiar de editor”." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiado la opción de menú “Editor” a “Cambiar de editor”." />
+    <MESSAGE value="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas" />
+    <option name="LAST_COMMIT_MESSAGE" value="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas" />
   </component>
 </project>
