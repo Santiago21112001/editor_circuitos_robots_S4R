@@ -50,7 +50,7 @@ class CircuitPiecesEditor:
         bottom_buttons = [
             ("Rotar", self.rotate_selected_piece, "green"),
             ("Eliminar pieza elegida", self.delete_selected_piece, "green"),
-            ("Eliminar todas las piezas", self.delete_all_pieces, "red")
+            ("Eliminar todas las piezas", self.delete_all_pieces, "green")
         ]
 
         for i, (text, command, color) in enumerate(top_buttons):
@@ -87,9 +87,12 @@ class CircuitPiecesEditor:
         self.set_selected_piece(new_piece)
 
     def delete_all_pieces(self):
-        self.draggable_pieces.clear()
-        self.selected_piece = None
-        self.canvas.delete("all")
+        title = "Eliminar todas las piezas"
+        message = "Se eliminarán todas las piezas y no se podrán recuperar. ¿Desea continuar?"
+        if messagebox.askokcancel(title, message):
+            self.draggable_pieces.clear()
+            self.selected_piece = None
+            self.canvas.delete("all")
 
     def rotate_selected_piece(self):
         if self.selected_piece is None:
@@ -126,7 +129,9 @@ class CircuitPiecesEditor:
 
     def load_file_pieces(self, file_pieces):
         """Draws the circuit parts of the JSON file."""
-        self.delete_all_pieces()
+        self.draggable_pieces.clear()
+        self.selected_piece = None
+        self.canvas.delete("all")
         for part in file_pieces:
             part_type = part['type']
             x1 = part['x1']

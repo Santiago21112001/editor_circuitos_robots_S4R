@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Al guardar un archivo, se permite elegir la ruta de destino">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Implementado atajos de teclado para las opciones de menú">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuits_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/robots_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces_editor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,14 +215,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Modificada funcionaliad de guardar fichero para que sea importable por el simulador.">
-      <option name="closed" value="true" />
-      <created>1716443968647</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1716443968647</updated>
     </task>
     <task id="LOCAL-00016" summary="Cargar y mostrar en pantalla">
       <option name="closed" value="true" />
@@ -610,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720125071366</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Implementado atajos de teclado para las opciones de menú">
+      <option name="closed" value="true" />
+      <created>1720134485414</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1720134485414</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -625,7 +623,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame" />
     <MESSAGE value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
     <MESSAGE value="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver." />
     <MESSAGE value="Editor de circuitos: implementado cruce de 3 vías." />
@@ -650,6 +647,7 @@
     <MESSAGE value="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito." />
     <MESSAGE value="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica)." />
     <MESSAGE value="Al guardar un archivo, se permite elegir la ruta de destino" />
-    <option name="LAST_COMMIT_MESSAGE" value="Al guardar un archivo, se permite elegir la ruta de destino" />
+    <MESSAGE value="Implementado atajos de teclado para las opciones de menú" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado atajos de teclado para las opciones de menú" />
   </component>
 </project>
