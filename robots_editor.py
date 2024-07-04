@@ -66,7 +66,7 @@ class RobotsEditor(Editor):
         self.save_button.grid(row=10, column=3, padx=10, pady=10, sticky="ew")
 
     def __add_robot(self):
-        name: str = "new_robot"
+        name = simpledialog.askstring("Crear", "Introduzca el nombre:")
         try:
             self.robot_manager.add_robot(name)
             self.__populate_robots_list()
