@@ -4,35 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Se ha cambiado el color de fondo del “Eliminar todas las piezas” (editor de piezas de un circuito) al verde. Además, se ha puesto un mensaje que pide confirmar la acción (para que el usuario no borre todas las piezas por error).">
-      <change afterPath="$PROJECT_DIR$/circuit_model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files_manager/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/robot_model/__init__.py" afterDir="false" />
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Cambiada la estructura de directorios y paquetes">
       <change beforePath="$PROJECT_DIR$/.idea/editor_circuitos_robots_S4R.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor_circuitos_robots_S4R.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/arc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/draggable_piece.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/four_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/four_way.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/rectangle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/three_way.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way_orient.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/three_way_orient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/circuit_pieces_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/circuits_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_manager/files_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot_model/robot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/robots_editor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot_model/robots_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_arc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_files_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_files_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rectangle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_robot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_robots_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_robots_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_three_way.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuit_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_model/arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuit_model/arc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_model/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuit_model/draggable_piece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_model/four_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuit_model/four_way.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_model/rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuit_model/rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_model/three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuit_model/three_way.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_model/three_way_orient.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/circuit_model/three_way_orient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_manager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/files_manager/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_manager/files_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/files_manager/files_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/circuit_pieces_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/robots_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot_model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/robot_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot_model/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/robot_model/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot_model/robots_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/robot_model/robots_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,14 +105,14 @@
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\src" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_model" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\robot_model" />
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\files_manager" />
-      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in tests">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
@@ -133,7 +126,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\src\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -242,14 +235,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709412837967</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Cargar y mostrar en pantalla">
-      <option name="closed" value="true" />
-      <created>1716574055490</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1716574055490</updated>
     </task>
     <task id="LOCAL-00017" summary="Añadida funcionalidad de borrar todas las piezas del lienzo de edición.">
       <option name="closed" value="true" />
@@ -635,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720134485414</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Cambiada la estructura de directorios y paquetes">
+      <option name="closed" value="true" />
+      <created>1720352822385</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1720352822385</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -650,7 +643,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
     <MESSAGE value="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver." />
     <MESSAGE value="Editor de circuitos: implementado cruce de 3 vías." />
     <MESSAGE value="Editor de robots: Cambiado de posición el botón &quot;Editar nombre&quot;" />
@@ -675,6 +667,7 @@
     <MESSAGE value="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica)." />
     <MESSAGE value="Al guardar un archivo, se permite elegir la ruta de destino" />
     <MESSAGE value="Implementado atajos de teclado para las opciones de menú" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementado atajos de teclado para las opciones de menú" />
+    <MESSAGE value="Cambiada la estructura de directorios y paquetes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiada la estructura de directorios y paquetes" />
   </component>
 </project>
