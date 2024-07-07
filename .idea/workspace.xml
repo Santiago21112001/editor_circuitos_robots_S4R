@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Implementado atajos de teclado para las opciones de menú">
+      <change afterPath="$PROJECT_DIR$/.idea/editor_circuitos_robots_S4R.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Python Unit Test" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Santiago21112001&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Santiago21112001/editor_circuitos_robots_S4R.git&quot;,
+    &quot;accountId&quot;: &quot;e8504c38-049b-459d-8c2b-aa440c6be869&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2d9GN2emiWenhyiS0gcGiZSszAV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_rectangle.TestRectangle.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in editor_circuitos_robots_S4R.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_app.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_check_format.py (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_check_format.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_draggable_arc.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_draggable_polygon.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_draggable_rectangle.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_files_manager.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_robot.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_robots_manager.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_three_way.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_circuit_editor.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests_robots_editor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.borrar.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prueba.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mines/PycharmProjects/simulator-robotic-software&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests\tests_circuit_editor" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\draggable_pieces" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_rectangle.TestRectangle" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_rectangle.TestRectangle&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in editor_circuitos_robots_S4R" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_files_manager.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_files_manager.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_three_way.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_three_way.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in editor_circuitos_robots_S4R" />
+        <item itemvalue="Python tests.Python tests in test_files_manager.py" />
+        <item itemvalue="Python tests.Python tests in test_three_way.py" />
+        <item itemvalue="Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left" />
+        <item itemvalue="Python tests.Python tests for test_rectangle.TestRectangle" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="" />
+      <created>1709412837967</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709412837967</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Cargar y mostrar en pantalla">
+      <option name="closed" value="true" />
+      <created>1716574055490</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716574055490</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Añadida funcionalidad de borrar todas las piezas del lienzo de edición.">
+      <option name="closed" value="true" />
+      <created>1716576798520</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716576798520</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Agregado comentarios a algunos constructores de clases.">
+      <option name="closed" value="true" />
+      <created>1716716255069</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716716255069</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Rotar piezas.">
+      <option name="closed" value="true" />
+      <created>1716752875121</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716752875121</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Se colorea el borde de la pieza seleccionada para que se distinga de las demás.">
+      <option name="closed" value="true" />
+      <created>1716753505249</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716753505249</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Se colorea toda la pieza seleccionada en vez de sólo el borde.">
+      <option name="closed" value="true" />
+      <created>1716913043488</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716913043488</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Cambiado robot_data.json a circuits.json, y quitado de su contenido la parte de robots.">
+      <option name="closed" value="true" />
+      <created>1716921246376</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1716921246376</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Pruebas unitarias de las subclases de DraggablePiece.">
+      <option name="closed" value="true" />
+      <created>1716988988266</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716988988266</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Mensaje de diálogo (pop-up) al guardar un archivo.">
+      <option name="closed" value="true" />
+      <created>1717178672478</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1717178672478</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Pasado el editor de circuitos a una clase aparte.">
+      <option name="closed" value="true" />
+      <created>1717248902341</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1717248902341</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Superclase 'Editor' para 'CircuitsEditor' y el futuro 'RobotsEditor'">
+      <option name="closed" value="true" />
+      <created>1717249527568</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1717249527568</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Comprobar formato del archivo al cargar un fichero de circuitos">
+      <option name="closed" value="true" />
+      <created>1717264046720</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1717264046720</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Comprobar formato del archivo al cargar un fichero de robots.">
+      <option name="closed" value="true" />
+      <created>1717265152847</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1717265152847</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Poder cambiar entre editor de circuitos y editor de robots a través de una opción del menú.">
+      <option name="closed" value="true" />
+      <created>1717319455666</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1717319455666</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Editar robot.">
+      <option name="closed" value="true" />
+      <created>1717341713025</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1717341713025</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Permitir crear/editar un robot móvil con 2, 3 o 4 sensores de luz (contenido del fichero json) (poder editar los pines de todos los componentes). Si tiene 3 sensores, permitir elegir sensor exterior izquierdo o sensor exterior derecho.">
+      <option name="closed" value="true" />
+      <created>1717353508690</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1717353508690</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Extraída la lógica de los robots de RobotsEditor e insertada en las nuevas clases Robot y RobotsManager. Ahora RobotsEditor se encarga sólo de la interfaz de usuario.">
+      <option name="closed" value="true" />
+      <created>1717583823560</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1717583823560</updated>
+    </task>
+    <task id="LOCAL-00033" summary="No dejar editar arduinoBoard ni actuador">
+      <option name="closed" value="true" />
+      <created>1717662452206</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1717662452206</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Pequeño cambio">
+      <option name="closed" value="true" />
+      <created>1717663085733</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1717663085733</updated>
+    </task>
+    <task id="LOCAL-00035" summary="En editor de circuitos: no permitir ver arduinoBoard, y siempre guardar en json el actuador y el arduinoBoard.">
+      <option name="closed" value="true" />
+      <created>1717679658604</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1717679658604</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Editor de circuitos: Permitir eliminar sólo una pieza.">
+      <option name="closed" value="true" />
+      <created>1717684143693</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1717684143693</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Editor de robots: Permitir cambiar el nombre de un robot.">
+      <option name="closed" value="true" />
+      <created>1717687064256</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1717687064256</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Poder añadir y eliminar robots.">
+      <option name="closed" value="true" />
+      <created>1717693479082</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1717693479082</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Editor tiene un atributo ttk.Frame en vez de heredar de ttk.Frame">
+      <option name="closed" value="true" />
+      <created>1717698421640</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1717698421640</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos.">
+      <option name="closed" value="true" />
+      <created>1717928716613</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1717928716613</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver.">
+      <option name="closed" value="true" />
+      <created>1717935227155</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1717935227155</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Editor de circuitos: implementado cruce de 3 vías.">
+      <option name="closed" value="true" />
+      <created>1718369515004</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1718369515004</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Editor de robots: Cambiado de posición el botón &quot;Editar nombre&quot;">
+      <option name="closed" value="true" />
+      <created>1718654302196</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1718654302196</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Editor de circuitos: Nuevo botón &quot;Guardar archivo&quot;">
+      <option name="closed" value="true" />
+      <created>1718796281644</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1718796281644</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Arreglado bug: si mandabas abrir el editor de robots mientras estabas editando las piezas de un circuito, se te quedaba la pantalla del editor de circuito cuando debería mostrarse la pantalla del editor de robots.">
+      <option name="closed" value="true" />
+      <created>1718797346470</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1718797346470</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Pqueñas mejoras">
+      <option name="closed" value="true" />
+      <created>1719227973068</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1719227973068</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Arreglos de nombres">
+      <option name="closed" value="true" />
+      <created>1719228423041</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1719228423041</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Cambios de nombres de algunas clases para que quede más claro">
+      <option name="closed" value="true" />
+      <created>1719232711637</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1719232711637</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;">
+      <option name="closed" value="true" />
+      <created>1719320172668</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1719320172668</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Piezas de un circuito: cambiado &quot;3way&quot; a &quot;three-way&quot; y &quot;polygon&quot; a &quot;four-way&quot;">
+      <option name="closed" value="true" />
+      <created>1719514026329</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1719514026329</updated>
+    </task>
+    <task id="LOCAL-00051" summary="CircuitPiecesEditor ya no hereda de Editor">
+      <option name="closed" value="true" />
+      <created>1719671043749</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1719671043749</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager">
+      <option name="closed" value="true" />
+      <created>1719673579194</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1719673579194</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Implementadas las pruebas unitarias">
+      <option name="closed" value="true" />
+      <created>1719955295905</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1719955295905</updated>
+    </task>
+    <task id="LOCAL-00054" summary="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario">
+      <option name="closed" value="true" />
+      <created>1719956234793</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1719956234793</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Corrección de la descripción del commit anterior: Robot lanza el error, no RobotsManager">
+      <option name="closed" value="true" />
+      <created>1719956489344</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1719956489344</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Problema: cuando el usuario carga un fichero con dos circuitos, borra uno y guarda el fichero, dicho fichero sigue teniendo dos circuitos. Sólo se borra la representación gráfica.&#10;Solución: se borra el circuito del fichero, además de su representación gráfica.">
+      <option name="closed" value="true" />
+      <created>1719959225528</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1719959225532</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Puesto en la parte superior de la interfaz qué editor se está usando y como cambiar de otro editor">
+      <option name="closed" value="true" />
+      <created>1720111169872</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1720111169872</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Cambiado la opción de menú “Editor” a “Cambiar de editor”.">
+      <option name="closed" value="true" />
+      <created>1720111301924</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1720111301924</updated>
+    </task>
+    <task id="LOCAL-00059" summary="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas">
+      <option name="closed" value="true" />
+      <created>1720111375485</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1720111375485</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Cuando se añade una nueva pieza a un circuito, se marca como seleccionada para que se vea.">
+      <option name="closed" value="true" />
+      <created>1720119158896</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1720119158896</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito.">
+      <option name="closed" value="true" />
+      <created>1720123813915</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1720123813915</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica).">
+      <option name="closed" value="true" />
+      <created>1720124525420</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1720124525420</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Al guardar un archivo, se permite elegir la ruta de destino">
+      <option name="closed" value="true" />
+      <created>1720125071366</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1720125071366</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Implementado atajos de teclado para las opciones de menú">
+      <option name="closed" value="true" />
+      <created>1720134485414</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1720134485414</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dejar editar varios circuitos. Se pueden añadir y eliminar circuitos." />
+    <MESSAGE value="Arreglado bug: Los botones del editor de circuitos se movían al editar un circuito y volver." />
+    <MESSAGE value="Editor de circuitos: implementado cruce de 3 vías." />
+    <MESSAGE value="Editor de robots: Cambiado de posición el botón &quot;Editar nombre&quot;" />
+    <MESSAGE value="Editor de circuitos: Nuevo botón &quot;Guardar archivo&quot;" />
+    <MESSAGE value="Arreglado bug: si mandabas abrir el editor de robots mientras estabas editando las piezas de un circuito, se te quedaba la pantalla del editor de circuito cuando debería mostrarse la pantalla del editor de robots." />
+    <MESSAGE value="Pqueñas mejoras" />
+    <MESSAGE value="Arreglos de nombres" />
+    <MESSAGE value="Cambios de nombres de algunas clases para que quede más claro" />
+    <MESSAGE value="Ahora la clase que pide la ruta del fichero es &quot;CircuitsEditor&quot; o &quot;RobotsEditor&quot;, no &quot;FilesManager&quot;" />
+    <MESSAGE value="Piezas de un circuito: cambiado &quot;3way&quot; a &quot;three-way&quot; y &quot;polygon&quot; a &quot;four-way&quot;" />
+    <MESSAGE value="CircuitPiecesEditor ya no hereda de Editor" />
+    <MESSAGE value="Pasada la funcionalidad de comprobar el formato del fichero a la clase FilesManager" />
+    <MESSAGE value="Implementadas las pruebas unitarias" />
+    <MESSAGE value="RobotsManager debe lanzar error si se pone un pin ya cogido por otro elemento, pero no lo hace&#10;&#9;Arreglado: capturar error en Robot.set_element() y atraparlo en RobotsEditor para mostrarlo al usuario" />
+    <MESSAGE value="Corrección de la descripción del commit anterior: Robot lanza el error, no RobotsManager" />
+    <MESSAGE value="Problema: cuando el usuario carga un fichero con dos circuitos, borra uno y guarda el fichero, dicho fichero sigue teniendo dos circuitos. Sólo se borra la representación gráfica.&#10;Solución: se borra el circuito del fichero, además de su representación gráfica." />
+    <MESSAGE value="Puesto en la parte superior de la interfaz qué editor se está usando y como cambiar de otro editor" />
+    <MESSAGE value="Cambiado la opción de menú “Editor” a “Cambiar de editor”." />
+    <MESSAGE value="En el editor de circuitos, cambiado el botón “Editar” a “Editar piezas" />
+    <MESSAGE value="Cuando se añade una nueva pieza a un circuito, se marca como seleccionada para que se vea." />
+    <MESSAGE value="Al crear un robot nuevo, se permite elegir el nombre de la misma manera que cuando se crea un circuito." />
+    <MESSAGE value="Dado un nombre apropiado en español a los sensores de luz de los robots (en la interfaz gráfica)." />
+    <MESSAGE value="Al guardar un archivo, se permite elegir la ruta de destino" />
+    <MESSAGE value="Implementado atajos de teclado para las opciones de menú" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado atajos de teclado para las opciones de menú" />
+  </component>
+</project>
