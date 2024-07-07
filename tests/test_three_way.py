@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import Mock, patch
-from circuit_pieces.three_way import ThreeWay, ThreeWayOrient
+from circuit_model.three_way import ThreeWay, ThreeWayOrient
 
 
 class TestThreeWayRotate(unittest.TestCase):

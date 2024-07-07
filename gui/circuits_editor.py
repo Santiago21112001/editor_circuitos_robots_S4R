@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog, filedialog
 
-from circuit_pieces_editor import CircuitPiecesEditor
-from editor import Editor
+from gui.circuit_pieces_editor import CircuitPiecesEditor
+from gui.editor import Editor
 
 
 class CircuitsEditor(Editor):

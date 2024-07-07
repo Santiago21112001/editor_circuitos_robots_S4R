@@ -1,6 +1,6 @@
 import unittest
 import tkinter as tk
-from circuit_pieces.arc import Arc
+from circuit_model.arc import Arc
 
 
 class MockApp:

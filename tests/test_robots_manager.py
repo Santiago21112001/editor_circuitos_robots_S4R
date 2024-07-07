@@ -1,6 +1,6 @@
 import unittest
 
-from robots_manager import RobotsManager
+from robot_model.robots_manager import RobotsManager
 
 
 class TestRobotsManager(unittest.TestCase):

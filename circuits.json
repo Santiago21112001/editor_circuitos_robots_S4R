@@ -13,37 +13,6 @@
                     "scale": 0.2
                 }
             ]
-        },
-        {
-            "name": "laberinto",
-            "parts": [
-                {
-                    "type": "straight",
-                    "x1": 193.0,
-                    "y1": 205.0,
-                    "orient": "x",
-                    "width": 20,
-                    "dist": 70,
-                    "scale": 0.2
-                },
-                {
-                    "type": "turn",
-                    "x1": 281.0,
-                    "y1": 217.0,
-                    "dist": 70,
-                    "start": 0,
-                    "extent": 90,
-                    "width": 20,
-                    "scale": 0.2
-                },
-                {
-                    "type": "four-way",
-                    "x1": 261.0,
-                    "y1": 205.0,
-                    "width": 20,
-                    "scale": 0.2
-                }
-            ]
         }
     ]
 }

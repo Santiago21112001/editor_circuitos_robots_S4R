@@ -1,11 +1,11 @@
 import tkinter as tk
 from tkinter import messagebox
 
-from circuit_pieces.arc import Arc
-from circuit_pieces.draggable_piece import DraggablePiece
-from circuit_pieces.four_way import FourWay
-from circuit_pieces.rectangle import Rectangle
-from circuit_pieces.three_way import ThreeWay
+from circuit_model.arc import Arc
+from circuit_model.draggable_piece import DraggablePiece
+from circuit_model.four_way import FourWay
+from circuit_model.rectangle import Rectangle
+from circuit_model.three_way import ThreeWay
 
 
 class CircuitPiecesEditor:

@@ -4,9 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Implementado atajos de teclado para las opciones de menú">
+    <list default="true" id="a32112db-c220-4b0a-83ec-cab80b32ae2f" name="Changes" comment="Se ha cambiado el color de fondo del “Eliminar todas las piezas” (editor de piezas de un circuito) al verde. Además, se ha puesto un mensaje que pide confirmar la acción (para que el usuario no borre todas las piezas por error).">
+      <change afterPath="$PROJECT_DIR$/circuit_model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files_manager/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robot_model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor_circuitos_robots_S4R.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor_circuitos_robots_S4R.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_pieces_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/arc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/draggable_piece.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/draggable_piece.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/four_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/four_way.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/three_way.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces/three_way_orient.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_model/three_way_orient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_pieces_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/circuit_pieces_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits.json" beforeDir="false" afterPath="$PROJECT_DIR$/circuits.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/circuits_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/files_manager/files_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot_model/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots_editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/robots_editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/robot_model/robots_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_arc.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_arc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_files_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_robots_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_robots_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_three_way.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_three_way.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -86,13 +112,14 @@
       <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R" />
-      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_pieces" />
-      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests\tests_circuit_editor" />
-      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\draggable_pieces" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\tests" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\circuit_model" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\robot_model" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\files_manager" />
+      <recent name="C:\Users\mines\PycharmProjects\editor_circuitos_robots_S4R\gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python tests.Python tests in tests">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="editor_circuitos_robots_S4R" />
       <option name="ENV_FILES" value="" />
@@ -113,21 +140,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_rectangle.TestRectangle" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="editor_circuitos_robots_S4R" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_rectangle.TestRectangle&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -171,7 +183,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_files_manager.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_files_manager.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -186,17 +198,32 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_three_way.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_three_way.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="editor_circuitos_robots_S4R" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in tests" />
         <item itemvalue="Python tests.Python tests in editor_circuitos_robots_S4R" />
         <item itemvalue="Python tests.Python tests in test_files_manager.py" />
         <item itemvalue="Python tests.Python tests in test_three_way.py" />
         <item itemvalue="Python tests.Python tests for test_three_way.TestThreeWayRotate.test_rotate_from_down_to_left" />
-        <item itemvalue="Python tests.Python tests for test_rectangle.TestRectangle" />
       </list>
     </recent_temporary>
   </component>

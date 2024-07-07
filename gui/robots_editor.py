@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog, filedialog
 
-from editor import Editor
-from robots_manager import RobotsManager
+from gui.editor import Editor
+from robot_model.robots_manager import RobotsManager
 
 
 class RobotsEditor(Editor):

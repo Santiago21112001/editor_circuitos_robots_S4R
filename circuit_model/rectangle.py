@@ -1,4 +1,4 @@
-from circuit_pieces.draggable_piece import DraggablePiece
+from circuit_model.draggable_piece import DraggablePiece
 
 
 class Rectangle(DraggablePiece):

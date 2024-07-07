@@ -1,4 +1,4 @@
-from robot import Robot
+from robot_model.robot import Robot
 
 
 class RobotsManager:

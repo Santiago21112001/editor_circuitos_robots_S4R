@@ -1,5 +1,5 @@
-from circuit_pieces.draggable_piece import DraggablePiece
-from circuit_pieces.three_way_orient import ThreeWayOrient, OrientDown, OrientUp, OrientLeft, OrientRight
+from circuit_model.draggable_piece import DraggablePiece
+from circuit_model.three_way_orient import ThreeWayOrient, OrientDown, OrientUp, OrientLeft, OrientRight
 
 
 class ThreeWay(DraggablePiece):

@@ -1,7 +1,7 @@
 from abc import abstractmethod
 import tkinter as tk
 
-from files_manager import FilesManager
+from files_manager.files_manager import FilesManager
 
 
 class Editor:

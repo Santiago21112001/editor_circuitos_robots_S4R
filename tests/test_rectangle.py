@@ -1,6 +1,6 @@
 import unittest
 import tkinter as tk
-from circuit_pieces.rectangle import Rectangle
+from circuit_model.rectangle import Rectangle
 
 
 class MockApp:
