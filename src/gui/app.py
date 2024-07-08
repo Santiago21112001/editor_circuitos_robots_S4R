@@ -17,7 +17,7 @@ class App:
         self.width = 1024
         self.height = 768
         self.root.geometry(f"{self.width}x{self.height}")
-        self.root.resizable(True, True)
+        self.root.resizable(False, False)
 
         # Main frame container
         self.container = ttk.Frame(self.root)
